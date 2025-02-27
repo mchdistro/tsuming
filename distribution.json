@@ -1,0 +1,181 @@
+{
+  "version": "1.0.0",
+  "rss": "<LINK TO RSS FEED>",
+  "discord": {
+    "clientId": "<FILL IN OR REMOVE DISCORD OBJECT>",
+    "smallImageText": "<FILL IN OR REMOVE DISCORD OBJECT>",
+    "smallImageKey": "<FILL IN OR REMOVE DISCORD OBJECT>"
+  },
+  "servers": [
+    {
+      "id": "tsuming-1.20.1",
+      "name": "츠밍",
+      "description": "Minecraft 1.20.1 (Fabric v0.16.10)",
+      "icon": "https://github.com/mchdistro/tsuming/raw/main/server-icon.png",
+      "version": "1.0.0",
+      "address": "localhost:25565",
+      "minecraftVersion": "1.20.1",
+      "discord": {
+        "shortId": "<FILL IN OR REMOVE DISCORD OBJECT>",
+        "largeImageText": "<FILL IN OR REMOVE DISCORD OBJECT>",
+        "largeImageKey": "<FILL IN OR REMOVE DISCORD OBJECT>"
+      },
+      "mainServer": true,
+      "autoconnect": false,
+      "modules": [
+        {
+          "id": "net.fabricmc:fabric-loader:0.16.10",
+          "name": "Fabric (fabric-loader)",
+          "type": "Fabric",
+          "artifact": {
+            "size": 1387408,
+            "MD5": "239d59118dec4324672b3d9e9d75efef",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/net/fabricmc/fabric-loader/0.16.10/fabric-loader-0.16.10.jar"
+          },
+          "subModules": [
+            {
+              "id": "1.20.1-fabric-0.16.10",
+              "name": "Fabric (version.json)",
+              "type": "VersionManifest",
+              "artifact": {
+                "size": 2859,
+                "MD5": "7e9b3819c2df03bd0e0ae5311098aef5",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/versions/1.20.1-fabric-0.16.10/1.20.1-fabric-0.16.10.json"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm:9.7.1",
+              "name": "Fabric (asm)",
+              "type": "Library",
+              "artifact": {
+                "size": 126093,
+                "MD5": "e2cdd32d198ad31427d298eee9d39d8d",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-analysis:9.7.1",
+              "name": "Fabric (asm-analysis)",
+              "type": "Library",
+              "artifact": {
+                "size": 35126,
+                "MD5": "4cd9e7178dfb85371bba3077e40cd514",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/org/ow2/asm/asm-analysis/9.7.1/asm-analysis-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-commons:9.7.1",
+              "name": "Fabric (asm-commons)",
+              "type": "Library",
+              "artifact": {
+                "size": 73459,
+                "MD5": "8344aea3c8b7d707e9d35a62710e77c9",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/org/ow2/asm/asm-commons/9.7.1/asm-commons-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-tree:9.7.1",
+              "name": "Fabric (asm-tree)",
+              "type": "Library",
+              "artifact": {
+                "size": 51939,
+                "MD5": "e85029f613b6469989cc7cf53fe06b74",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/org/ow2/asm/asm-tree/9.7.1/asm-tree-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-util:9.7.1",
+              "name": "Fabric (asm-util)",
+              "type": "Library",
+              "artifact": {
+                "size": 94519,
+                "MD5": "36d373a9cd6cad9b35db9f984c6b4bbb",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/org/ow2/asm/asm-util/9.7.1/asm-util-9.7.1.jar"
+              }
+            },
+            {
+              "id": "net.fabricmc:sponge-mixin:0.15.4+mixin.0.8.7",
+              "name": "Fabric (sponge-mixin)",
+              "type": "Library",
+              "artifact": {
+                "size": 1494834,
+                "MD5": "991ca8be2c408fe19eb64014d8a18243",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/net/fabricmc/sponge-mixin/0.15.4+mixin.0.8.7/sponge-mixin-0.15.4+mixin.0.8.7.jar"
+              }
+            },
+            {
+              "id": "net.fabricmc:intermediary:1.20.1",
+              "name": "Fabric (intermediary)",
+              "type": "Library",
+              "artifact": {
+                "size": 573365,
+                "MD5": "3f4768ac751cac3418266d1d7aa15f55",
+                "url": "https://github.com/mchdistro/tsuming/raw/main/repo/lib/net/fabricmc/intermediary/1.20.1/intermediary-1.20.1.jar"
+              }
+            }
+          ]
+        },
+        {
+          "id": "org.betterx:bclib:3.0.14@jar",
+          "name": "BCLib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2312835,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/bclib-3.0.14.jar",
+            "MD5": "f8ace3a498b889040dea6ff1ea85d288"
+          }
+        },
+        {
+          "id": "generated.fabricmod:better:end-4.0.11@jar",
+          "name": "Better",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 92544800,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/better-end-4.0.11.jar",
+            "MD5": "25be609cb7b9fc6e4e8782c6fdfea35b"
+          }
+        },
+        {
+          "id": "org.betterx:betternether:9.0.10@jar",
+          "name": "Better Nether",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 22981698,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/better-nether-9.0.10.jar",
+            "MD5": "ddc5a347daf531668da8ebe61bfc1c80"
+          }
+        },
+        {
+          "id": "com.kyanite:deeperdarker:1.3.3@jar",
+          "name": "Deeper and Darker",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 17848630,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/deeperdarker-fabric-1.20-1.3.3.jar",
+            "MD5": "4d01841e175773c61f8be01b35dd58c3"
+          }
+        },
+        {
+          "id": "generated.fabricmod:fabric-api:0.92.3+1.20.1@jar",
+          "name": "Fabric API",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2107985,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/fabric-api-0.92.3+1.20.1.jar",
+            "MD5": "dc37eff29b709467379bc41ae4f721b4"
+          }
+        },
+        {
+          "id": "io.wispforest:owo:0.11.2+1.20@jar",
+          "name": "Oωo",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 905421,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/owo-lib-0.11.2+1.20.jar",
+            "MD5": "9150f588f732ae38c0320a17fa340626"
+          }
+        }
+      ]
+    }
+  ]
+}
