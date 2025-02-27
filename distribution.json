@@ -13,7 +13,7 @@
       "description": "Minecraft 1.20.1 (Fabric v0.16.10)",
       "icon": "https://github.com/mchdistro/tsuming/raw/main/server-icon.png",
       "version": "1.0.0",
-      "address": "localhost:25565",
+      "address": "mc.gotiger.dev:25570",
       "minecraftVersion": "1.20.1",
       "discord": {
         "shortId": "<FILL IN OR REMOVE DISCORD OBJECT>",
@@ -173,6 +173,17 @@
             "size": 905421,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/fabricmods/required/owo-lib-0.11.2+1.20.jar",
             "MD5": "9150f588f732ae38c0320a17fa340626"
+          }
+        },
+        {
+          "id": "servers.dat",
+          "name": "servers.dat",
+          "type": "File",
+          "artifact": {
+            "size": 67,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.20.1/files/servers.dat",
+            "MD5": "5b871023d888be511a0a090fad2cc446",
+            "path": "servers.dat"
           }
         }
       ]
