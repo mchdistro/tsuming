@@ -190,7 +190,7 @@
     },
     {
       "id": "tsuming-forge-1.20.1",
-      "name": "츠밍-forge",
+      "name": "츠밍 빙아포",
       "description": "Minecraft 1.20.1 (Forge v47.4.3)",
       "icon": "https://github.com/mchdistro/tsuming/raw/main/server-icon.png",
       "version": "1.0.0",
@@ -651,6 +651,16 @@
             "size": 47826468,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge-1.20.1/forgemods/required/tacz-1.20.1-1.1.6-hotfix.jar",
             "MD5": "51636447584a75f8d2db2fb930d110b1"
+          }
+        },
+        {
+          "id": "options.txt",
+          "name": "options.txt",
+          "type": "File",
+          "artifact": {
+            "size": 127,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge-1.20.1/files/options.txt",
+            "path": "options.txt"
           }
         },
         {

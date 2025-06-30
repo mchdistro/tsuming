@@ -1,0 +1,7 @@
+version:3465
+lang:ko_kr
+soundDevice:""
+narrator:0
+tutorialStep:none
+skipMultiplayerWarning:true
+onboardAccessibility:true

@@ -2,7 +2,7 @@
   "$schema": "file:///D:/Coding/Projects/mchlauncher/Distro/tsuming/schemas/ServerMetaSchema.schema.json",
   "meta": {
     "version": "1.0.0",
-    "name": "츠밍-forge",
+    "name": "츠밍 빙아포",
     "description": "Minecraft 1.20.1 (Forge v47.4.3)",
     "icon": "https://github.com/mchdistro/tsuming/raw/main/server-icon.png",
     "address": "mc.gotiger.dev:25570",
@@ -17,5 +17,10 @@
   "forge": {
     "version": "47.4.3"
   },
-  "untrackedFiles": []
+  "untrackedFiles": [
+    {
+      "appliesTo": ["files"],
+      "patterns": ["options.txt"]
+    }
+  ]
 }
