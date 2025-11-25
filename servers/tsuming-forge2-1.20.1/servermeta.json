@@ -2,7 +2,7 @@
   "$schema": "file:///D:/Coding/Projects/mchlauncher/Distro/tsuming/schemas/ServerMetaSchema.schema.json",
   "meta": {
     "version": "1.0.0",
-    "name": "단기서버",
+    "name": "먼푸 서버",
     "description": "Minecraft 1.20.1 (Forge v47.4.10)",
     "icon": "https://github.com/mchdistro/tsuming/raw/main/server-icon.png",
     "address": "mc.gotiger.dev:20007",

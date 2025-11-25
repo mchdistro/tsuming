@@ -678,7 +678,7 @@
     },
     {
       "id": "tsuming-forge2-1.20.1",
-      "name": "단기서버",
+      "name": "먼푸 서버",
       "description": "Minecraft 1.20.1 (Forge v47.4.10)",
       "icon": "https://github.com/mchdistro/tsuming/raw/main/server-icon.png",
       "version": "1.0.0",
@@ -1219,6 +1219,19 @@
           }
         },
         {
+          "id": "com.kyanite:deeperdarker:1.3.3@jar",
+          "name": "Deeper and Darker",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 17844266,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/deeperdarker-forge-1.20.1-1.3.3.jar",
+            "MD5": "0a71e15737a134276edb310ea02db5f4"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
           "id": "com.jkvin114:displaydelight:1.4.0@jar",
           "name": "Display Delight",
           "type": "ForgeMod",
@@ -1538,6 +1551,19 @@
             "size": 1438965,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/sophisticatedcore-1.20.1-1.2.107.1240.jar",
             "MD5": "fbc7db24a060b7cbe715013b071d604f"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "twilightforest:twilightforest:4.3.2508@jar",
+          "name": "The Twilight Forest",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 23332091,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/twilightforest-1.20.1-4.3.2508-universal.jar",
+            "MD5": "0e1ca36ec2ca7e35059dea1600aa31ee"
           },
           "required": {
             "value": false
