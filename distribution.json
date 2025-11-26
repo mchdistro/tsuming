@@ -1102,6 +1102,32 @@
           ]
         },
         {
+          "id": "net.mcreator:aetherdelight:1.0.0@jar",
+          "name": "Aether Delight",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 198771,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/aether_delight_1.0.0_forge_1.20.1.jar",
+            "MD5": "3add552367ef26ac2c1118f249cc1534"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "com.aetherteam:aether:1.20.1-1.5.2-neoforge@jar",
+          "name": "The Aether",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 39746319,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/aether-1.20.1-1.5.2-neoforge.jar",
+            "MD5": "3508066e170a010e8a466eea05579b85"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
           "id": "net.mehvahdjukaar:amendments:1.20-2.2.3@jar",
           "name": "Amendments",
           "type": "ForgeMod",
@@ -1135,6 +1161,19 @@
             "size": 601173,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/Aquaculture-1.20.1-2.5.5.jar",
             "MD5": "515dde53d77858310af77cd93a5d1316"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "net.mcreator:aquaculturedelight:1.1.1@jar",
+          "name": "Aquaculture Delight",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 225149,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/aquaculturedelight-1.1.1-forge-1.20.1.jar",
+            "MD5": "e1aa5ae3c8f5ceafbda9298804d9daaf"
           },
           "required": {
             "value": false
@@ -1551,6 +1590,19 @@
             "size": 1438965,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/sophisticatedcore-1.20.1-1.2.107.1240.jar",
             "MD5": "fbc7db24a060b7cbe715013b071d604f"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "dev.xkmc.twilightdelight.init:twilightdelight:2.0.17@jar",
+          "name": "Twilight's Flavor & Delight",
+          "type": "ForgeMod",
+          "artifact": {
+            "size": 1433333,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-forge2-1.20.1/forgemods/optionalon/twilightdelight-2.0.17.jar",
+            "MD5": "595362564fcc91f5313eb72e2af768ec"
           },
           "required": {
             "value": false
