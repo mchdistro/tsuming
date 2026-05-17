@@ -1,0 +1,102 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation": {
+			"animation_length": 0.75,
+			"bones": {
+				"fireball_explosion": {
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.05": {
+							"vector": [1, 1, 1]
+						},
+						"0.5": {
+							"vector": [1, 1, 1]
+						},
+						"0.6": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ef_flame_hit1": {
+					"rotation": {
+						"vector": [-26.98845, -34.40211, 60.78931]
+					},
+					"position": {
+						"vector": [7, 0, 3]
+					}
+				},
+				"ef_flame_hit2": {
+					"rotation": {
+						"vector": [79.06854, -7.00403, -30.93441]
+					},
+					"position": {
+						"vector": [0, 0, -12]
+					}
+				},
+				"ef_flame_hit3": {
+					"rotation": {
+						"vector": [-46.7768, 17.01441, -5.24753]
+					},
+					"position": {
+						"vector": [0, 2, 7]
+					}
+				},
+				"ef_flame_hit4": {
+					"rotation": {
+						"vector": [-24.13062, -20.031, -28.23777]
+					},
+					"position": {
+						"vector": [-7, 1, 2]
+					}
+				},
+				"ef_smoke1": {
+					"rotation": {
+						"vector": [44.22768, -47.35432, 15.86847]
+					},
+					"position": {
+						"vector": [7, 4, -6]
+					},
+					"scale": {
+						"vector": [1.3, 1.4, 1]
+					}
+				},
+				"ef_smoke2": {
+					"rotation": {
+						"vector": [77.89366, 59.0889, 28.00839]
+					},
+					"position": {
+						"vector": [-9, 6, -9]
+					},
+					"scale": {
+						"vector": [1.7, 1.5, 1]
+					}
+				},
+				"ef_smoke3": {
+					"rotation": {
+						"vector": [-44.11955, -23.48223, -22.98785]
+					},
+					"position": {
+						"vector": [-4, 7, 3]
+					},
+					"scale": {
+						"vector": [1.5, 1.7, 1]
+					}
+				},
+				"ef_smoke4": {
+					"rotation": {
+						"vector": [-29.43839, 4.46375, 56.83501]
+					},
+					"position": {
+						"vector": [9, 3, 3]
+					},
+					"scale": {
+						"vector": [1.6, 1.3, 1]
+					}
+				}
+			}
+		}
+	}
+}

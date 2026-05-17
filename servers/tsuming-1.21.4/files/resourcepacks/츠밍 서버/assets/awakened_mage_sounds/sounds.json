@@ -1,0 +1,92 @@
+{
+  "samus.awakened_mage.fire_ball": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/fire_ball"
+    ]
+  },
+  "samus.awakened_mage.fire_blast": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/fire_blast"
+    ]
+  },
+  "samus.awakened_mage.fire_circle": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/fire_circle"
+    ]
+  },
+  "samus.awakened_mage.fire_explode": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/fire_explode"
+    ]
+  },
+  "samus.awakened_mage.glacial_spikes_shoot": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/glacial_spikes_shoot"
+    ]
+  },
+  "samus.awakened_mage.ice_break": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/ice_break"
+    ]
+  },
+  "samus.awakened_mage.thunder_teleport": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/thunder_teleport"
+    ]
+  },
+  "samus.awakened_mage.thunder_strike": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/thunder_strike"
+    ]
+  },
+  "samus.awakened_mage.meteor_shoot": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/meteor_shoot"
+    ]
+  },
+  "samus.awakened_mage.meteor_explosion": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/meteor_explosion"
+    ]
+  },
+  "samus.awakened_mage.meteor_creation": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/meteor_creation"
+    ]
+  },
+  "samus.awakened_mage.mana_barrier_break": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/mana_barrier_break"
+    ]
+  },
+  "samus.awakened_mage.ice_spike_creation": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/ice_spike_creation"
+    ]
+  },
+  "samus.awakened_mage.ice_break_big": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/ice_break_big"
+    ]
+  },
+  "samus.awakened_mage.ice_charge": {
+    "category": "master",
+    "sounds": [
+      "samus/awakened_mage/ice_charge"
+    ]
+  }
+}

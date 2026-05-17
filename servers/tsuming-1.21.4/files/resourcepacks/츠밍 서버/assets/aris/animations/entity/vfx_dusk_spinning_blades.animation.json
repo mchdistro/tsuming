@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"spin": {
+			"loop": true,
+			"animation_length": 0.2,
+			"override_previous_animation": true,
+			"bones": {
+				"h_bone": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1": {
+							"vector": [0, 180, 0]
+						},
+						"0.2": {
+							"vector": [0, 360, 0]
+						}
+					}
+				},
+				"h_bone2": {
+					"scale": {
+						"0.0": {
+							"post": {
+								"vector": [1.35, 1.35, 1.35]
+							},
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	}
+}

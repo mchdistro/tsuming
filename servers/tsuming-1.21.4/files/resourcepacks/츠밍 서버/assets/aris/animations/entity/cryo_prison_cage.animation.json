@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"crystal_the_enemy": {
+			"loop": true,
+			"animation_length": 0.15,
+			"bones": {
+				"ef_ice_cage": {
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				}
+			}
+		}
+	}
+}

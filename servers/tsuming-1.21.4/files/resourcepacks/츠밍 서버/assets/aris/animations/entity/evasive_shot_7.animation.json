@@ -1,0 +1,139 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"back_roll": {
+			"animation_length": 0.7,
+			"bones": {
+				"ef_dash_smokev1_1": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [22.85018, -0.12087, 15.82547]
+						}
+					}
+				},
+				"ef_dash_smokev2_1": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [8, 0, -15]
+						}
+					}
+				},
+				"ef_dash_smokev3_1": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [0.23658, 0.63265, -2.37872]
+						}
+					}
+				},
+				"ef_dash_smokev4_1": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [-7.72586, -4.67544, 16.01472]
+						}
+					}
+				},
+				"evasive_shot": {
+					"rotation": {
+						"vector": [0, -180, 0]
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.05": {
+							"vector": [1, 1, 1]
+						},
+						"0.4": {
+							"vector": [1, 1, 1]
+						},
+						"0.7": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ef_dash_smokev4_2": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [19.21569, 0.46017, 22.78211]
+						}
+					}
+				},
+				"ef_dash_smokev4_3": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [-8.93616, 5.16004, -16.44745]
+						}
+					}
+				},
+				"ef_dash_smokev4_4": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [-2, 0, 13]
+						}
+					}
+				},
+				"ef_dash_smokev5_1": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [-6.63697, 3.11145, -21.96542]
+						}
+					}
+				},
+				"ef_dash_smokev3_2": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [0, 0, 14]
+						}
+					}
+				},
+				"ef_dash_smokev5_2": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.65": {
+							"vector": [-5, 0, 12]
+						}
+					}
+				}
+			}
+		},
+		"evasive_shot": {
+			"animation_length": 1.7,
+			"bones": {
+				"bone": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

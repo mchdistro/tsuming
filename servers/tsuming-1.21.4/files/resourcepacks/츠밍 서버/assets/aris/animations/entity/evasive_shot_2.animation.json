@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"back_roll": {
+			"animation_length": 0.7,
+			"bones": {
+				"evasive_shot": {
+					"rotation": {
+						"vector": [0, -180, 0]
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.05": {
+							"vector": [1, 1, 1]
+						},
+						"0.4": {
+							"vector": [1, 1, 1]
+						},
+						"0.7": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"evasive_shot": {
+			"animation_length": 1.7
+		}
+	}
+}

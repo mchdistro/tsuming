@@ -1,0 +1,748 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"arrow_destruction2": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"vfx_shot_of_destruction": {
+					"scale": {
+						"vector": [1.7, 1.7, 1.7]
+					}
+				},
+				"ef_stone1": {
+					"rotation": {
+						"0.0": {
+							"vector": [5.08453, -12.23946, -3.8098]
+						},
+						"0.35": {
+							"vector": [5.08453, -12.23946, -3.8098]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [5, -0.5, -13]
+						},
+						"0.35": {
+							"vector": [5, -0.5, 23]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.05": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.3": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.35": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ef_stone2": {
+					"rotation": {
+						"0.0": {
+							"vector": [5.08453, 12.23946, 3.8098]
+						},
+						"0.35": {
+							"vector": [5.08453, 12.23946, 3.8098]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-5, -0.5, -13]
+						},
+						"0.35": {
+							"vector": [-5, -0.5, 23]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.05": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.3": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.35": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ef_stone3": {
+					"rotation": {
+						"0.15": {
+							"vector": [26.96363, -9.98525, -13.41328]
+						},
+						"0.5": {
+							"vector": [26.96363, -9.98525, -13.41328]
+						}
+					},
+					"position": {
+						"0.15": {
+							"vector": [9, -0.5, -13]
+						},
+						"0.5": {
+							"vector": [10, -0.5, 23]
+						}
+					},
+					"scale": {
+						"0.15": {
+							"vector": [0, 0, 0]
+						},
+						"0.2": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.45": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ef_stone4": {
+					"rotation": {
+						"0.15": {
+							"vector": [26.96363, 9.98525, 13.41328]
+						},
+						"0.5": {
+							"vector": [26.96363, 9.98525, 13.41328]
+						}
+					},
+					"position": {
+						"0.15": {
+							"vector": [-9, -0.5, -13]
+						},
+						"0.5": {
+							"vector": [-10, -0.5, 23]
+						}
+					},
+					"scale": {
+						"0.15": {
+							"vector": [0, 0, 0]
+						},
+						"0.2": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.45": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ef_stone5": {
+					"rotation": {
+						"0.0": {
+							"vector": [-6.5, -14.16, 14.29]
+						},
+						"0.1": {
+							"vector": [-6.49654, -14.15573, 14.28556]
+						},
+						"0.25": {
+							"vector": [-6.49654, -14.15573, 14.28556]
+						},
+						"0.5": {
+							"vector": [-6.5, -14.16, 14.29]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [5, -0.5, 12.71]
+						},
+						"0.1": {
+							"vector": [5, -0.5, 23]
+						},
+						"0.25": {
+							"vector": [5, -0.5, -13]
+						},
+						"0.5": {
+							"vector": [5, -0.5, 12.71]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.05": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.1": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.3": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.5": {
+							"vector": [1.25, 1.25, 1.25]
+						}
+					}
+				},
+				"ef_stone6": {
+					"rotation": {
+						"0.0": {
+							"vector": [-6.5, 14.16, -14.29]
+						},
+						"0.1": {
+							"vector": [-6.49654, 14.15573, -14.28556]
+						},
+						"0.25": {
+							"vector": [-6.49654, 14.15573, -14.28556]
+						},
+						"0.5": {
+							"vector": [-6.5, 14.16, -14.29]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-5, -0.5, 12.71]
+						},
+						"0.1": {
+							"vector": [-5, -0.5, 23]
+						},
+						"0.25": {
+							"vector": [-5, -0.5, -13]
+						},
+						"0.5": {
+							"vector": [-5, -0.5, 12.71]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.05": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.1": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.3": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.5": {
+							"vector": [1.25, 1.25, 1.25]
+						}
+					}
+				},
+				"ef_stone7": {
+					"rotation": {
+						"0.0": {
+							"vector": [5.08, -12.24, -3.81]
+						},
+						"0.25": {
+							"vector": [5.08453, -12.23946, -3.8098]
+						},
+						"0.4": {
+							"vector": [5.08453, -12.23946, -3.8098]
+						},
+						"0.5": {
+							"vector": [5.08, -12.24, -3.81]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [8, -0.5, -2.71]
+						},
+						"0.25": {
+							"vector": [8, -0.5, 23]
+						},
+						"0.4": {
+							"vector": [8, -0.5, -13]
+						},
+						"0.5": {
+							"vector": [8, -0.5, -2.71]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1.95, 2.25, 1.25]
+						},
+						"0.2": {
+							"vector": [1.95, 2.25, 1.25]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.4": {
+							"vector": [0, 0, 0]
+						},
+						"0.45": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.5": {
+							"vector": [1.95, 2.25, 1.25]
+						}
+					}
+				},
+				"ef_stone8": {
+					"rotation": {
+						"0.0": {
+							"vector": [5.08, 12.24, 3.81]
+						},
+						"0.25": {
+							"vector": [5.08453, 12.23946, 3.8098]
+						},
+						"0.4": {
+							"vector": [5.08453, 12.23946, 3.8098]
+						},
+						"0.5": {
+							"vector": [5.08, 12.24, 3.81]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-8, -0.5, -2.71]
+						},
+						"0.25": {
+							"vector": [-8, -0.5, 23]
+						},
+						"0.4": {
+							"vector": [-8, -0.5, -13]
+						},
+						"0.5": {
+							"vector": [-8, -0.5, -2.71]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1.95, 2.25, 1.25]
+						},
+						"0.2": {
+							"vector": [1.95, 2.25, 1.25]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.4": {
+							"vector": [0, 0, 0]
+						},
+						"0.45": {
+							"vector": [1.25, 1.25, 1.25]
+						},
+						"0.5": {
+							"vector": [1.95, 2.25, 1.25]
+						}
+					}
+				}
+			}
+		},
+		"rub1": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"vfx_shot_of_destruction": {
+					"scale": {
+						"vector": [1.7, 1.7, 1.7]
+					}
+				},
+				"ef_stone1": {
+					"rotation": {
+						"vector": [5.08453, -12.23946, -3.8098]
+					},
+					"position": {
+						"vector": [5, -0.5, -13]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone2": {
+					"rotation": {
+						"vector": [5.08453, 12.23946, 3.8098]
+					},
+					"position": {
+						"vector": [-5, -0.5, -13]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone3": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone4": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone5": {
+					"rotation": {
+						"vector": [-6.5, -14.16, 14.29]
+					},
+					"position": {
+						"vector": [5, -0.5, 12.71]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone6": {
+					"rotation": {
+						"vector": [-6.5, 14.16, -14.29]
+					},
+					"position": {
+						"vector": [-5, -0.5, 12.71]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone7": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [8, -0.5, -2.71]
+					},
+					"scale": {
+						"vector": [1.95, 2.25, 1.25]
+					}
+				},
+				"ef_stone8": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-8, -0.5, -2.71]
+					},
+					"scale": {
+						"vector": [1.95, 2.25, 1.25]
+					}
+				}
+			}
+		},
+		"rub2": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"vfx_shot_of_destruction": {
+					"scale": {
+						"vector": [1.7, 1.7, 1.7]
+					}
+				},
+				"ef_stone1": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [5, -0.5, 7.57]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone2": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-5, -0.5, 7.57]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone3": {
+					"rotation": {
+						"vector": [26.96, -9.99, -13.41]
+					},
+					"position": {
+						"vector": [9.14, -0.5, -7.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone4": {
+					"rotation": {
+						"vector": [26.96, 9.99, 13.41]
+					},
+					"position": {
+						"vector": [-9.14, -0.5, -7.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone5": {
+					"rotation": {
+						"vector": [-6.5, -14.16, 14.29]
+					},
+					"position": {
+						"vector": [5, -0.5, -1]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone6": {
+					"rotation": {
+						"vector": [-6.5, 14.16, -14.29]
+					},
+					"position": {
+						"vector": [-5, -0.5, -1]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone7": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [8, -0.5, 17.86]
+					},
+					"scale": {
+						"vector": [1.95, 2.25, 1.25]
+					}
+				},
+				"ef_stone8": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-8, -0.5, 17.86]
+					},
+					"scale": {
+						"vector": [1.95, 2.25, 1.25]
+					}
+				}
+			}
+		},
+		"rub3": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"vfx_shot_of_destruction": {
+					"scale": {
+						"vector": [1.7, 1.7, 1.7]
+					}
+				},
+				"ef_stone1": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [5, -0.5, 23]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone2": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-5, -0.5, 23]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone3": {
+					"rotation": {
+						"vector": [26.96, -9.99, -13.41]
+					},
+					"position": {
+						"vector": [7.86, -0.5, 17.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone4": {
+					"rotation": {
+						"vector": [26.96, 9.99, 13.41]
+					},
+					"position": {
+						"vector": [-7.86, -0.5, 17.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone5": {
+					"rotation": {
+						"vector": [-6.5, -14.16, 14.29]
+					},
+					"position": {
+						"vector": [5, -0.5, 3.57]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone6": {
+					"rotation": {
+						"vector": [-6.5, 14.16, -14.29]
+					},
+					"position": {
+						"vector": [-5, -0.5, 3.57]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone7": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [8, -0.5, -7.85]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone8": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-8, -0.5, -7.85]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				}
+			}
+		},
+		"rub4": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"vfx_shot_of_destruction": {
+					"scale": {
+						"vector": [1.7, 1.7, 1.7]
+					}
+				},
+				"ef_stone1": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [5, -0.5, 17.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone2": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-5, -0.5, 17.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone3": {
+					"rotation": {
+						"vector": [26.96, -9.99, -13.41]
+					},
+					"position": {
+						"vector": [9.43, -0.5, 2.43]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone4": {
+					"rotation": {
+						"vector": [26.96, 9.99, 13.41]
+					},
+					"position": {
+						"vector": [-9.43, -0.5, 2.43]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone5": {
+					"rotation": {
+						"vector": [-6.5, -14.16, 14.29]
+					},
+					"position": {
+						"vector": [5, -0.5, -7.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone6": {
+					"rotation": {
+						"vector": [-6.5, 14.16, -14.29]
+					},
+					"position": {
+						"vector": [-5, -0.5, -7.86]
+					},
+					"scale": {
+						"vector": [1.25, 1.25, 1.25]
+					}
+				},
+				"ef_stone7": {
+					"rotation": {
+						"vector": [5.08, -12.24, -3.81]
+					},
+					"position": {
+						"vector": [8, -0.5, 11]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"ef_stone8": {
+					"rotation": {
+						"vector": [5.08, 12.24, 3.81]
+					},
+					"position": {
+						"vector": [-8, -0.5, 11]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"remove": {
+			"animation_length": 0.7,
+			"bones": {
+				"vfx_shot_of_destruction": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.3": {
+							"vector": [0, -7, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+    "model": {
+        "type": "range_dispatch",
+        "property": "custom_model_data",
+        "fallback": {
+            "type": "model",
+            "model": "item/stone_sword"
+        },
+        "entries": [
+            {
+                "threshold": 2089,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/awakened_mage_runestaff"
+                }
+            }
+        ]
+    }
+}

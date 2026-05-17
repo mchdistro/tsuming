@@ -1,0 +1,389 @@
+{
+    "format_version":  "1.12.0",
+    "minecraft:geometry":  [
+                               {
+                                   "description":  {
+                                                       "identifier":  "geometry.fireball_explosion_7",
+                                                       "texture_width":  128,
+                                                       "texture_height":  128,
+                                                       "visible_bounds_width":  2,
+                                                       "visible_bounds_height":  3,
+                                                       "visible_bounds_offset":  [
+                                                                                     0,
+                                                                                     0.5,
+                                                                                     0
+                                                                                 ]
+                                                   },
+                                   "bones":  [
+                                                 {
+                                                     "name":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -12.5,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_flame_hit1",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   3,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -7,
+                                                                                      -12.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    14,
+                                                                                    31,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           0,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                31.4,
+                                                                                                                78
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           31.4,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -31.4,
+                                                                                                                78
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_flame_hit2",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   1.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -6,
+                                                                                      -12.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    12,
+                                                                                    28,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           32,
+                                                                                                           3
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                29.4,
+                                                                                                                75
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           61.4,
+                                                                                                           3
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -29.4,
+                                                                                                                75
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_flame_hit3",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   3,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -7,
+                                                                                      -12.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    14,
+                                                                                    31,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           68,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                24.4,
+                                                                                                                78
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           92.4,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -24.4,
+                                                                                                                78
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_flame_hit4",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   3,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -7,
+                                                                                      -12.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    14,
+                                                                                    31,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           95.6,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                28.4,
+                                                                                                                78
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           95.6,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                28.4,
+                                                                                                                78
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_smoke1",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -3,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -7,
+                                                                                      -9.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    14,
+                                                                                    13,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           1,
+                                                                                                           89
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                37,
+                                                                                                                36
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           38,
+                                                                                                           89
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -37,
+                                                                                                                36
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_smoke2",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0.5,
+                                                                   1.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -2,
+                                                                                      -9.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    5,
+                                                                                    20,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           74,
+                                                                                                           84
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                12,
+                                                                                                                44
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           86,
+                                                                                                           84
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -12,
+                                                                                                                44
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_smoke3",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -3,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -7,
+                                                                                      -9.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    14,
+                                                                                    13,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           1,
+                                                                                                           89
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                37,
+                                                                                                                36
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           38,
+                                                                                                           89
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -37,
+                                                                                                                36
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_smoke4",
+                                                     "parent":  "fireball_explosion",
+                                                     "pivot":  [
+                                                                   0.5,
+                                                                   1.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -2,
+                                                                                      -9.5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    5,
+                                                                                    20,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           74,
+                                                                                                           84
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                12,
+                                                                                                                44
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           86,
+                                                                                                           84
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -12,
+                                                                                                                44
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                               }
+                           ]
+}

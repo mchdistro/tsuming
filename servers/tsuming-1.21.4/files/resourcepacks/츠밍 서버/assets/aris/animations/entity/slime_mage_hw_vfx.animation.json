@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"animation_length": 0.5,
+			"bones": {
+				"hi_root": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 360]
+						}
+					},
+					"position": {
+						"vector": [0, 22, -15]
+					},
+					"scale": {
+						"vector": [2, 2, 2]
+					}
+				}
+			}
+		}
+	}
+}

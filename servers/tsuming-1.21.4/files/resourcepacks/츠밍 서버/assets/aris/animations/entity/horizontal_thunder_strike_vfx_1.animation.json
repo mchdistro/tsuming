@@ -1,0 +1,144 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation": {
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"h_ef_thunder": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -5]
+						},
+						"0.05": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.05": {
+							"vector": [1.2, 2.7, 0.12]
+						},
+						"0.1": {
+							"vector": [1.2, 1.2, 1.2]
+						},
+						"0.3": {
+							"vector": [0.7, 0.9, 1.4667]
+						},
+						"0.4": {
+							"vector": [0, 0, 1.6]
+						}
+					}
+				},
+				"h_ef_asset_thunderv1_1": {
+					"rotation": {
+						"vector": [6.02635, 16.78756, -13.42446]
+					},
+					"position": {
+						"vector": [5, 6, -45]
+					},
+					"scale": {
+						"vector": [1, 1.5, 1.4]
+					}
+				},
+				"h_ef_asset_thunderv2_1": {
+					"rotation": {
+						"vector": [0, -50, 0]
+					},
+					"position": {
+						"vector": [-7, 0, -12]
+					},
+					"scale": {
+						"vector": [1, 1.1, 1.2]
+					}
+				},
+				"h_allef_asset_thunder": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.3": {
+							"vector": [1, 1, 1]
+						},
+						"0.4": {
+							"vector": [0, 0, 1.6]
+						}
+					}
+				},
+				"h_ef_asset_thunderv1_2": {
+					"rotation": {
+						"vector": [2.13902, -14.38723, -15.59536]
+					},
+					"position": {
+						"vector": [-4.5, -2, -83]
+					},
+					"scale": {
+						"vector": [1, 1.5, 1.4]
+					}
+				},
+				"h_ef_asset_thunderv1_3": {
+					"rotation": {
+						"vector": [5.00082, -1.9399, -27.63831]
+					},
+					"position": {
+						"vector": [-3.5, 1, -54]
+					},
+					"scale": {
+						"vector": [1, 1.1, 1.2]
+					}
+				},
+				"h_ef_asset_thunderv1_4": {
+					"rotation": {
+						"vector": [5.18676, 5.95205, 42.95201]
+					},
+					"position": {
+						"vector": [2.75, 0, -94]
+					},
+					"scale": {
+						"vector": [1, 1.1, 1.2]
+					}
+				},
+				"h_ef_asset_thunderv2_2": {
+					"rotation": {
+						"vector": [0, 50, 0]
+					},
+					"position": {
+						"vector": [7, 0, -12]
+					},
+					"scale": {
+						"vector": [1, 1.1, 1.2]
+					}
+				},
+				"h_ef_asset_thunderv2_3": {
+					"rotation": {
+						"vector": [0, 50, -90]
+					},
+					"position": {
+						"vector": [0, 5, -11]
+					},
+					"scale": {
+						"vector": [1, 1.1, 1.2]
+					}
+				},
+				"h_ef_asset_thunderv2_4": {
+					"rotation": {
+						"vector": [0, -50, -90]
+					},
+					"position": {
+						"vector": [0, -5, -11]
+					},
+					"scale": {
+						"vector": [1, 1.1, 1.2]
+					}
+				},
+				"h_allef": {
+					"scale": {
+						"vector": [1.9, 1, 1.3]
+					}
+				}
+			}
+		}
+	}
+}

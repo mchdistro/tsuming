@@ -1,0 +1,61 @@
+{
+    "model": {
+        "type": "range_dispatch",
+        "property": "custom_model_data",
+        "fallback": {
+            "type": "model",
+            "model": "item/coal"
+        },
+        "entries": [
+            {
+                "threshold": 2308,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_blazing_barrage"
+                }
+            },
+            {
+                "threshold": 2309,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_cryo_prison"
+                }
+            },
+            {
+                "threshold": 2310,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_hailpiercer"
+                }
+            },
+            {
+                "threshold": 2311,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_mana_barrier"
+                }
+            },
+            {
+                "threshold": 2312,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_meteor_of_doom"
+                }
+            },
+            {
+                "threshold": 2313,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_sorcery_combo"
+                }
+            },
+            {
+                "threshold": 2314,
+                "model": {
+                    "type": "model",
+                    "model": "awakened_mage_model/icon_teleport_strike"
+                }
+            }
+        ]
+    }
+}

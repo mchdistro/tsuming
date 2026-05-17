@@ -1,0 +1,555 @@
+{
+    "format_version":  "1.12.0",
+    "minecraft:geometry":  [
+                               {
+                                   "description":  {
+                                                       "identifier":  "geometry.horizontal_thunder_strike_vfx_6",
+                                                       "texture_width":  128,
+                                                       "texture_height":  128,
+                                                       "visible_bounds_width":  10,
+                                                       "visible_bounds_height":  3,
+                                                       "visible_bounds_offset":  [
+                                                                                     0,
+                                                                                     0.5,
+                                                                                     0
+                                                                                 ]
+                                                   },
+                                   "bones":  [
+                                                 {
+                                                     "name":  "allef",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_thunder",
+                                                     "parent":  "allef",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ],
+                                                     "rotation":  [
+                                                                      0,
+                                                                      0,
+                                                                      10
+                                                                  ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -9,
+                                                                                      -88
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    18,
+                                                                                    89
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     0,
+                                                                                     0,
+                                                                                     -43.5
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        0,
+                                                                                        -22.5
+                                                                                    ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          0,
+                                                                                                          0
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          128,
+                                                                                                          0
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   },
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -9,
+                                                                                      -88
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    18,
+                                                                                    89
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          0,
+                                                                                                          0
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          128,
+                                                                                                          0
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "allef_asset_thunder",
+                                                     "parent":  "allef",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv1_1",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -5,
+                                                                                      -12.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    9,
+                                                                                    25
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          119,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          95,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv1_2",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -5,
+                                                                                      -12.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    9,
+                                                                                    25
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          119,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          95,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv1_3",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -5,
+                                                                                      -12.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    9,
+                                                                                    25
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          119,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          95,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv1_4",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -5,
+                                                                                      -12.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    9,
+                                                                                    25
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          119,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          95,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv1_5",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -5,
+                                                                                      -12.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    9,
+                                                                                    25
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          119,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          95,
+                                                                                                          51
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               24,
+                                                                                                               67
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv2_1",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   5
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -13,
+                                                                                      -5.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    25,
+                                                                                    21
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          72,
+                                                                                                          54
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -41,
+                                                                                                               34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          31,
+                                                                                                          88
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               41,
+                                                                                                               -34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv2_2",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   5
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -13,
+                                                                                      -5.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    25,
+                                                                                    21
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          72,
+                                                                                                          54
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -41,
+                                                                                                               34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          31,
+                                                                                                          88
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               41,
+                                                                                                               -34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv2_3",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   5
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -13,
+                                                                                      -5.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    25,
+                                                                                    21
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          72,
+                                                                                                          54
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -41,
+                                                                                                               34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          31,
+                                                                                                          88
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               41,
+                                                                                                               -34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_asset_thunderv2_4",
+                                                     "parent":  "allef_asset_thunder",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   5
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -13,
+                                                                                      -5.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    25,
+                                                                                    21
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          72,
+                                                                                                          54
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -41,
+                                                                                                               34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          31,
+                                                                                                          88
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               41,
+                                                                                                               -34
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                               }
+                           ]
+}

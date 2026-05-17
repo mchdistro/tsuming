@@ -1,0 +1,36 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"skill": {
+			"animation_length": 4.0417,
+			"bones": {
+				"body": {
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [1.6, 1.6, 1.6]
+						}
+					}
+				}
+			}
+		},
+		"death": {
+			"animation_length": 0.5417,
+			"override_previous_animation": true,
+			"bones": {
+				"body": {
+					"scale": {
+						"0.0": {
+							"vector": [1.6, 1.6, 1.6]
+						},
+						"0.4167": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

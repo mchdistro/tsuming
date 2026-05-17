@@ -1,0 +1,492 @@
+{
+    "format_version":  "1.12.0",
+    "minecraft:geometry":  [
+                               {
+                                   "description":  {
+                                                       "identifier":  "geometry.constant_thunder_strike_vfx",
+                                                       "texture_width":  128,
+                                                       "texture_height":  128,
+                                                       "visible_bounds_width":  10,
+                                                       "visible_bounds_height":  2.5,
+                                                       "visible_bounds_offset":  [
+                                                                                     0,
+                                                                                     0.75,
+                                                                                     0
+                                                                                 ]
+                                                   },
+                                   "bones":  [
+                                                 {
+                                                     "name":  "h_allef",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_thunder",
+                                                     "parent":  "h_allef",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ],
+                                                     "rotation":  [
+                                                                      0,
+                                                                      0,
+                                                                      20
+                                                                  ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -88
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    16,
+                                                                                    89
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     0,
+                                                                                     0,
+                                                                                     -43.5
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        0,
+                                                                                        -45
+                                                                                    ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          128,
+                                                                                                          5
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          0,
+                                                                                                          5
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   },
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -88
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    16,
+                                                                                    89
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          0,
+                                                                                                          5
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          128,
+                                                                                                          5
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -128,
+                                                                                                               37
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_allef_asset",
+                                                     "parent":  "h_allef",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v1_1",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -8
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    17,
+                                                                                    16
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          121,
+                                                                                                          91
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -34,
+                                                                                                               36
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          87,
+                                                                                                          91
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               34,
+                                                                                                               36
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v1_2",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -8
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    17,
+                                                                                    16
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          121,
+                                                                                                          91
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -34,
+                                                                                                               36
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          87,
+                                                                                                          91
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               34,
+                                                                                                               36
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v2_1",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   2.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    21,
+                                                                                    10
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          77,
+                                                                                                          76
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -25,
+                                                                                                               52
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          52,
+                                                                                                          76
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               25,
+                                                                                                               52
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v2_2",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   2.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    21,
+                                                                                    10
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          77,
+                                                                                                          76
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -25,
+                                                                                                               52
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          52,
+                                                                                                          76
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               25,
+                                                                                                               52
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v3_1",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -9
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    15,
+                                                                                    18
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          45,
+                                                                                                          96
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -38,
+                                                                                                               32
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          7,
+                                                                                                          96
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               38,
+                                                                                                               32
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v3_2",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -9
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    15,
+                                                                                    18
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          45,
+                                                                                                          96
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -38,
+                                                                                                               32
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          7,
+                                                                                                          96
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               38,
+                                                                                                               32
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v4_1",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   2.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -3
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    21,
+                                                                                    6
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          33,
+                                                                                                          50
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -16,
+                                                                                                               44
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          17,
+                                                                                                          50
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               16,
+                                                                                                               44
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "h_ef_asset_v4_2",
+                                                     "parent":  "h_allef_asset",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   2.5,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -8,
+                                                                                      -3
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    21,
+                                                                                    6
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          33,
+                                                                                                          50
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -16,
+                                                                                                               44
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          17,
+                                                                                                          50
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               16,
+                                                                                                               44
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                               }
+                           ]
+}

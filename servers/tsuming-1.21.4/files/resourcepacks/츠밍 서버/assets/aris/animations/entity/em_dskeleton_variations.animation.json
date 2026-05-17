@@ -1,0 +1,267 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"walk_movement_run(45)": {
+			"animation_length": 2
+		},
+		"walk_movement_walk(35": {
+			"animation_length": 2
+		},
+		"walk_movement_combat(25)": {
+			"animation_length": 2
+		},
+		"walk_movement_combat(-20)": {
+			"animation_length": 2
+		},
+		"POSE============": {
+			"loop": true,
+			"override_previous_animation": true
+		},
+		"idle": {
+			"loop": true,
+			"animation_length": 2
+		},
+		"idle_combat": {
+			"loop": true,
+			"animation_length": 2,
+			"override_previous_animation": true
+		},
+		"walk_70(unused)": {
+			"loop": true,
+			"animation_length": 1,
+			"timeline": {
+				"0.1": "mm:em_blazeskeleton1_em_stepsound;",
+				"0.6": "mm:em_blazeskeleton1_em_stepsound;"
+			}
+		},
+		"walk": {
+			"loop": true,
+			"animation_length": 1.3,
+			"timeline": {
+				"0.1": "mm:dskeleton_em_stepsound;",
+				"0.75": "mm:dskeleton_em_stepsound;"
+			}
+		},
+		"walk_combat": {
+			"loop": true,
+			"animation_length": 1.2,
+			"timeline": {
+				"0.1": "mm:dskeleton_em_stepsound;",
+				"0.7": "mm:dskeleton_em_stepsound;"
+			}
+		},
+		"walk_backwards": {
+			"loop": true,
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.1": "mm:dskeleton_em_stepsound;",
+				"0.6": "mm:dskeleton_em_stepsound;"
+			}
+		},
+		"walk_fast": {
+			"loop": true,
+			"animation_length": 0.8,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.1": "mm:em_blazeskeleton1_em_stepsound;",
+				"0.5": "mm:em_blazeskeleton1_em_stepsound;"
+			}
+		},
+		"attack1": {
+			"animation_length": 1.65,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.3": "mm:dskeleton_em_stepsound_skills;",
+				"0.85": "mm:dskeleton_em_stepsound_skills;",
+				"1.5": "mm:dskeleton_em_stepsound_skills;",
+				"1.65": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"attack1_resources": {
+			"animation_length": 1.65,
+			"override_previous_animation": true
+		},
+		"attack2": {
+			"animation_length": 1.65,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.3": "mm:dskeleton_em_stepsound_skills;",
+				"0.85": "mm:dskeleton_em_stepsound_skills;",
+				"1.5": "mm:dskeleton_em_stepsound_skills;",
+				"1.65": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"attack2_resources": {
+			"animation_length": 1.65,
+			"override_previous_animation": true
+		},
+		"death": {
+			"animation_length": 1
+		},
+		"hurt1": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurt2": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurt3": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurt4": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurtbad1": {
+			"animation_length": 1.2,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.2": "mm:dskeleton_em_stepsound_skills;",
+				"1.1": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"hurtbad2": {
+			"animation_length": 1.2,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.2": "mm:dskeleton_em_stepsound_skills;",
+				"1.1": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"walk_movement_run(45)2": {
+			"animation_length": 2
+		},
+		"walk_movement_walk(2": {
+			"animation_length": 2
+		},
+		"walk_movement_combat(25)2": {
+			"animation_length": 2
+		},
+		"walk_movement_combat(-20)2": {
+			"animation_length": 2
+		},
+		"POSE============2": {
+			"loop": true,
+			"override_previous_animation": true
+		},
+		"idle2": {
+			"loop": true,
+			"animation_length": 2
+		},
+		"idle_combat2": {
+			"loop": true,
+			"animation_length": 2,
+			"override_previous_animation": true
+		},
+		"walk_70(unused)2": {
+			"loop": true,
+			"animation_length": 1,
+			"timeline": {
+				"0.1": "mm:em_blazeskeleton1_em_stepsound;",
+				"0.6": "mm:em_blazeskeleton1_em_stepsound;"
+			}
+		},
+		"walk2": {
+			"loop": true,
+			"animation_length": 1.3,
+			"timeline": {
+				"0.1": "mm:dskeleton_em_stepsound;",
+				"0.75": "mm:dskeleton_em_stepsound;"
+			}
+		},
+		"walk_combat2": {
+			"loop": true,
+			"animation_length": 1,
+			"timeline": {
+				"0.1": "mm:dskeleton_em_stepsound;",
+				"0.6": "mm:dskeleton_em_stepsound;"
+			}
+		},
+		"walk_fast2": {
+			"loop": true,
+			"animation_length": 0.8,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.1": "mm:em_blazeskeleton1_em_stepsound;",
+				"0.5": "mm:em_blazeskeleton1_em_stepsound;"
+			}
+		},
+		"walk_backwards2": {
+			"loop": true,
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.1": "mm:dskeleton_em_stepsound;",
+				"0.6": "mm:dskeleton_em_stepsound;"
+			}
+		},
+		"attack1_right": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.3": "mm:dskeleton_em_stepsound_skills;",
+				"0.8": "mm:dskeleton_em_stepsound_skills;",
+				"1.4": "mm:dskeleton_em_stepsound_skills;",
+				"1.5": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"attack1_left": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.3": "mm:dskeleton_em_stepsound_skills;",
+				"0.8": "mm:dskeleton_em_stepsound_skills;",
+				"1.4": "mm:dskeleton_em_stepsound_skills;",
+				"1.5": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"attack1_resources2": {
+			"animation_length": 1.5,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.3": "mm:dskeleton_em_stepsound_skills;",
+				"0.8": "mm:dskeleton_em_stepsound_skills;",
+				"1.4": "mm:dskeleton_em_stepsound_skills;",
+				"1.5": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"death2": {
+			"animation_length": 1
+		},
+		"hurt5": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurt6": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurt7": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurt8": {
+			"animation_length": 0.55,
+			"override_previous_animation": true
+		},
+		"hurtbad3": {
+			"animation_length": 1.2,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.2": "mm:dskeleton_em_stepsound_skills;",
+				"1.1": "mm:dskeleton_em_stepsound_skills;"
+			}
+		},
+		"hurtbad4": {
+			"animation_length": 1.2,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.2": "mm:dskeleton_em_stepsound_skills;",
+				"1.1": "mm:dskeleton_em_stepsound_skills;"
+			}
+		}
+	}
+}

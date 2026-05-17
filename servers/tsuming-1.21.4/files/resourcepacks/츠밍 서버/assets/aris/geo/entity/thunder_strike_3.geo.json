@@ -1,0 +1,303 @@
+{
+    "format_version":  "1.12.0",
+    "minecraft:geometry":  [
+                               {
+                                   "description":  {
+                                                       "identifier":  "geometry.thunder_strike_3",
+                                                       "texture_width":  128,
+                                                       "texture_height":  128,
+                                                       "visible_bounds_width":  4,
+                                                       "visible_bounds_height":  5.5,
+                                                       "visible_bounds_offset":  [
+                                                                                     0,
+                                                                                     2.25,
+                                                                                     0
+                                                                                 ]
+                                                   },
+                                   "bones":  [
+                                                 {
+                                                     "name":  "thunder_strike",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "bone",
+                                                     "parent":  "thunder_strike",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   -0.5,
+                                                                   0
+                                                               ],
+                                                     "rotation":  [
+                                                                      0,
+                                                                      -12.5,
+                                                                      0
+                                                                  ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -13,
+                                                                                      -5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    26,
+                                                                                    77,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           8,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                53,
+                                                                                                                128
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           61,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -53,
+                                                                                                                128
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   },
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -13,
+                                                                                      -5,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    26,
+                                                                                    77,
+                                                                                    0
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     0,
+                                                                                     33.5,
+                                                                                     0
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        22.5,
+                                                                                        0
+                                                                                    ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           8,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                53,
+                                                                                                                128
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           61,
+                                                                                                           0
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -53,
+                                                                                                                128
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_hit",
+                                                     "parent":  "thunder_strike",
+                                                     "pivot":  [
+                                                                   10,
+                                                                   10,
+                                                                   1
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -1.5,
+                                                                                      0,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    23,
+                                                                                    20,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           88,
+                                                                                                           103
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                34,
+                                                                                                                25
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           122,
+                                                                                                           103
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -34,
+                                                                                                                25
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_hit2",
+                                                     "parent":  "thunder_strike",
+                                                     "pivot":  [
+                                                                   -11,
+                                                                   10,
+                                                                   1
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -22.5,
+                                                                                      -2,
+                                                                                      0
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    23,
+                                                                                    22,
+                                                                                    0
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           69,
+                                                                                                           64
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                34,
+                                                                                                                35
+                                                                                                            ]
+                                                                                            },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           103,
+                                                                                                           64
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                -34,
+                                                                                                                35
+                                                                                                            ]
+                                                                                            }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_hit3",
+                                                     "parent":  "thunder_strike",
+                                                     "pivot":  [
+                                                                   1,
+                                                                   10,
+                                                                   11
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -2,
+                                                                                      -22.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    22,
+                                                                                    23
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          95,
+                                                                                                          43
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               30,
+                                                                                                               23
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          125,
+                                                                                                          43
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -30,
+                                                                                                               23
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "ef_hit4",
+                                                     "parent":  "thunder_strike",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   9,
+                                                                   11
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -2,
+                                                                                      -0.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    22,
+                                                                                    23
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          120,
+                                                                                                          0
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -43,
+                                                                                                               36
+                                                                                                           ]
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          77,
+                                                                                                          0
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               43,
+                                                                                                               36
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                               }
+                           ]
+}

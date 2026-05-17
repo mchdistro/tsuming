@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"skill": {
+			"animation_length": 0.95,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"scale": {
+						"0.0": {
+							"vector": [0.5, 0.5, 1.2]
+						},
+						"0.15": {
+							"vector": [1.5, 1.4, 1.2]
+						},
+						"0.7": {
+							"vector": [1.6, 1.5, 1.2]
+						}
+					}
+				}
+			}
+		}
+	}
+}

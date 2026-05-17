@@ -1,0 +1,105 @@
+{
+    "format_version":  "1.12.0",
+    "minecraft:geometry":  [
+                               {
+                                   "description":  {
+                                                       "identifier":  "geometry.ground_with_roots",
+                                                       "texture_width":  64,
+                                                       "texture_height":  64,
+                                                       "visible_bounds_width":  4,
+                                                       "visible_bounds_height":  2.5,
+                                                       "visible_bounds_offset":  [
+                                                                                     0,
+                                                                                     0.75,
+                                                                                     0
+                                                                                 ]
+                                                   },
+                                   "bones":  [
+                                                 {
+                                                     "name":  "h_ground_with_roots",
+                                                     "pivot":  [
+                                                                   -0.08333,
+                                                                   17.33333,
+                                                                   11
+                                                               ],
+                                                     "rotation":  [
+                                                                      90,
+                                                                      0,
+                                                                      0
+                                                                  ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -8,
+                                                                                      20,
+                                                                                      -1
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    16,
+                                                                                    16,
+                                                                                    16
+                                                                                ],
+                                                                       "uv":  [
+                                                                                  0,
+                                                                                  0
+                                                                              ]
+                                                                   },
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -5.42157,
+                                                                                      8,
+                                                                                      8.17157
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    16,
+                                                                                    12,
+                                                                                    0
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     -0.25,
+                                                                                     12,
+                                                                                     11
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        45,
+                                                                                        0
+                                                                                    ],
+                                                                       "uv":  [
+                                                                                  0,
+                                                                                  32
+                                                                              ]
+                                                                   },
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -10.82843,
+                                                                                      8,
+                                                                                      8.17157
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    16,
+                                                                                    12,
+                                                                                    0
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     0,
+                                                                                     12,
+                                                                                     11
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        -45,
+                                                                                        0
+                                                                                    ],
+                                                                       "uv":  [
+                                                                                  0,
+                                                                                  32
+                                                                              ],
+                                                                       "mirror":  true
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                               }
+                           ]
+}

@@ -1,0 +1,600 @@
+{
+    "format_version":  "1.12.0",
+    "minecraft:geometry":  [
+                               {
+                                   "description":  {
+                                                       "identifier":  "geometry.brutal_combo_1",
+                                                       "texture_width":  259,
+                                                       "texture_height":  259,
+                                                       "visible_bounds_width":  8,
+                                                       "visible_bounds_height":  1.5,
+                                                       "visible_bounds_offset":  [
+                                                                                     0,
+                                                                                     0.25,
+                                                                                     0
+                                                                                 ]
+                                                   },
+                                   "bones":  [
+                                                 {
+                                                     "name":  "brutal_combo",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_slash",
+                                                     "parent":  "brutal_combo",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -30.5,
+                                                                                      0,
+                                                                                      -38.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    61,
+                                                                                    0,
+                                                                                    55
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "up":  {
+                                                                                             "uv":  [
+                                                                                                        123,
+                                                                                                        116
+                                                                                                    ],
+                                                                                             "uv_size":  [
+                                                                                                             -116,
+                                                                                                             -109
+                                                                                                         ]
+                                                                                         },
+                                                                                  "down":  {
+                                                                                               "uv":  [
+                                                                                                          123,
+                                                                                                          7
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -116,
+                                                                                                               109
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_pierce",
+                                                     "parent":  "brutal_combo",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   -24
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -9,
+                                                                                      0,
+                                                                                      -67.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    18,
+                                                                                    0,
+                                                                                    87
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     0,
+                                                                                     0,
+                                                                                     -24
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        0,
+                                                                                        22.5
+                                                                                    ],
+                                                                       "uv":  {
+                                                                                  "up":  {
+                                                                                             "uv":  [
+                                                                                                        130,
+                                                                                                        81
+                                                                                                    ],
+                                                                                             "uv_size":  [
+                                                                                                             128,
+                                                                                                             -33
+                                                                                                         ],
+                                                                                             "uv_rotation":  270
+                                                                                         },
+                                                                                  "down":  {
+                                                                                               "uv":  [
+                                                                                                          258,
+                                                                                                          81
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -128,
+                                                                                                               -33
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   },
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -9,
+                                                                                      0,
+                                                                                      -67.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    18,
+                                                                                    0,
+                                                                                    87
+                                                                                ],
+                                                                       "pivot":  [
+                                                                                     0,
+                                                                                     0,
+                                                                                     -24
+                                                                                 ],
+                                                                       "rotation":  [
+                                                                                        0,
+                                                                                        0,
+                                                                                        -22.5
+                                                                                    ],
+                                                                       "uv":  {
+                                                                                  "up":  {
+                                                                                             "uv":  [
+                                                                                                        130,
+                                                                                                        48
+                                                                                                    ],
+                                                                                             "uv_size":  [
+                                                                                                             128,
+                                                                                                             33
+                                                                                                         ],
+                                                                                             "uv_rotation":  270
+                                                                                         },
+                                                                                  "down":  {
+                                                                                               "uv":  [
+                                                                                                          258,
+                                                                                                          48
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -128,
+                                                                                                               33
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_spin",
+                                                     "parent":  "brutal_combo",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      -36,
+                                                                                      0,
+                                                                                      -36
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    72,
+                                                                                    0,
+                                                                                    72
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "north":  {
+                                                                                                "uv":  [
+                                                                                                           1,
+                                                                                                           130
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                16,
+                                                                                                                0
+                                                                                                            ]
+                                                                                            },
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          1,
+                                                                                                          130
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               16,
+                                                                                                               0
+                                                                                                           ]
+                                                                                           },
+                                                                                  "south":  {
+                                                                                                "uv":  [
+                                                                                                           1,
+                                                                                                           130
+                                                                                                       ],
+                                                                                                "uv_size":  [
+                                                                                                                16,
+                                                                                                                0
+                                                                                                            ]
+                                                                                            },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          1,
+                                                                                                          130
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               16,
+                                                                                                               0
+                                                                                                           ]
+                                                                                           },
+                                                                                  "up":  {
+                                                                                             "uv":  [
+                                                                                                        125,
+                                                                                                        253
+                                                                                                    ],
+                                                                                             "uv_size":  [
+                                                                                                             -119,
+                                                                                                             -118
+                                                                                                         ]
+                                                                                         },
+                                                                                  "down":  {
+                                                                                               "uv":  [
+                                                                                                          125,
+                                                                                                          135
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -119,
+                                                                                                               118
+                                                                                                           ]
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "allwarrior_efv1_1",
+                                                     "parent":  "brutal_combo",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv1_1",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   0
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -4,
+                                                                                      -18.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    8,
+                                                                                    37
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          153,
+                                                                                                          131
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -11,
+                                                                                                               62
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          142,
+                                                                                                          131
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               11,
+                                                                                                               62
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv2_1",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   3
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -7,
+                                                                                      -14.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    14,
+                                                                                    35
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          187,
+                                                                                                          133
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -20,
+                                                                                                               61
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          167,
+                                                                                                          133
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               20,
+                                                                                                               61
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv3_1",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   -2.5
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -5.5,
+                                                                                      -14.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    11,
+                                                                                    24
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          215,
+                                                                                                          150
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               -13,
+                                                                                                               42
+                                                                                                           ],
+                                                                                               "uv_rotation":  270
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          202,
+                                                                                                          150
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               13,
+                                                                                                               42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv4_1",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   4
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -3,
+                                                                                      -14.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    6,
+                                                                                    37
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          254
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               -42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          212
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv4_2",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   4
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -3,
+                                                                                      -14.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    6,
+                                                                                    37
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          254
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               -42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          212
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv4_3",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   4
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -3,
+                                                                                      -14.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    6,
+                                                                                    37
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          254
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               -42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          212
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 },
+                                                 {
+                                                     "name":  "warrior_efv4_4",
+                                                     "parent":  "allwarrior_efv1_1",
+                                                     "pivot":  [
+                                                                   0,
+                                                                   0,
+                                                                   4
+                                                               ],
+                                                     "cubes":  [
+                                                                   {
+                                                                       "origin":  [
+                                                                                      0,
+                                                                                      -3,
+                                                                                      -14.5
+                                                                                  ],
+                                                                       "size":  [
+                                                                                    0,
+                                                                                    6,
+                                                                                    37
+                                                                                ],
+                                                                       "uv":  {
+                                                                                  "east":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          254
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               -42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           },
+                                                                                  "west":  {
+                                                                                               "uv":  [
+                                                                                                          174,
+                                                                                                          212
+                                                                                                      ],
+                                                                                               "uv_size":  [
+                                                                                                               7,
+                                                                                                               42
+                                                                                                           ],
+                                                                                               "uv_rotation":  90
+                                                                                           }
+                                                                              }
+                                                                   }
+                                                               ]
+                                                 }
+                                             ]
+                               }
+                           ]
+}

@@ -1,0 +1,43 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"skill": {
+			"animation_length": 1.55,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"vector": [0, 0, -45]
+					},
+					"scale": {
+						"vector": [2, 2, 2]
+					}
+				},
+				"bone2": {
+					"position": {
+						"0.1": {
+							"vector": [0, 0, 40]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.6": {
+							"vector": [0, 0, -48]
+						}
+					},
+					"scale": {
+						"0.1": {
+							"vector": [1, 1, 0]
+						},
+						"0.25": {
+							"vector": [1, 1, 1]
+						},
+						"0.6": {
+							"vector": [1, 1, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

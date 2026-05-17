@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"animation_length": 4,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 25]
+						},
+						"2.0": {
+							"vector": [0, -360, -25]
+						},
+						"4.0": {
+							"vector": [0, -720, 25]
+						}
+					},
+					"position": {
+						"vector": [3.75, 0, 0]
+					}
+				}
+			}
+		},
+		"walk": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"circle": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

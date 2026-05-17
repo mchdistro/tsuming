@@ -1,0 +1,48 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation": {
+			"loop": true,
+			"animation_length": 0.25
+		},
+		"animation2": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"h_fireball": {
+					"scale": {
+						"vector": [0.7, 0.7, 0.7]
+					}
+				}
+			}
+		},
+		"animation3": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"h_fireball": {
+					"rotation": {
+						"vector": [0, 7.5, 0]
+					},
+					"scale": {
+						"vector": [0.7, 0.7, 0.7]
+					}
+				}
+			}
+		},
+		"animation4": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"h_fireball": {
+					"rotation": {
+						"vector": [0, -7.5, 0]
+					},
+					"scale": {
+						"vector": [0.7, 0.7, 0.7]
+					}
+				}
+			}
+		}
+	}
+}
