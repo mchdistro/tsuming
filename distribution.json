@@ -709,6 +709,16 @@
           }
         },
         {
+          "id": "options.txt",
+          "name": "options.txt",
+          "type": "File",
+          "artifact": {
+            "size": 282,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/options.txt",
+            "path": "options.txt"
+          }
+        },
+        {
           "id": "pack.zip",
           "name": "pack.zip",
           "type": "File",
@@ -15402,6 +15412,16 @@
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/zz_converted_missing_entities.aris.lua",
             "MD5": "9759b1435a6e997698aa52aee4b4137e",
             "path": "robots/init/zz_converted_missing_entities.aris.lua"
+          }
+        },
+        {
+          "id": "servers.dat",
+          "name": "servers.dat",
+          "type": "File",
+          "artifact": {
+            "size": 6141,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/servers.dat",
+            "path": "servers.dat"
           }
         }
       ]
