@@ -1,54 +1,64 @@
-{
-	"format_version": "1.8.0",
-	"animations": {
-		"idle": {
-			"loop": true,
-			"animation_length": 5,
-			"override_previous_animation": true
-		},
-		"walk": {
-			"loop": true,
-			"animation_length": 2.35,
-			"override_previous_animation": true
-		},
-		"run": {
-			"loop": true,
-			"animation_length": 1,
-			"override_previous_animation": true
-		},
-		"vortex": {
-			"animation_length": 4.75,
-			"override_previous_animation": true
-		},
-		"scales": {
-			"animation_length": 7.75,
-			"override_previous_animation": true
-		},
-		"launch": {
-			"animation_length": 6.1,
-			"override_previous_animation": true
-		},
-		"wreck": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 3,
-			"override_previous_animation": true
-		},
-		"wreck_show": {
-			"animation_length": 1.7,
-			"override_previous_animation": true
-		},
-		"tail": {
-			"animation_length": 3,
-			"override_previous_animation": true
-		},
-		"on_spawn": {
-			"animation_length": 7.15,
-			"override_previous_animation": true
-		},
-		"death": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 4.5,
-			"override_previous_animation": true
-		}
-	}
+﻿{
+    "format_version":  "1.8.0",
+    "animations":  {
+                       "idle":  {
+                                    "loop":  true,
+                                    "animation_length":  5,
+                                    "override_previous_animation":  true
+                                },
+                       "walk":  {
+                                    "loop":  true,
+                                    "animation_length":  2.35,
+                                    "override_previous_animation":  true
+                                },
+                       "run":  {
+                                   "loop":  true,
+                                   "animation_length":  1,
+                                   "override_previous_animation":  true
+                               },
+                       "vortex":  {
+                                      "animation_length":  4.75,
+                                      "override_previous_animation":  true
+                                  },
+                       "scales":  {
+                                      "animation_length":  7.75,
+                                      "override_previous_animation":  true
+                                  },
+                       "launch":  {
+                                      "animation_length":  6.1,
+                                      "override_previous_animation":  true
+                                  },
+                       "wreck":  {
+                                     "loop":  "hold_on_last_frame",
+                                     "animation_length":  3,
+                                     "override_previous_animation":  true
+                                 },
+                       "wreck_show":  {
+                                          "animation_length":  1.7,
+                                          "override_previous_animation":  true
+                                      },
+                       "tail":  {
+                                    "animation_length":  3,
+                                    "override_previous_animation":  true
+                                },
+                       "on_spawn":  {
+                                        "animation_length":  7.15,
+                                        "override_previous_animation":  true
+                                    },
+                       "death":  {
+                                     "loop":  "hold_on_last_frame",
+                                     "animation_length":  4.5,
+                                     "override_previous_animation":  true
+                                 },
+                       "misc.idle":  {
+                                         "loop":  true,
+                                         "animation_length":  5,
+                                         "override_previous_animation":  true
+                                     },
+                       "move.walk":  {
+                                         "loop":  true,
+                                         "animation_length":  2.35,
+                                         "override_previous_animation":  true
+                                     }
+                   }
 }

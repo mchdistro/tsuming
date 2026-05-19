@@ -1,37 +1,117 @@
-{
-	"format_version": "1.8.0",
-	"animations": {
-		"idle": {
-			"loop": true,
-			"animation_length": 1,
-			"bones": {
-				"leaf_tornado_down": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [0, 180, 0]
-						},
-						"1.0": {
-							"vector": [0, 360, 0]
-						}
-					}
-				},
-				"leaf_tornado_up": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [0, -180, 0]
-						},
-						"1.0": {
-							"vector": [0, -360, 0]
-						}
-					}
-				}
-			}
-		}
-	}
+﻿{
+    "format_version":  "1.8.0",
+    "animations":  {
+                       "idle":  {
+                                    "loop":  true,
+                                    "animation_length":  1,
+                                    "bones":  {
+                                                  "leaf_tornado_down":  {
+                                                                            "rotation":  {
+                                                                                             "0.0":  {
+                                                                                                         "vector":  [
+                                                                                                                        0,
+                                                                                                                        0,
+                                                                                                                        0
+                                                                                                                    ]
+                                                                                                     },
+                                                                                             "0.5":  {
+                                                                                                         "vector":  [
+                                                                                                                        0,
+                                                                                                                        180,
+                                                                                                                        0
+                                                                                                                    ]
+                                                                                                     },
+                                                                                             "1.0":  {
+                                                                                                         "vector":  [
+                                                                                                                        0,
+                                                                                                                        360,
+                                                                                                                        0
+                                                                                                                    ]
+                                                                                                     }
+                                                                                         }
+                                                                        },
+                                                  "leaf_tornado_up":  {
+                                                                          "rotation":  {
+                                                                                           "0.0":  {
+                                                                                                       "vector":  [
+                                                                                                                      0,
+                                                                                                                      0,
+                                                                                                                      0
+                                                                                                                  ]
+                                                                                                   },
+                                                                                           "0.5":  {
+                                                                                                       "vector":  [
+                                                                                                                      0,
+                                                                                                                      -180,
+                                                                                                                      0
+                                                                                                                  ]
+                                                                                                   },
+                                                                                           "1.0":  {
+                                                                                                       "vector":  [
+                                                                                                                      0,
+                                                                                                                      -360,
+                                                                                                                      0
+                                                                                                                  ]
+                                                                                                   }
+                                                                                       }
+                                                                      }
+                                              }
+                                },
+                       "misc.idle":  {
+                                         "loop":  true,
+                                         "animation_length":  1,
+                                         "bones":  {
+                                                       "leaf_tornado_down":  {
+                                                                                 "rotation":  {
+                                                                                                  "0.0":  {
+                                                                                                              "vector":  [
+                                                                                                                             0,
+                                                                                                                             0,
+                                                                                                                             0
+                                                                                                                         ]
+                                                                                                          },
+                                                                                                  "0.5":  {
+                                                                                                              "vector":  [
+                                                                                                                             0,
+                                                                                                                             180,
+                                                                                                                             0
+                                                                                                                         ]
+                                                                                                          },
+                                                                                                  "1.0":  {
+                                                                                                              "vector":  [
+                                                                                                                             0,
+                                                                                                                             360,
+                                                                                                                             0
+                                                                                                                         ]
+                                                                                                          }
+                                                                                              }
+                                                                             },
+                                                       "leaf_tornado_up":  {
+                                                                               "rotation":  {
+                                                                                                "0.0":  {
+                                                                                                            "vector":  [
+                                                                                                                           0,
+                                                                                                                           0,
+                                                                                                                           0
+                                                                                                                       ]
+                                                                                                        },
+                                                                                                "0.5":  {
+                                                                                                            "vector":  [
+                                                                                                                           0,
+                                                                                                                           -180,
+                                                                                                                           0
+                                                                                                                       ]
+                                                                                                        },
+                                                                                                "1.0":  {
+                                                                                                            "vector":  [
+                                                                                                                           0,
+                                                                                                                           -360,
+                                                                                                                           0
+                                                                                                                       ]
+                                                                                                        }
+                                                                                            }
+                                                                           }
+                                                   }
+                                     }
+                   }
 }

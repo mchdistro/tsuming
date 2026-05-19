@@ -1,3 +1,5 @@
+depends_on("10_awakened_hud_shared.aris")
+
 local DEG_TO_RAD = math.pi / 180
 
 local state = {
@@ -8,6 +10,7 @@ local state = {
     players = {},
     projectiles = {},
     next_vfx_id = 0,
+    motion_tokens = {},
 }
 
 local SKILL = {
@@ -20,10 +23,86 @@ local SKILL = {
     barrier_damage = 4,
     vicious_damage = 6,
     fury_damage = 8,
+    brutal_cooldown = 6,
+    leap_cooldown = 40,
+    whirlwind_cooldown = 60,
+    barrier_cooldown = 180,
+    vicious_cooldown = 60,
+    fury_cooldown = 140,
+    brutal_combo_stack_duration = 300,
+    brutal_combo_max_stack = 4,
+    brutal_hit_limit = 6,
+    brutal_hit_radius = 3,
+    brutal_final_radius = 3,
+    brutal_final_delay = 8,
+    leap_casting_duration = 15,
+    leap_hit_radius = 2.5,
+    leap_hit_limit = 6,
+    leap_landing_delay = 24,
+    whirlwind_casting_duration = 40,
+    whirlwind_tick_count = 25,
+    whirlwind_hit_radius = 5.5,
+    whirlwind_hit_limit = 8,
+    barrier_duration = 160,
+    vicious_casting_duration = 25,
+    vicious_charge_duration = 25,
+    vicious_projectile_radius = 2.5,
+    vicious_projectile_pierce = 9,
+    vicious_projectile_ticks = 9,
+    vicious_projectile_speed = 1.6,
+    vicious_projectile_life = 20,
+    fury_casting_duration = 110,
+    fury_slash_start_delay = 40,
+    fury_slash_count = 4,
+    fury_slash_interval = 5,
+    fury_hit_radius = 4,
+    fury_hit_limit = 10,
+    fury_stomp_delay = 85,
+    fury_stomp_radius = 5,
+    fury_final_radius = 7,
+    fury_final_multiplier = 2,
+    bulwark_duration = 100,
+    bulwark_particle_count = 50,
+}
+
+local HUD_SKILLS = {
+    { id = "brutal_combo", key = "cooldown_Brutal_Combo", cooldown = SKILL.brutal_cooldown },
+    { id = "berserkers_leap", key = "cooldown_Berserkers_Leap", cooldown = SKILL.leap_cooldown },
+    { id = "strike_of_fury", key = "cooldown_Strike_Of_Fury", cooldown = SKILL.fury_cooldown },
+    { id = "vicious_strike", key = "cooldown_Vicious_Strike", cooldown = SKILL.vicious_cooldown },
+    { id = "relentless_whirlwind", key = "cooldown_Relentless_Whirlwind", cooldown = SKILL.whirlwind_cooldown },
+    { id = "bloodbound_barrier", key = "cooldown_Bloodbound_Barrier", cooldown = SKILL.barrier_cooldown },
 }
 
 local VFX_NBT = "Invulnerable:1b,NoAI:1b,Silent:1b,NoGravity:1b,PersistenceRequired:0b,DeathLootTable:\"minecraft:empty\",CanPickUpLoot:0b,Health:1000000f,attributes:[{id:\"minecraft:max_health\",base:1000000d},{id:\"minecraft:armor\",base:1000000d}],Attributes:[{Name:\"minecraft:generic.max_health\",Base:1000000d},{Name:\"minecraft:generic.armor\",Base:1000000d}]"
 local VFX_SELECTOR_EXCLUDE = ",tag=!aw_warrior_caster,tag=!aa_vfx,type=!aris:bloodbound_barrier,type=!aris:vicious_strike_charge,type=!aris:vfx_earthquake_rupture_1,type=!aris:vfx_earthquake_rupture_2,type=!aris:vfx_earthquake_rupture_3,type=!aris:vfx_earthquake_rupture_4,type=!aris:vfx_earthquake_rupture_5,type=!aris:vfx_rubbles"
+
+local MOTION_TICKS = {
+    bulwark_instinct = 30,
+    c1 = 13,
+    c2 = 13,
+    c3 = 13,
+    c4 = 19,
+    c5 = 20,
+    berserker_leap = 40,
+    relentless_whirlwind_spin = 5,
+    bloodbound_barrier = 16,
+    vicious_strike = 95,
+    strike_of_fury_1 = 58,
+}
+
+local function play_player_motion(player, motion)
+    aris.game.geckolib.emote.set_emote_file(player, "boss_warrior")
+    aris.game.geckolib.emote.trigger_emote(player, motion)
+    local id = player:get_uuid()
+    local token = (state.motion_tokens[id] or 0) + 1
+    state.motion_tokens[id] = token
+    state.timers[#state.timers + 1] = { at = state.tick + (MOTION_TICKS[motion] or 20), fn = function()
+        if state.motion_tokens[id] == token then
+            aris.game.geckolib.emote.trigger_emote(player, "")
+        end
+    end }
+end
 
 for i = 1, 13 do
     VFX_SELECTOR_EXCLUDE = VFX_SELECTOR_EXCLUDE .. ",type=!aris:berserker_leap_" .. tostring(i)
@@ -74,13 +153,19 @@ local function aura_stacks(entity, name)
     return aura.stacks or 0
 end
 
+local function send_cooldown_message(entity, name, remaining_ticks)
+    entity:send_message_text("§6[스킬] §c" .. name .. " 쿨타임: " .. string.format("%.1f", remaining_ticks / 20) .. "초 남음")
+end
+
 local function can_cast(entity, name, cooldown_ticks)
     local key = aura_key(entity, "cooldown_" .. name)
     local until_tick = state.cooldowns[key] or 0
     if until_tick > state.tick then
+        send_cooldown_message(entity, name, until_tick - state.tick)
         return false
     end
     state.cooldowns[key] = state.tick + cooldown_ticks
+    AWAKENED_HUD.sync_skill(entity, "warrior")
     return true
 end
 
@@ -139,6 +224,10 @@ local function is_brutesword(player)
     return string.find(name, SKILL.item_name, 1, true) ~= nil
 end
 
+AWAKENED_HUD.register_class("warrior", is_brutesword, state.cooldowns, HUD_SKILLS, function()
+    return state.tick
+end)
+
 local function is_entity_object(entity)
     local kind = type(entity)
     return entity ~= nil and kind ~= "number" and kind ~= "boolean" and kind ~= "string"
@@ -196,7 +285,7 @@ end
 
 local function spawn_vfx_at_player(player, key, y_offset, forward_offset, anim, life, yaw_offset)
     local yaw = player:get_yaw() + (yaw_offset or 0)
-    local dx, dz = yaw_vector(player:get_yaw(), 0)
+    local dx, dz = yaw_vector(yaw, 0)
     return spawn_vfx(player:get_server_world(), key, player:get_x() + dx * (forward_offset or 0), player:get_y() + (y_offset or 0), player:get_z() + dz * (forward_offset or 0), anim, life, yaw, 0)
 end
 
@@ -321,42 +410,47 @@ local function player_state(player)
 end
 
 local function cast_brutal_combo(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Brutal_Combo", 6) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Brutal_Combo", SKILL.brutal_cooldown) then
         return
     end
 
     local stacks = aura_stacks(player, "Brutal_Combo_Stack")
     if stacks == 0 then
-        add_aura(player, "Brutal_Combo_Stack", 300, 1, 4)
+        play_player_motion(player, "c1")
+        add_aura(player, "Brutal_Combo_Stack", SKILL.brutal_combo_stack_duration, 1, SKILL.brutal_combo_max_stack)
         spawn_frame_sequence(player, "brutal_combo_", 1, 8, "slash_left_diag", 1.4, 1.3, 4, 1, 1, 1)
-        skill_damage_forward(player, 1.6, 1, 3, 6, SKILL.brutal_damage)
+        skill_damage_forward(player, 1.6, 1, SKILL.brutal_hit_radius, SKILL.brutal_hit_limit, SKILL.brutal_damage)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_slash", 0.7, 1)
     elseif stacks == 1 then
-        add_aura(player, "Brutal_Combo_Stack", 300, 1, 4)
+        play_player_motion(player, "c2")
+        add_aura(player, "Brutal_Combo_Stack", SKILL.brutal_combo_stack_duration, 1, SKILL.brutal_combo_max_stack)
         spawn_frame_sequence(player, "brutal_combo_", 1, 8, "slash_right_diag", 1.4, 1.3, 4, 1, 1, 1)
-        skill_damage_forward(player, 1.6, 1, 3, 6, SKILL.brutal_damage)
+        skill_damage_forward(player, 1.6, 1, SKILL.brutal_hit_radius, SKILL.brutal_hit_limit, SKILL.brutal_damage)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_slash", 0.7, 1)
     elseif stacks == 2 then
-        add_aura(player, "Brutal_Combo_Stack", 300, 1, 4)
+        play_player_motion(player, "c3")
+        add_aura(player, "Brutal_Combo_Stack", SKILL.brutal_combo_stack_duration, 1, SKILL.brutal_combo_max_stack)
         player:add_velocity_relative(0, -0.05, 0)
         spawn_frame_sequence(player, "brutal_combo_", 1, 8, "pierce", 1.4, 1.3, 4, 1, 1, 1)
-        skill_damage_forward(player, 2.1, 1, 2.6, 6, SKILL.brutal_damage)
+        skill_damage_forward(player, 2.1, 1, 2.6, SKILL.brutal_hit_limit, SKILL.brutal_damage)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_pierce", 0.7, 1)
     elseif stacks == 3 then
-        add_aura(player, "Brutal_Combo_Stack", 300, 1, 4)
+        play_player_motion(player, "c4")
+        add_aura(player, "Brutal_Combo_Stack", SKILL.brutal_combo_stack_duration, 1, SKILL.brutal_combo_max_stack)
         prevent_fall_damage(player, 3)
         player:add_velocity_relative(0, 0.7, 0)
         spawn_frame_sequence(player, "brutal_combo_", 1, 8, "spin", 2.4, 1.3, 5, 1, 1, 1)
         after(6, function()
             spawn_frame_sequence(player, "brutal_combo_", 1, 8, "spin", 2.4, 1.3, 5, 1, 1, 1)
-            skill_damage_forward(player, 1.3, 1.2, 3.2, 6, SKILL.brutal_damage)
-            lift_forward(player, 1.3, 1.2, 3.2, 6)
+            skill_damage_forward(player, 1.3, 1.2, 3.2, SKILL.brutal_hit_limit, SKILL.brutal_damage)
+            lift_forward(player, 1.3, 1.2, 3.2, SKILL.brutal_hit_limit)
         end)
         after(12, function()
             player:add_velocity_relative(0, -1.1, 0)
         end)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_wheel_spin", 0.7, 1)
     else
+        play_player_motion(player, "c5")
         remove_aura(player, "Brutal_Combo_Stack")
         prevent_fall_damage(player, 4)
         player:add_velocity_relative(0, -1.5, 0)
@@ -366,24 +460,25 @@ local function cast_brutal_combo(player)
         after(6, function()
             sound(player, "awakened_warrior_sounds:samus.awakened_warrior.rupture_quick", 0.7, 0.85)
         end)
-        after(8, function()
+        after(SKILL.brutal_final_delay, function()
             local x, y, z, yaw = forward_position(player, 2, 0.05, 0)
             spawn_vfx(player:get_server_world(), "vfx_earthquake_rupture_1", x, y, z, "skill", 24, yaw, 0)
             spawn_vfx(player:get_server_world(), "vfx_rubbles", x, y, z, "skill", 30, yaw, 0)
-            skill_damage(player, x, y, z, 3, 6, SKILL.brutal_damage)
+            skill_damage(player, x, y, z, SKILL.brutal_final_radius, SKILL.brutal_hit_limit, SKILL.brutal_damage)
         end)
     end
 end
 
 local function cast_berserkers_leap(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Berserkers_Leap", 40) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Berserkers_Leap", SKILL.leap_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 15, 1, 1)
+    play_player_motion(player, "berserker_leap")
+    add_aura(player, "CASTING", SKILL.leap_casting_duration, 1, 1)
     prevent_fall_damage(player, 5)
     spawn_frame_sequence(player, "berserker_leap_", 1, 13, "animation", 0.1, 0.7, 14, 2, 1, 1)
     spawn_frame_sequence(player, "brutal_combo_", 1, 8, "slash_up", 1.4, 0, 10, 2, 1, 1)
-    skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 2.5, 6, SKILL.leap_damage)
+    skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.leap_hit_radius, SKILL.leap_hit_limit, SKILL.leap_damage)
     sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_slash", 0.7, 1)
     after(10, function()
         player:add_velocity_relative(1.4, 1, 0)
@@ -393,27 +488,28 @@ local function cast_berserkers_leap(player)
         player:add_velocity_relative(0.4, -1.5, 0)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_airdash", 0.7, 1)
     end)
-    after(24, function()
+    after(SKILL.leap_landing_delay, function()
         local x, y, z, yaw = forward_position(player, 2, 0.05, 0)
         spawn_frame_sequence(player, "brutal_combo_", 1, 8, "strike", 1.4, 0.2, 10, 2, 1, 1)
         spawn_vfx(player:get_server_world(), "vfx_earthquake_rupture_1", x, y, z, "skill2", 52, yaw, 0)
         spawn_vfx(player:get_server_world(), "vfx_rubbles", x, y, z, "skill2", 45, yaw, 0)
-        skill_damage(player, x, y + 1, z, 3, 6, SKILL.leap_damage)
+        skill_damage(player, x, y + 1, z, SKILL.brutal_final_radius, SKILL.leap_hit_limit, SKILL.leap_damage)
     end)
 end
 
 local function cast_relentless_whirlwind(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Relentless_Whirlwind", 60) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Relentless_Whirlwind", SKILL.whirlwind_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 40, 1, 1)
+    play_player_motion(player, "relentless_whirlwind_spin")
+    add_aura(player, "CASTING", SKILL.whirlwind_casting_duration, 1, 1)
     prevent_fall_damage(player, 4)
-    every(0, 25, 1, function()
+    every(0, SKILL.whirlwind_tick_count, 1, function()
         player:add_velocity_relative(0.25, 0, 0)
     end)
     every(0, 5, 7, function()
         spawn_frame_sequence(player, "relentless_whirlwind_", 1, 8, "spin", 2.6, 0, 10, 2, 1, 1)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 5.5, 8, SKILL.whirlwind_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.whirlwind_hit_radius, SKILL.whirlwind_hit_limit, SKILL.whirlwind_damage)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_wheel_spin", 0.7, 1)
     end)
     after(32, function()
@@ -423,46 +519,49 @@ local function cast_relentless_whirlwind(player)
     after(39, function()
         player:add_velocity_relative(0.7, -0.05, 0)
         spawn_frame_sequence(player, "relentless_whirlwind_", 1, 8, "dash_pierce", 2.4, 0.5, 10, 2, 1, 1)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3, 8, SKILL.whirlwind_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.brutal_final_radius, SKILL.whirlwind_hit_limit, SKILL.whirlwind_damage)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_pierce", 0.7, 0.8)
     end)
     after(44, function()
         player:add_velocity_relative(0.5, -0.05, 0)
         spawn_frame_sequence(player, "relentless_whirlwind_", 1, 8, "dash_pierce", 2.4, 0.5, 10, 2, 1, 1)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3, 8, SKILL.whirlwind_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.brutal_final_radius, SKILL.whirlwind_hit_limit, SKILL.whirlwind_damage)
     end)
 end
 
 local function cast_bloodbound_barrier(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Bloodbound_Barrier", 180) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Bloodbound_Barrier", SKILL.barrier_cooldown) then
         return
     end
-    add_aura(player, "Bloodbound_Barrier", 160, 1, 1)
-    add_aura(player, "Bloodbound_Barrier_Reset", 160, 0, 5)
-    spawn_vfx_at_player(player, "bloodbound_barrier", 1.3, 0, "idle_bloodbound_barrier", 160)
+    play_player_motion(player, "bloodbound_barrier")
+    add_aura(player, "Bloodbound_Barrier", SKILL.barrier_duration, 1, 1)
+    add_aura(player, "Bloodbound_Barrier_Reset", SKILL.barrier_duration, 0, 5)
+    spawn_vfx_at_player(player, "bloodbound_barrier", 1.3, 0, "idle_bloodbound_barrier", SKILL.barrier_duration)
     sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_airdash", 0.7, 0.5)
 end
 
 local function cast_vicious_strike(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Vicious_Strike", 60) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Vicious_Strike", SKILL.vicious_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 25, 1, 1)
-    spawn_vfx_at_player(player, "vicious_strike_charge", 2.4, 0, "charge", 25)
+    play_player_motion(player, "vicious_strike")
+    add_aura(player, "CASTING", SKILL.vicious_casting_duration, 1, 1)
+    spawn_vfx_at_player(player, "vicious_strike_charge", 2.4, 0, "charge", SKILL.vicious_charge_duration)
     sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_stomp_charge", 0.7, 1)
-    after(25, function()
+    after(SKILL.vicious_charge_duration, function()
         spawn_frame_sequence(player, "vicious_strike_", 1, 13, "animation", 0.1, 0.7, 14, 2, 1, 1)
         spawn_frame_sequence(player, "brutal_combo_", 1, 8, "slash_up2", 1.4, 0, 10, 2, 1, 1)
-        spawn_projectile(player, "vicious_strike_1", "animation", SKILL.vicious_damage, { radius = 2.5, pierce = 9, max_ticks = 9, speed = 1.6, life = 20 })
+        spawn_projectile(player, "vicious_strike_1", "animation", SKILL.vicious_damage, { radius = SKILL.vicious_projectile_radius, pierce = SKILL.vicious_projectile_pierce, max_ticks = SKILL.vicious_projectile_ticks, speed = SKILL.vicious_projectile_speed, life = SKILL.vicious_projectile_life })
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_stomp", 0.7, 1)
     end)
 end
 
 local function cast_strike_of_fury(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Strike_Of_Fury", 140) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Strike_Of_Fury", SKILL.fury_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 110, 1, 1)
+    play_player_motion(player, "strike_of_fury_1")
+    add_aura(player, "CASTING", SKILL.fury_casting_duration, 1, 1)
     prevent_fall_damage(player, 7)
     spawn_frame_sequence(player, "strike_of_fury_", 1, 13, "charge_sword", 2.4, 0, 100, 2, 1, 1)
     sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_charge", 0.8, 1)
@@ -472,10 +571,10 @@ local function cast_strike_of_fury(player)
             particle(player, "dust_color_transition 1.0 0.37 0.0 0.78 0.01 0.0 0.55", 40 + ((9 - i) * 30), radius, 0.6, radius, 0)
         end)
     end
-    every(40, 4, 5, function(step)
+    every(SKILL.fury_slash_start_delay, SKILL.fury_slash_count, SKILL.fury_slash_interval, function(step)
         local anim = step % 2 == 1 and "sword_slash1" or "sword_slash2"
         spawn_frame_sequence(player, "strike_of_fury_", 1, 13, anim, 2.4, 0, 9, 2, 1, 1)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 4, 10, SKILL.fury_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.fury_hit_radius, SKILL.fury_hit_limit, SKILL.fury_damage)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_slash_ult", 0.7, 0.8 + (step * 0.08))
     end)
     after(65, function()
@@ -483,14 +582,14 @@ local function cast_strike_of_fury(player)
         player:add_velocity_relative(1.4, 1.4, 0)
         spawn_frame_sequence(player, "strike_of_fury_", 1, 13, "sword_jump", 2.4, 0, 12, 2, 1, 1)
     end)
-    after(85, function()
+    after(SKILL.fury_stomp_delay, function()
         prevent_fall_damage(player, 5)
         player:add_velocity_relative(0.4, -2, 0)
         local x, y, z, yaw = forward_position(player, 0, 0.1, 0)
         spawn_vfx(player:get_server_world(), "strike_of_fury_1", x, y, z, "floor_crack", 66, yaw, 0)
-        skill_damage(player, x, y + 1, z, 5, 10, SKILL.fury_damage)
+        skill_damage(player, x, y + 1, z, SKILL.fury_stomp_radius, SKILL.fury_hit_limit, SKILL.fury_damage)
         after(20, function()
-            skill_damage(player, x, y + 1, z, 7, 10, SKILL.fury_damage * 2)
+            skill_damage(player, x, y + 1, z, SKILL.fury_final_radius, SKILL.fury_hit_limit, SKILL.fury_damage * SKILL.fury_final_multiplier)
         end)
         sound(player, "awakened_warrior_sounds:samus.awakened_warrior.ult_stomp", 0.7, 1)
     end)
@@ -507,9 +606,10 @@ local function cast_strike_of_fury(player)
 end
 
 local function cast_bulwark_instinct(player)
-    add_aura(player, "Bulwark_Instinct", 100, 1, 1)
+    play_player_motion(player, "bulwark_instinct")
+    add_aura(player, "Bulwark_Instinct", SKILL.bulwark_duration, 1, 1)
     sound(player, "awakened_warrior_sounds:samus.awakened_warrior.warrior_airdash", 0.7, 0.75)
-    every(0, 50, 2, function()
+    every(0, SKILL.bulwark_particle_count, 2, function()
         particle(player, "dust_color_transition 1.0 0.5 0.09 1.0 0.16 0.01 0.6", 20, 1.5, 0.2, 1.5, 0)
     end)
 end

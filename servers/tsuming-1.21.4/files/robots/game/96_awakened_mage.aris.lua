@@ -1,3 +1,5 @@
+depends_on("10_awakened_hud_shared.aris")
+
 local DEG_TO_RAD = math.pi / 180
 
 local state = {
@@ -8,6 +10,7 @@ local state = {
     players = {},
     projectiles = {},
     next_vfx_id = 0,
+    motion_tokens = {},
 }
 
 local SKILL = {
@@ -29,10 +32,86 @@ local SKILL = {
     meteor_damage = 20,
     meteor_burn_damage = 2,
     meteor_burn_duration = 7,
+    combo_cooldown = 6,
+    teleport_cooldown = 40,
+    barrage_cooldown = 60,
+    cryo_cooldown = 60,
+    hail_cooldown = 60,
+    meteor_cooldown = 140,
+    mana_barrier_cooldown = 140,
+    combo_stack_duration = 300,
+    combo_max_stack = 3,
+    combo_projectile_speed = 1.7,
+    combo_projectile_radius = 3.2,
+    combo_projectile_limit = 10,
+    combo_projectile_ticks = 8,
+    combo_explosion_radius = 3,
+    combo_explosion_limit = 5,
+    combo_finisher_casting = 18,
+    teleport_casting = 5,
+    teleport_hit_radius = 5,
+    teleport_hit_limit = 7,
+    barrage_casting = 55,
+    barrage_fireball_radius = 3,
+    barrage_fireball_limit = 3,
+    barrage_big_delay = 28,
+    barrage_shoot_delay = 58,
+    barrage_big_radius = 4,
+    barrage_big_limit = 7,
+    cryo_casting = 10,
+    cryo_hit_delay = 24,
+    cryo_radius = 7,
+    cryo_limit = 15,
+    hail_casting = 35,
+    hail_radius = 6.5,
+    hail_limit = 8,
+    hail_first_delay = 30,
+    hail_second_delay = 35,
+    hail_third_delay = 40,
+    meteor_casting = 45,
+    meteor_launch_delay = 40,
+    meteor_radius = 10,
+    meteor_limit = 10,
+    meteor_projectile_ticks = 12,
+}
+
+local HUD_SKILLS = {
+    { id = "sorcery_combo", key = "cooldown_Sorcery_Combo", cooldown = SKILL.combo_cooldown },
+    { id = "teleport_strike", key = "cooldown_Teleport_Strike", cooldown = SKILL.teleport_cooldown },
+    { id = "meteor_of_doom", key = "cooldown_Meteor_Of_Doom", cooldown = SKILL.meteor_cooldown },
+    { id = "hailpiercer", key = "cooldown_Hailpiercer", cooldown = SKILL.hail_cooldown },
+    { id = "blazing_barrage", key = "cooldown_Blazing_Barrage", cooldown = SKILL.barrage_cooldown },
+    { id = "cryo_prison", key = "cooldown_Cryo_Prison", cooldown = SKILL.cryo_cooldown },
 }
 
 local VFX_NBT = "Invulnerable:1b,NoAI:1b,Silent:1b,NoGravity:1b,PersistenceRequired:0b,DeathLootTable:\"minecraft:empty\",CanPickUpLoot:0b,Health:1000000f,attributes:[{id:\"minecraft:max_health\",base:1000000d},{id:\"minecraft:armor\",base:1000000d}],Attributes:[{Name:\"minecraft:generic.max_health\",Base:1000000d},{Name:\"minecraft:generic.armor\",Base:1000000d}]"
 local VFX_SELECTOR_EXCLUDE = ",tag=!am_mage_caster,tag=!aa_vfx"
+
+local MOTION_TICKS = {
+    mana_barrier = 35,
+    c1 = 20,
+    c2 = 20,
+    c3 = 38,
+    c4 = 26,
+    teleport_strike = 37,
+    blazing_barrage1 = 50,
+    cryo_prison = 40,
+    hailpiercer1 = 70,
+    meteor_of_doom = 78,
+}
+
+local function play_player_motion(player, motion)
+    aris.game.geckolib.emote.set_emote_file(player, "boss_mage")
+    aris.game.geckolib.emote.trigger_emote(player, motion)
+    local id = player:get_uuid()
+    local token = (state.motion_tokens[id] or 0) + 1
+    state.motion_tokens[id] = token
+    state.timers[#state.timers + 1] = { at = state.tick + (MOTION_TICKS[motion] or 20), fn = function()
+        if state.motion_tokens[id] == token then
+            aris.game.geckolib.emote.trigger_emote(player, "")
+        end
+    end }
+end
 
 local function uuid(entity)
     return entity:get_uuid()
@@ -72,13 +151,19 @@ local function aura_stacks(entity, name)
     return aura.stacks or 0
 end
 
+local function send_cooldown_message(entity, name, remaining_ticks)
+    entity:send_message_text("§6[스킬] §c" .. name .. " 쿨타임: " .. string.format("%.1f", remaining_ticks / 20) .. "초 남음")
+end
+
 local function can_cast(entity, name, cooldown_ticks)
     local key = aura_key(entity, "cooldown_" .. name)
     local until_tick = state.cooldowns[key] or 0
     if until_tick > state.tick then
+        send_cooldown_message(entity, name, until_tick - state.tick)
         return false
     end
     state.cooldowns[key] = state.tick + cooldown_ticks
+    AWAKENED_HUD.sync_skill(entity, "mage")
     return true
 end
 
@@ -140,6 +225,10 @@ local function is_runestaff(player)
     local name = item:get_display_name() or item:get_name() or ""
     return string.find(name, SKILL.item_name, 1, true) ~= nil
 end
+
+AWAKENED_HUD.register_class("mage", is_runestaff, state.cooldowns, HUD_SKILLS, function()
+    return state.tick
+end)
 
 local function is_entity_object(entity)
     local kind = type(entity)
@@ -332,46 +421,49 @@ local function player_state(player)
 end
 
 local function cast_sorcery_combo(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Sorcery_Combo", 6) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Sorcery_Combo", SKILL.combo_cooldown) then
         return
     end
     local stacks = aura_stacks(player, "Sorcery_Combo_Stack")
     if stacks == 0 then
-        add_aura(player, "Sorcery_Combo_Stack", 300, 1, 3)
+        play_player_motion(player, "c1")
+        add_aura(player, "Sorcery_Combo_Stack", SKILL.combo_stack_duration, 1, SKILL.combo_max_stack)
         sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_ball", 0.7, 1)
         spawn_projectile(player, "fireball", "animation", {
-            speed = 1.7,
+            speed = SKILL.combo_projectile_speed,
             tick_damage = SKILL.combo_damage,
-            tick_radius = 3.2,
-            tick_limit = 10,
+            tick_radius = SKILL.combo_projectile_radius,
+            tick_limit = SKILL.combo_projectile_limit,
             tick_interval = 1,
-            max_ticks = 8,
+            max_ticks = SKILL.combo_projectile_ticks,
             on_end = function(p)
                 explosion_vfx(player, p.x, p.y, p.z, 0.4)
-                damage_near(player, p.x, p.y, p.z, 3, 5, SKILL.combo_damage)
-                burn_near(player, p.x, p.y, p.z, 3, 5, SKILL.burn_damage, SKILL.burn_duration)
+                damage_near(player, p.x, p.y, p.z, SKILL.combo_explosion_radius, SKILL.combo_explosion_limit, SKILL.combo_damage)
+                burn_near(player, p.x, p.y, p.z, SKILL.combo_explosion_radius, SKILL.combo_explosion_limit, SKILL.burn_damage, SKILL.burn_duration)
                 sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_explode", 0.7, 1)
             end,
         })
     elseif stacks == 1 then
-        add_aura(player, "Sorcery_Combo_Stack", 300, 1, 3)
+        play_player_motion(player, "c2")
+        add_aura(player, "Sorcery_Combo_Stack", SKILL.combo_stack_duration, 1, SKILL.combo_max_stack)
         sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_ball", 0.7, 1)
         spawn_projectile(player, "fireball", "animation", {
-            speed = 1.7,
+            speed = SKILL.combo_projectile_speed,
             tick_damage = SKILL.combo_damage,
-            tick_radius = 3.2,
-            tick_limit = 10,
+            tick_radius = SKILL.combo_projectile_radius,
+            tick_limit = SKILL.combo_projectile_limit,
             tick_interval = 1,
-            max_ticks = 8,
+            max_ticks = SKILL.combo_projectile_ticks,
             on_end = function(p)
                 explosion_vfx(player, p.x, p.y, p.z, 0.4)
-                damage_near(player, p.x, p.y, p.z, 3, 5, SKILL.combo_damage)
-                burn_near(player, p.x, p.y, p.z, 3, 5, SKILL.burn_damage, SKILL.burn_duration)
+                damage_near(player, p.x, p.y, p.z, SKILL.combo_explosion_radius, SKILL.combo_explosion_limit, SKILL.combo_damage)
+                burn_near(player, p.x, p.y, p.z, SKILL.combo_explosion_radius, SKILL.combo_explosion_limit, SKILL.burn_damage, SKILL.burn_duration)
                 sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_explode", 0.7, 1)
             end,
         })
     elseif stacks == 2 then
-        add_aura(player, "Sorcery_Combo_Stack", 300, 1, 3)
+        play_player_motion(player, "c3")
+        add_aura(player, "Sorcery_Combo_Stack", SKILL.combo_stack_duration, 1, SKILL.combo_max_stack)
         spawn_vfx_at_player(player, "glacial_spike", 1.3, 0.5, 0, "animation", 20)
         sound(player, "awakened_mage_sounds:samus.awakened_mage.glacial_spikes_shoot", 0.7, 1)
         for i, yaw_offset in ipairs({ -45, -22.5, 0, 22.5, 45 }) do
@@ -388,15 +480,16 @@ local function cast_sorcery_combo(player)
                     end,
                     max_ticks = 7,
                     on_end = function(p)
-                        damage_near(player, p.x, p.y, p.z, 3, 3, SKILL.combo_damage)
+                        damage_near(player, p.x, p.y, p.z, SKILL.combo_explosion_radius, 3, SKILL.combo_damage)
                         effect_near(player, p.x, p.y, p.z, 3, 3, "slowness", SKILL.slow_duration, 1)
                     end,
                 })
             end)
         end
     else
+        play_player_motion(player, "c4")
         remove_aura(player, "Sorcery_Combo_Stack")
-        add_aura(player, "CASTING", 18, 1, 1)
+        add_aura(player, "CASTING", SKILL.combo_finisher_casting, 1, 1)
         local x, y, z, yaw = offset_position(player, 8, 0.1, 0, 0)
         after(1, function()
             spawn_vfx(player:get_server_world(), "thunder_strike_1", x, y, z, "animation2", 10, yaw, 0)
@@ -408,16 +501,17 @@ local function cast_sorcery_combo(player)
             sound(player, "awakened_mage_sounds:samus.awakened_mage.thunder_strike", 0.7, 1)
         end)
         after(2, function()
-            damage_near(player, x, y + 1, z, 5, 7, SKILL.combo_damage)
+            damage_near(player, x, y + 1, z, SKILL.teleport_hit_radius, SKILL.teleport_hit_limit, SKILL.combo_damage)
         end)
     end
 end
 
 local function cast_teleport_strike(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Teleport_Strike", 40) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Teleport_Strike", SKILL.teleport_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 5, 1, 1)
+    play_player_motion(player, "teleport_strike")
+    add_aura(player, "CASTING", SKILL.teleport_casting, 1, 1)
     prevent_fall_damage(player, 2)
     spawn_vfx_at_player(player, "thunder_teleport_1", 0, 0, 0, "animation", 10)
     after(1, function()
@@ -428,17 +522,18 @@ local function cast_teleport_strike(player)
         spawn_vfx_at_player(player, "thunder_teleport_1", 0, 0, 0, "animation", 10)
         spawn_vfx_at_player(player, "thunder_explosion_1", 0, 0, 0, "animation", 14)
         sound(player, "awakened_mage_sounds:samus.awakened_mage.thunder_strike", 0.7, 0.7)
-        damage_near(player, player:get_x(), player:get_y() + 1, player:get_z(), 5, 7, SKILL.teleport_damage)
-        effect_near(player, player:get_x(), player:get_y() + 1, player:get_z(), 5, 7, "slowness", SKILL.stun_duration, 255)
+        damage_near(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.teleport_hit_radius, SKILL.teleport_hit_limit, SKILL.teleport_damage)
+        effect_near(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.teleport_hit_radius, SKILL.teleport_hit_limit, "slowness", SKILL.stun_duration, 255)
         particle_at(player:get_x(), player:get_y() + 2.3, player:get_z(), "minecraft:crit", 22, 0.5, 0.1, 0.5, 0)
     end)
 end
 
 local function cast_blazing_barrage(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Blazing_Barrage", 60) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Blazing_Barrage", SKILL.barrage_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 55, 1, 1)
+    play_player_motion(player, "blazing_barrage1")
+    add_aura(player, "CASTING", SKILL.barrage_casting, 1, 1)
     sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_circle", 0.7, 1)
     local circles = {
         { "animation6", -1.05, -2 },
@@ -472,18 +567,18 @@ local function cast_blazing_barrage(player)
                 max_ticks = 14,
                 on_end = function(p)
                     explosion_vfx(player, p.x, p.y, p.z, 0.4)
-                    damage_near(player, p.x, p.y, p.z, 3, 3, SKILL.barrage_damage)
-                    burn_near(player, p.x, p.y, p.z, 3, 3, SKILL.burn_damage, SKILL.burn_duration)
+                    damage_near(player, p.x, p.y, p.z, SKILL.barrage_fireball_radius, SKILL.barrage_fireball_limit, SKILL.barrage_damage)
+                    burn_near(player, p.x, p.y, p.z, SKILL.barrage_fireball_radius, SKILL.barrage_fireball_limit, SKILL.burn_damage, SKILL.burn_duration)
                     sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_explode", 0.7, 1)
                 end,
             })
         end)
     end
-    after(28, function()
+    after(SKILL.barrage_big_delay, function()
         spawn_vfx_at_player(player, "big_fireball_charge", 0, 0, 0, "animation", 57)
         sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_circle", 0.7, 0.55)
     end)
-    after(58, function()
+    after(SKILL.barrage_shoot_delay, function()
         sound(player, "awakened_mage_sounds:samus.awakened_mage.fire_blast", 0.7, 1)
         spawn_projectile(player, "fireball", "animation", {
             speed = 1.5,
@@ -494,36 +589,38 @@ local function cast_blazing_barrage(player)
             max_ticks = 8,
             on_end = function(p)
                 explosion_vfx(player, p.x, p.y, p.z, 1)
-                damage_near(player, p.x, p.y, p.z, 4, 7, SKILL.barrage_damage)
-                burn_near(player, p.x, p.y, p.z, 4, 7, SKILL.burn_damage, SKILL.burn_duration)
+                damage_near(player, p.x, p.y, p.z, SKILL.barrage_big_radius, SKILL.barrage_big_limit, SKILL.barrage_damage)
+                burn_near(player, p.x, p.y, p.z, SKILL.barrage_big_radius, SKILL.barrage_big_limit, SKILL.burn_damage, SKILL.burn_duration)
             end,
         })
     end)
 end
 
 local function cast_cryo_prison(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Cryo_Prison", 60) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Cryo_Prison", SKILL.cryo_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 10, 1, 1)
+    play_player_motion(player, "cryo_prison")
+    add_aura(player, "CASTING", SKILL.cryo_casting, 1, 1)
     local x, y, z, yaw = offset_position(player, 8, 0.1, 0, 0)
     spawn_vfx(player:get_server_world(), "cryo_prison", x, y, z, "animation", 111, yaw, 0)
     sound(player, "awakened_mage_sounds:samus.awakened_mage.ice_charge", 1, 0.75)
-    after(24, function()
+    after(SKILL.cryo_hit_delay, function()
         particle_at(x, y + 1.5, z, "minecraft:snowflake", 40, 3.5, 2, 3.5, 0.07)
         sound(player, "awakened_mage_sounds:samus.awakened_mage.ice_spike_creation", 0.7, 0.75)
-        freeze_near(player, x, y + 1, z, 7, 15, SKILL.cryo_damage, SKILL.freeze_duration)
+        freeze_near(player, x, y + 1, z, SKILL.cryo_radius, SKILL.cryo_limit, SKILL.cryo_damage, SKILL.freeze_duration)
         after(1, function()
-            freeze_near(player, x, y + 1, z, 7, 15, SKILL.freeze_damage, SKILL.freeze_duration)
+            freeze_near(player, x, y + 1, z, SKILL.cryo_radius, SKILL.cryo_limit, SKILL.freeze_damage, SKILL.freeze_duration)
         end)
     end)
 end
 
 local function cast_hailpiercer(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Hailpiercer", 60) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Hailpiercer", SKILL.hail_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 35, 1, 1)
+    play_player_motion(player, "hailpiercer1")
+    add_aura(player, "CASTING", SKILL.hail_casting, 1, 1)
     spawn_vfx_at_player(player, "hailpiercer_inhale_breath", 0, 1.5, 0, "animation", 28)
     sound(player, "awakened_mage_sounds:samus.awakened_mage.ice_charge", 1, 1)
     every(0, 6, 5, function()
@@ -531,8 +628,8 @@ local function cast_hailpiercer(player)
     end)
     local function hail_hit(forward_offset, side_offset)
         local x, y, z = offset_position(player, forward_offset, 1, side_offset or 0, 0)
-        damage_near(player, x, y, z, 6.5, 8, SKILL.hail_damage)
-        effect_near(player, x, y, z, 6.5, 8, "slowness", SKILL.hail_slow_duration, 1)
+        damage_near(player, x, y, z, SKILL.hail_radius, SKILL.hail_limit, SKILL.hail_damage)
+        effect_near(player, x, y, z, SKILL.hail_radius, SKILL.hail_limit, "slowness", SKILL.hail_slow_duration, 1)
         particle_at(x, y, z, "minecraft:snowflake", 24, 1.2, 0.5, 1.2, 0.03)
         particle_at(x, y + 0.4, z, "minecraft:snowflake", 18, 1.2, 0.9, 1.2, 0.03)
     end
@@ -544,17 +641,17 @@ local function cast_hailpiercer(player)
             hail_burst(forward_offset, side_offset)
         end)
     end
-    after(30, function()
+    after(SKILL.hail_first_delay, function()
         sound(player, "awakened_mage_sounds:samus.awakened_mage.ice_spike_creation", 0.7, 1)
         spawn_vfx_at_player(player, "hailpiercer", 0, 2, 0, "ice_spike_o", 42)
         delayed_hail_burst(2, 3, 0)
     end)
-    after(35, function()
+    after(SKILL.hail_second_delay, function()
         sound(player, "awakened_mage_sounds:samus.awakened_mage.ice_spike_creation", 0.7, 1)
         spawn_vfx_at_player(player, "hailpiercer", 0, 6, -1, "ice_spike", 42)
         delayed_hail_burst(8, 7, -0.5)
     end)
-    after(40, function()
+    after(SKILL.hail_third_delay, function()
         sound(player, "awakened_mage_sounds:samus.awakened_mage.ice_spike_creation", 0.7, 1)
         spawn_vfx_at_player(player, "hailpiercer", 0, 10, 0, "ice_spike2", 42)
         delayed_hail_burst(12, 11, 0)
@@ -562,10 +659,11 @@ local function cast_hailpiercer(player)
 end
 
 local function cast_meteor_of_doom(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Meteor_Of_Doom", 140) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Meteor_Of_Doom", SKILL.meteor_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 45, 1, 1)
+    play_player_motion(player, "meteor_of_doom")
+    add_aura(player, "CASTING", SKILL.meteor_casting, 1, 1)
     prevent_fall_damage(player, 5)
     local ground_y = player:get_y()
     player:add_velocity_relative(0, 0.65, 0)
@@ -575,7 +673,7 @@ local function cast_meteor_of_doom(player)
     after(25, function()
         player:add_velocity_relative(0, -0.55, 0)
     end)
-    after(40, function()
+    after(SKILL.meteor_launch_delay, function()
         sound(player, "awakened_mage_sounds:samus.awakened_mage.meteor_shoot", 0.7, 1)
         spawn_projectile(player, "meteor_of_doom", "meteor_impact", {
             start_forward = 8,
@@ -583,13 +681,13 @@ local function cast_meteor_of_doom(player)
             speed = 0,
             dy = -0.7,
             tick_damage = 0,
-            max_ticks = 12,
+            max_ticks = SKILL.meteor_projectile_ticks,
             pitch = 90,
             impact_y = ground_y + 0.2,
             on_end = function(p)
                 local iy = p.impact_y or p.y
-                damage_near(player, p.x, iy + 1, p.z, 10, 10, SKILL.meteor_damage)
-                burn_near(player, p.x, iy + 1, p.z, 10, 10, SKILL.meteor_burn_damage, SKILL.meteor_burn_duration)
+                damage_near(player, p.x, iy + 1, p.z, SKILL.meteor_radius, SKILL.meteor_limit, SKILL.meteor_damage)
+                burn_near(player, p.x, iy + 1, p.z, SKILL.meteor_radius, SKILL.meteor_limit, SKILL.meteor_burn_damage, SKILL.meteor_burn_duration)
                 spawn_vfx(player:get_server_world(), "meteor_of_doom_cross", p.x, iy, p.z, "meteor_impact", 97, player:get_yaw(), 0)
                 explosion_vfx(player, p.x, iy + 1, p.z, 3)
                 after(3, function() explosion_vfx(player, p.x + 3, iy + 0.6, p.z, 3) end)
@@ -608,7 +706,8 @@ local function cast_mana_barrier(player)
     if state.tick < ps.next_mana_barrier then
         return
     end
-    ps.next_mana_barrier = state.tick + 140
+    play_player_motion(player, "mana_barrier")
+    ps.next_mana_barrier = state.tick + SKILL.mana_barrier_cooldown
     for i = 0, 29 do
         after(i, function()
             local angle = (i * 12) * DEG_TO_RAD

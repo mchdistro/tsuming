@@ -1,3 +1,5 @@
+depends_on("10_awakened_hud_shared.aris")
+
 local DEG_TO_RAD = math.pi / 180
 
 local state = {
@@ -7,6 +9,7 @@ local state = {
     players = {},
     projectiles = {},
     next_vfx_id = 0,
+    motion_tokens = {},
 }
 
 local SKILL = {
@@ -30,10 +33,76 @@ local SKILL = {
     soul_spear_cooldown = 60,
     summon_dragon_damage = 7,
     summon_dragon_cooldown = 200,
+    soul_combo_stack_duration = 300,
+    soul_combo_radius = 3,
+    soul_combo_limit = 5,
+    blade_wheel_life = 40,
+    blade_wheel_radius = 3,
+    soul_spear_life = 35,
+    soul_spear_radius = 5,
+    soul_spear_limit = 15,
+    spirit_wolf_life = 90,
+    spirit_wolf_radius = 3.2,
+    spirit_wolf_limit = 5,
+    minion_axe_life = 64,
+    minion_axe_attack_count = 2,
+    minion_axe_attack_interval = 20,
+    minion_axe_radius = 3,
+    minion_axe_limit = 5,
+    crossbow_minion_life = 78,
+    crossbow_minion_attack_count = 2,
+    crossbow_minion_attack_interval = 24,
+    summon_dragon_life = 150,
+    summon_dragon_spawn_delay = 14,
+    summon_dragon_fireball_count = 2,
+    summon_dragon_fireball_interval = 30,
+    summon_dragon_fireball_delay = 10,
+    summon_dragon_fireball_radius = 5,
+    summon_dragon_fireball_limit = 8,
+    summon_dragon_breath_delay = 86,
+    summon_dragon_breath_radius = 3.8,
+    summon_dragon_breath_limit = 6,
+    summon_dragon_despawn_delay = 124,
+    summon_dragon_remove_delay = 142,
+}
+
+local HUD_SKILLS = {
+    { id = "soul_combo", key = "soul_combo", cooldown = SKILL.soul_combo_cooldown },
+    { id = "blade_wheel", key = "blade_wheel", cooldown = SKILL.blade_wheel_cooldown },
+    { id = "summon_dragon", key = "summon_dragon", cooldown = SKILL.summon_dragon_cooldown },
+    { id = "soul_spear", key = "soul_spear", cooldown = SKILL.soul_spear_cooldown },
+    { id = "summon_minion", key = "summon_minion", cooldown = SKILL.summon_minion_cooldown },
+    { id = "summoners_command", key = "summoners_command", cooldown = SKILL.command_cooldown },
 }
 
 local VFX_NBT = "Invulnerable:1b,NoAI:1b,Silent:1b,NoGravity:1b,PersistenceRequired:0b,DeathLootTable:\"minecraft:empty\",CanPickUpLoot:0b,Health:1000000f,attributes:[{id:\"minecraft:max_health\",base:1000000d},{id:\"minecraft:armor\",base:1000000d}],Attributes:[{Name:\"minecraft:generic.max_health\",Base:1000000d},{Name:\"minecraft:generic.armor\",Base:1000000d}]"
 local VFX_SELECTOR_EXCLUDE = ",tag=!as_summoner_caster,tag=!aa_vfx"
+
+local MOTION_TICKS = {
+    spirit_wolf = 40,
+    soul_c1 = 16,
+    soul_c2 = 22,
+    soul_c3 = 29,
+    soul_c4 = 30,
+    blade_wheel = 26,
+    summon_axe_minion = 40,
+    summon_crossbow_minion = 40,
+    soul_spear = 50,
+    summon_dragon = 77,
+}
+
+local function play_player_motion(player, motion)
+    aris.game.geckolib.emote.set_emote_file(player, "boss_summoner")
+    aris.game.geckolib.emote.trigger_emote(player, motion)
+    local id = player:get_uuid()
+    local token = (state.motion_tokens[id] or 0) + 1
+    state.motion_tokens[id] = token
+    state.timers[#state.timers + 1] = { at = state.tick + (MOTION_TICKS[motion] or 20), fn = function()
+        if state.motion_tokens[id] == token then
+            aris.game.geckolib.emote.trigger_emote(player, "")
+        end
+    end }
+end
 
 local function uuid(entity)
     return entity:get_uuid()
@@ -43,13 +112,19 @@ local function cooldown_key(entity, name)
     return uuid(entity) .. ":" .. name
 end
 
+local function send_cooldown_message(entity, name, remaining_ticks)
+    entity:send_message_text("§6[스킬] §c" .. name .. " 쿨타임: " .. string.format("%.1f", remaining_ticks / 20) .. "초 남음")
+end
+
 local function can_cast(entity, name, cooldown_ticks)
     local key = cooldown_key(entity, name)
     local until_tick = state.cooldowns[key] or 0
     if until_tick > state.tick then
+        send_cooldown_message(entity, name, until_tick - state.tick)
         return false
     end
     state.cooldowns[key] = state.tick + cooldown_ticks
+    AWAKENED_HUD.sync_skill(entity, "summoner")
     return true
 end
 
@@ -114,6 +189,10 @@ local function is_soultome(player)
     return string.find(name, SKILL.item_name, 1, true) ~= nil
 end
 
+AWAKENED_HUD.register_class("summoner", is_soultome, state.cooldowns, HUD_SKILLS, function()
+    return state.tick
+end)
+
 local function is_entity_object(entity)
     local kind = type(entity)
     return entity ~= nil and kind ~= "number" and kind ~= "boolean" and kind ~= "string"
@@ -151,6 +230,18 @@ end
 
 local function clear_spirit_wolf_vfx()
     aris.game.dispatch_command("tp @e[type=aris:spirit_wolf,tag=aa_vfx] 0 -10000 0")
+end
+
+local function clear_player_wolf(ps)
+    if ps.wolf_tag ~= nil then
+        remove_tagged_vfx(ps.wolf_tag)
+    end
+    if is_entity_object(ps.wolf) then
+        ps.wolf:remove()
+    end
+    ps.wolf = nil
+    ps.wolf_tag = nil
+    ps.wolf_until = 0
 end
 
 local function move_tagged_vfx(tag, x, y, z, yaw, pitch)
@@ -305,7 +396,8 @@ local function cast_soul_combo(player)
     if ps.combo > 4 then
         ps.combo = 1
     end
-    ps.combo_until = state.tick + 300
+    ps.combo_until = state.tick + SKILL.soul_combo_stack_duration
+    play_player_motion(player, "soul_c" .. tostring(ps.combo))
 
     local anims = {
         "left_slash",
@@ -322,7 +414,7 @@ local function cast_soul_combo(player)
     for _, delay in ipairs(delays[ps.combo]) do
         after(delay, function()
             local x, y, z = offset_position(player, 2.2, 0.8, 0, 0)
-            damage_near(player, x, y, z, 3, 5, SKILL.soul_combo_damage)
+            damage_near(player, x, y, z, SKILL.soul_combo_radius, SKILL.soul_combo_limit, SKILL.soul_combo_damage)
         end)
     end
 end
@@ -331,26 +423,28 @@ local function cast_blade_wheel(player)
     if not can_cast(player, "blade_wheel", SKILL.blade_wheel_cooldown) then
         return
     end
+    play_player_motion(player, "blade_wheel")
     local x, y, z, yaw = offset_position(player, -0.5, 1.0, 0, 0)
     sound(player, "minecraft:entity.breeze.wind_burst", 0.8, 1.1)
-    spawn_projectile(player, "soul_blades_1", "spin_sword", x, y, z, yaw, 0.9, 40, 3, SKILL.blade_wheel_damage, nil)
+    spawn_projectile(player, "soul_blades_1", "spin_sword", x, y, z, yaw, 0.9, SKILL.blade_wheel_life, SKILL.blade_wheel_radius, SKILL.blade_wheel_damage, nil)
 end
 
 local function cast_soul_spear(player)
     if not can_cast(player, "soul_spear", SKILL.soul_spear_cooldown) then
         return
     end
+    play_player_motion(player, "soul_spear")
     local x, y, z, yaw = offset_position(player, -0.5, 1.0, 0, 0)
     sound(player, "minecraft:item.trident.throw", 0.8, 0.75)
     every(1, 10, 2, function(i)
         local tx, ty, tz = offset_from_point(x, y, z, yaw, i * 0.9, 0, 0)
         particle_at(tx, ty, tz, "minecraft:soul_fire_flame", 3, 0.05, 0.05, 0.05, 0.01)
     end)
-    spawn_projectile(player, "soul_spear_vfx", "on", x, y, z, yaw, 1.0, 35, 5, SKILL.soul_spear_damage, function(projectile)
+    spawn_projectile(player, "soul_spear_vfx", "on", x, y, z, yaw, 1.0, SKILL.soul_spear_life, SKILL.soul_spear_radius, SKILL.soul_spear_damage, function(projectile)
         spawn_vfx(player:get_server_world(), "soul_spear_vfx", projectile.x, projectile.y - 0.5, projectile.z, "on", 12, projectile.yaw, 90)
-        damage_near(player, projectile.x, projectile.y, projectile.z, 5, 15, SKILL.soul_spear_damage)
-        effect_near(player, projectile.x, projectile.y, projectile.z, 5, 15, "slowness", SKILL.soul_spear_stun_seconds, 255)
-        stun_vfx_near(player, projectile.x, projectile.y, projectile.z, 5, 15, SKILL.soul_spear_stun_seconds * 20)
+        damage_near(player, projectile.x, projectile.y, projectile.z, SKILL.soul_spear_radius, SKILL.soul_spear_limit, SKILL.soul_spear_damage)
+        effect_near(player, projectile.x, projectile.y, projectile.z, SKILL.soul_spear_radius, SKILL.soul_spear_limit, "slowness", SKILL.soul_spear_stun_seconds, 255)
+        stun_vfx_near(player, projectile.x, projectile.y, projectile.z, SKILL.soul_spear_radius, SKILL.soul_spear_limit, SKILL.soul_spear_stun_seconds * 20)
         spawn_vfx(player:get_server_world(), "vfx_earthquake_rupture_1", projectile.x, projectile.y - 0.9, projectile.z, "skill2", 24, projectile.yaw, 0)
         spawn_vfx(player:get_server_world(), "vfx_rubbles", projectile.x, projectile.y - 0.9, projectile.z, "skill", 22, projectile.yaw, 0)
         particle_at(projectile.x, projectile.y, projectile.z, "minecraft:campfire_cosy_smoke", 14, 1.1, 0.12, 1.1, 0.07)
@@ -386,11 +480,12 @@ local function spawn_spirit_wolf(player)
     if ps.wolf ~= nil and is_entity_object(ps.wolf) and (ps.wolf_until or 0) > state.tick then
         return
     end
+    play_player_motion(player, "spirit_wolf")
     clear_spirit_wolf_vfx()
     local x, y, z, yaw = offset_position(player, 2, 0, 2, 0)
     spawn_vfx(player:get_server_world(), "vfx_summon", x, y + 0.1, z, "on", 28, yaw, 0)
-    ps.wolf, ps.wolf_tag = spawn_vfx(player:get_server_world(), "spirit_wolf", x, y, z, "idle", 90, yaw, 0)
-    ps.wolf_until = state.tick + 90
+    ps.wolf, ps.wolf_tag = spawn_vfx(player:get_server_world(), "spirit_wolf", x, y, z, "idle", SKILL.spirit_wolf_life, yaw, 0)
+    ps.wolf_until = state.tick + SKILL.spirit_wolf_life
     sound(player, "minecraft:entity.wolf.ambient", 0.7, 1.1)
 end
 
@@ -416,9 +511,9 @@ local function wolf_attack(player)
     after(5, function()
         local x1, y1, z1 = offset_position(player, 2.6, 0.7, 0, 0)
         local x2, y2, z2 = offset_position(player, 4.6, 0.7, 0, 0)
-        damage_near_non_players(player, wx, wy + 0.7, wz, 3.2, 5, SKILL.spirit_wolf_damage)
-        damage_near_non_players(player, x1, y1, z1, 3.2, 5, SKILL.spirit_wolf_damage)
-        damage_near_non_players(player, x2, y2, z2, 3.2, 5, SKILL.spirit_wolf_damage)
+        damage_near_non_players(player, wx, wy + 0.7, wz, SKILL.spirit_wolf_radius, SKILL.spirit_wolf_limit, SKILL.spirit_wolf_damage)
+        damage_near_non_players(player, x1, y1, z1, SKILL.spirit_wolf_radius, SKILL.spirit_wolf_limit, SKILL.spirit_wolf_damage)
+        damage_near_non_players(player, x2, y2, z2, SKILL.spirit_wolf_radius, SKILL.spirit_wolf_limit, SKILL.spirit_wolf_damage)
     end)
 end
 
@@ -428,6 +523,7 @@ local function cast_summon_minion(player)
     end
     local ps = player_state(player)
     local minion_type = ps.minion_type
+    play_player_motion(player, minion_type == "axe" and "summon_axe_minion" or "summon_crossbow_minion")
     ps.minion_type = minion_type == "axe" and "crossbow" or "axe"
     local summon_forward = minion_type == "axe" and 3.2 or 8
     local x, y, z, yaw = offset_position(player, summon_forward, 0, 0, 0)
@@ -438,7 +534,7 @@ local function cast_summon_minion(player)
     if minion_type == "axe" then
         after(10, function()
             local ax, ay, az, ayaw = offset_position(player, 3.2, 0, -0.9, 0)
-            local axe, axe_tag = spawn_vfx(player:get_server_world(), "axe_minion_1", ax, ay, az, "spawn", 64, ayaw, 0)
+            local axe, axe_tag = spawn_vfx(player:get_server_world(), "axe_minion_1", ax, ay, az, "spawn", SKILL.minion_axe_life, ayaw, 0)
             every(2, 16, 3, function()
                 local mx, my, mz, myaw = offset_position(player, 3.2, 0, -0.9, 0)
                 if axe_tag ~= nil then
@@ -447,11 +543,11 @@ local function cast_summon_minion(player)
                     axe:move_to(mx, my, mz)
                 end
             end)
-            every(10, 2, 20, function()
+            every(10, SKILL.minion_axe_attack_count, SKILL.minion_axe_attack_interval, function()
                 trigger_entity_anim(axe, "slash")
                 after(9, function()
                     local hx, hy, hz = offset_position(player, 3.6, 0.7, -0.6, 0)
-                    damage_near(player, hx, hy, hz, 3, 5, SKILL.minion_axe_damage)
+                    damage_near(player, hx, hy, hz, SKILL.minion_axe_radius, SKILL.minion_axe_limit, SKILL.minion_axe_damage)
                 end)
             end)
             after(48, function()
@@ -468,8 +564,8 @@ local function cast_summon_minion(player)
         end)
     else
         after(24, function()
-            local crossbow = spawn_vfx(player:get_server_world(), "crossbow_minion", x, y, z, "spawn", 78, yaw, 0)
-            every(20, 2, 24, function()
+            local crossbow = spawn_vfx(player:get_server_world(), "crossbow_minion", x, y, z, "spawn", SKILL.crossbow_minion_life, yaw, 0)
+            every(20, SKILL.crossbow_minion_attack_count, SKILL.crossbow_minion_attack_interval, function()
                 trigger_entity_anim(crossbow, "shoot")
                 after(10, function()
                     local sx, sy, sz = x, y + 1.2, z
@@ -488,46 +584,47 @@ local function cast_summon_dragon(player)
     if not can_cast(player, "summon_dragon", SKILL.summon_dragon_cooldown) then
         return
     end
+    play_player_motion(player, "summon_dragon")
     clear_dragon_vfx()
     local x, y, z, yaw = offset_position(player, 6, 0, 0, 0)
     spawn_vfx(player:get_server_world(), "vfx_summon", x, y + 0.1, z, "on2", 22, yaw, 0)
     sound(player, "minecraft:entity.ender_dragon.growl", 0.75, 1.15)
-    after(14, function()
-        local dragon, dragon_tag = spawn_vfx(player:get_server_world(), "spirit_dragon", x, y, z, "spawn", 150, yaw, 0)
+    after(SKILL.summon_dragon_spawn_delay, function()
+        local dragon, dragon_tag = spawn_vfx(player:get_server_world(), "spirit_dragon", x, y, z, "spawn", SKILL.summon_dragon_life, yaw, 0)
         after(20, function()
             trigger_entity_anim(dragon, "idle")
         end)
-        every(24, 2, 30, function()
+        every(24, SKILL.summon_dragon_fireball_count, SKILL.summon_dragon_fireball_interval, function()
             trigger_entity_anim(dragon, "shoot_fireball")
-            after(10, function()
+            after(SKILL.summon_dragon_fireball_delay, function()
                 local sx, sy, sz = offset_from_point(x, y, z, yaw, 1.2, 2.0, 0)
                 spawn_projectile(player, "soul_fireball", "animation", sx, sy, sz, yaw, 1.6, 18, 5, SKILL.summon_dragon_damage, function(projectile)
                     spawn_vfx(player:get_server_world(), "fireball_explosion", projectile.x, projectile.y, projectile.z, "actived", 16, yaw, 0)
                     spawn_vfx(player:get_server_world(), "vfx_rubbles", projectile.x, projectile.y - 0.8, projectile.z, "skill", 14, yaw, 0)
-                    damage_near(player, projectile.x, projectile.y, projectile.z, 5, 8, SKILL.summon_dragon_damage)
-                    push_near(player, projectile.x, projectile.y, projectile.z, 5, 8, 0.8)
+                    damage_near(player, projectile.x, projectile.y, projectile.z, SKILL.summon_dragon_fireball_radius, SKILL.summon_dragon_fireball_limit, SKILL.summon_dragon_damage)
+                    push_near(player, projectile.x, projectile.y, projectile.z, SKILL.summon_dragon_fireball_radius, SKILL.summon_dragon_fireball_limit, 0.8)
                     after(3, function()
-                        push_near(player, projectile.x, projectile.y, projectile.z, 5, 8, -0.8)
+                        push_near(player, projectile.x, projectile.y, projectile.z, SKILL.summon_dragon_fireball_radius, SKILL.summon_dragon_fireball_limit, -0.8)
                     end)
                     sound(player, "minecraft:entity.generic.explode", 0.8, 1)
                 end)
                 sound(player, "minecraft:entity.blaze.shoot", 0.6, 1.1)
             end)
         end)
-        after(86, function()
+        after(SKILL.summon_dragon_breath_delay, function()
             trigger_entity_anim(dragon, "fire_breath")
             local bx, by, bz = offset_from_point(x, y, z, yaw, 1.6, 1.8, 0)
             spawn_vfx(player:get_server_world(), "soul_fire_breath", bx, by, bz, "loop", 24, yaw, 0)
             sound(player, "minecraft:entity.blaze.shoot", 0.8, 0.7)
             every(10, 7, 2, function(i)
                 local hx, hy, hz = offset_from_point(x, y, z, yaw, 2.2 + i * 0.65, 1.2, 0)
-                damage_near(player, hx, hy, hz, 3.8, 6, SKILL.summon_dragon_damage)
+                damage_near(player, hx, hy, hz, SKILL.summon_dragon_breath_radius, SKILL.summon_dragon_breath_limit, SKILL.summon_dragon_damage)
             end)
         end)
-        after(124, function()
+        after(SKILL.summon_dragon_despawn_delay, function()
             trigger_entity_anim(dragon, "despawn")
         end)
-        after(142, function()
+        after(SKILL.summon_dragon_remove_delay, function()
             if is_entity_object(dragon) then
                 dragon:remove()
             end
@@ -624,14 +721,12 @@ while true do
     for id, ps in pairs(state.players) do
         local player = ps.player
         if player == nil or not is_soultome(player) then
-            if ps.wolf_tag ~= nil then
-                remove_tagged_vfx(ps.wolf_tag)
-            end
-            if is_entity_object(ps.wolf) then
-                ps.wolf:remove()
-            end
+            clear_player_wolf(ps)
             state.players[id] = nil
         else
+            if ps.wolf ~= nil and (ps.wolf_until or 0) <= state.tick then
+                clear_player_wolf(ps)
+            end
             if state.tick % SKILL.spirit_wolf_timer == 0 then
                 spawn_spirit_wolf(player)
             end

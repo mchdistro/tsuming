@@ -3,6 +3,15 @@ local function anim(key, trigger, animation)
     raw:then_play(animation or trigger)
 end
 
+local function enable_idle(key)
+    local ok, err = xpcall(function()
+        aris.game.geckolib.enable_idle(key)
+    end, debug ~= nil and debug.traceback or tostring)
+    if not ok then
+        aris.log_error("[06_awakened_summoner_animations:enable_idle] " .. tostring(key) .. " " .. tostring(err))
+    end
+end
+
 anim("vfx_summon", "on")
 anim("vfx_summon", "on2")
 
@@ -47,6 +56,7 @@ anim("spirit_wolf", "scratch_right")
 anim("spirit_wolf", "bite")
 anim("spirit_wolf", "leap_bite")
 anim("spirit_wolf", "death")
+enable_idle("spirit_wolf")
 
 anim("spirit_dragon", "spawn")
 anim("spirit_dragon", "idle")
@@ -55,6 +65,7 @@ anim("spirit_dragon", "shoot_fireball")
 anim("spirit_dragon", "shoot_fireball3")
 anim("spirit_dragon", "fire_breath")
 anim("spirit_dragon", "despawn")
+enable_idle("spirit_dragon")
 
 anim("crossbow_minion", "spawn")
 anim("crossbow_minion", "idle")

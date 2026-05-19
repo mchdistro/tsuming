@@ -1,3 +1,5 @@
+depends_on("10_awakened_hud_shared.aris")
+
 local DEG_TO_RAD = math.pi / 180
 
 local state = {
@@ -7,6 +9,7 @@ local state = {
     players = {},
     projectiles = {},
     next_vfx_id = 0,
+    motion_tokens = {},
 }
 
 local SKILL = {
@@ -28,10 +31,74 @@ local SKILL = {
     ancestral_damage = 7,
     ancestral_heal = 2,
     ancestral_cooldown = 140,
+    primal_stack_duration = 300,
+    primal_line_forward = 0.9,
+    primal_line_radius = 2.4,
+    primal_line_channel_count = 6,
+    primal_line_channel_interval = 5,
+    primal_finisher_radius = 4.5,
+    primal_finisher_limit = 7,
+    echo_step_duration_seconds = 2,
+    totem_life = 220,
+    totem_idle_delay = 30,
+    totem_attack_start_delay = 40,
+    totem_attack_count = 8,
+    totem_attack_interval = 20,
+    totem_heal_start_delay = 20,
+    totem_heal_count = 9,
+    totem_heal_interval = 20,
+    totem_despawn_delay = 200,
+    totem_heal_radius = 12,
+    totem_heal_limit = 8,
+    earthen_step_delay = 2,
+    earthen_slow_seconds = 3,
+    ancestral_thunder_radius = 5,
+    ancestral_thunder_limit = 8,
+    ancestral_nature_heal_start = 20,
+    ancestral_nature_heal_count = 22,
+    ancestral_nature_heal_interval = 5,
+    ancestral_nature_radius = 4,
+    ancestral_nature_limit = 8,
+}
+
+local HUD_SKILLS = {
+    { id = "primal_combo", key = "primal_combo", cooldown = SKILL.primal_cooldown },
+    { id = "echo_step", key = "echo_step", cooldown = SKILL.echo_step_cooldown },
+    { id = "ancestral_hands", key = "ancestral_hands", cooldown = SKILL.ancestral_cooldown },
+    { id = "earthen_embrace", key = "earthen_embrace", cooldown = SKILL.earthen_embrace_cooldown },
+    { id = "ritual_totem", key = "ritual_totem", cooldown = SKILL.ritual_cooldown },
+    { id = "stance_switch", key = "stance_switch", cooldown = SKILL.stance_cooldown },
 }
 
 local VFX_NBT = "Invulnerable:1b,NoAI:1b,Silent:1b,NoGravity:1b,PersistenceRequired:0b,DeathLootTable:\"minecraft:empty\",CanPickUpLoot:0b,Health:1000000f,attributes:[{id:\"minecraft:max_health\",base:1000000d},{id:\"minecraft:armor\",base:1000000d}],Attributes:[{Name:\"minecraft:generic.max_health\",Base:1000000d},{Name:\"minecraft:generic.armor\",Base:1000000d}]"
 local VFX_SELECTOR_EXCLUDE = ",tag=!ash_shaman_caster,tag=!aa_vfx"
+
+local MOTION_TICKS = {
+    life_link = 52,
+    thunder_c1 = 24,
+    thunder_c2 = 60,
+    thunder_c3 = 70,
+    life_beam = 36,
+    dash_front = 13,
+    hunter_totem = 43,
+    guardian_totem = 37,
+    earthen_embrace = 47,
+    thunderous_hand_1 = 54,
+    natural_hands_start = 32,
+}
+
+local function play_player_motion(player, motion)
+    aris.game.geckolib.emote.set_emote_file(player, "boss_shaman")
+    aris.game.geckolib.emote.trigger_emote(player, motion)
+    local id = player:get_uuid()
+    local token = (state.motion_tokens[id] or 0) + 1
+    state.motion_tokens[id] = token
+    state.timers[#state.timers + 1] = { at = state.tick + (MOTION_TICKS[motion] or 20), fn = function()
+        if state.motion_tokens[id] == token then
+            aris.game.geckolib.emote.trigger_emote(player, "")
+        end
+    end }
+end
 
 local function uuid(entity)
     return entity:get_uuid()
@@ -41,13 +108,19 @@ local function key_for(entity, name)
     return uuid(entity) .. ":" .. name
 end
 
+local function send_cooldown_message(entity, name, remaining_ticks)
+    entity:send_message_text("§6[스킬] §c" .. name .. " 쿨타임: " .. string.format("%.1f", remaining_ticks / 20) .. "초 남음")
+end
+
 local function can_cast(entity, name, cooldown_ticks)
     local key = key_for(entity, name)
     local until_tick = state.cooldowns[key] or 0
     if until_tick > state.tick then
+        send_cooldown_message(entity, name, until_tick - state.tick)
         return false
     end
     state.cooldowns[key] = state.tick + cooldown_ticks
+    AWAKENED_HUD.sync_skill(entity, "shaman")
     return true
 end
 
@@ -108,6 +181,10 @@ local function is_lifescepter(player)
     local name = item:get_display_name() or item:get_name() or ""
     return string.find(name, SKILL.item_name, 1, true) ~= nil
 end
+
+AWAKENED_HUD.register_class("shaman", is_lifescepter, state.cooldowns, HUD_SKILLS, function()
+    return state.tick
+end)
 
 local function is_entity_object(entity)
     local kind = type(entity)
@@ -312,6 +389,7 @@ local function cast_stance_switch(player)
     if not can_cast(player, "stance_switch", SKILL.stance_cooldown) then
         return
     end
+    play_player_motion(player, "life_link")
     if ps.stance == "thunder" then
         ps.stance = "earth"
         particle_at(player:get_x(), player:get_y() + 0.7, player:get_z(), "minecraft:happy_villager", 45, 0.45, 0.7, 0.45, 0.03)
@@ -346,20 +424,21 @@ local function cast_primal_combo(player)
     if ps.combo > 4 then
         ps.combo = 1
     end
-    ps.combo_until = state.tick + 300
+    ps.combo_until = state.tick + SKILL.primal_stack_duration
+    play_player_motion(player, ps.stance == "thunder" and "thunder_c" .. tostring(math.min(ps.combo, 3)) or "life_beam")
 
     local x, y, z, yaw = offset_position(player, 1.0, 1.1, 0, 0)
     if ps.stance == "thunder" then
         if ps.combo <= 2 then
             spawn_vfx(player:get_server_world(), "horizontal_thunder_strike_vfx_1", x, y, z, "animation", 9, yaw, 0)
             after(1, function()
-                damage_forward_line(player, 0.9, SKILL.primal_damage, 2.4)
+                damage_forward_line(player, SKILL.primal_line_forward, SKILL.primal_damage, SKILL.primal_line_radius)
             end)
             sound(player, "minecraft:entity.lightning_bolt.impact", 0.45, 1.8)
         elseif ps.combo == 3 then
             spawn_vfx(player:get_server_world(), "constant_thunder_strike_vfx", x, y, z, "on", 45, yaw, 0)
-            every(0, 6, 5, function()
-                damage_forward_line(player, 0.9, SKILL.primal_damage, 2.2)
+            every(0, SKILL.primal_line_channel_count, SKILL.primal_line_channel_interval, function()
+                damage_forward_line(player, SKILL.primal_line_forward, SKILL.primal_damage, 2.2)
             end)
             sound(player, "minecraft:entity.lightning_bolt.thunder", 0.45, 1.5)
         else
@@ -367,7 +446,7 @@ local function cast_primal_combo(player)
             spawn_vfx(player:get_server_world(), "vertical_thunder_strike_vfx_1", sx, sy, sz, "animation", 24, yaw, 0)
             spawn_vfx(player:get_server_world(), "vfx_earthquake_rupture_1", sx, sy - 0.1, sz, "skill2", 24, yaw, 0)
             after(2, function()
-                damage_near(player, sx, sy + 0.5, sz, 4.5, 7, SKILL.primal_damage)
+                damage_near(player, sx, sy + 0.5, sz, SKILL.primal_finisher_radius, SKILL.primal_finisher_limit, SKILL.primal_damage)
             end)
             sound(player, "minecraft:item.trident.thunder", 0.7, 1.0)
         end
@@ -378,7 +457,7 @@ local function cast_primal_combo(player)
             sound(player, "minecraft:block.trial_spawner.spawn_item_begin", 0.7, 1.3)
         elseif ps.combo == 3 then
             spawn_vfx(player:get_server_world(), "constant_healing_beam_vfx", x, y, z, "on", 49, yaw, 0)
-            every(0, 6, 5, function()
+            every(0, SKILL.primal_line_channel_count, SKILL.primal_line_channel_interval, function()
                 heal_forward_line(player, 0.8, 0, 2.2)
             end)
             sound(player, "minecraft:block.beacon.ambient", 0.6, 1.3)
@@ -386,7 +465,7 @@ local function cast_primal_combo(player)
             local sx, sy, sz = offset_position(player, 5.5, 0.2, 0, 0)
             spawn_vfx(player:get_server_world(), "vertical_healing_beam_vfx", sx, sy, sz, "animation", 24, yaw, 0)
             after(2, function()
-                heal_players_near(player, sx, sy, sz, 4.5, 7, 0)
+                heal_players_near(player, sx, sy, sz, SKILL.primal_finisher_radius, SKILL.primal_finisher_limit, 0)
             end)
             sound(player, "minecraft:block.trial_spawner.spawn_item_begin", 0.9, 1.15)
         end
@@ -397,11 +476,12 @@ local function cast_echo_step(player)
     if not can_cast(player, "echo_step", SKILL.echo_step_cooldown) then
         return
     end
+    play_player_motion(player, "dash_front")
     local x, y, z, yaw = offset_position(player, 0, 1.3, 0, 0)
     spawn_vfx(player:get_server_world(), "echo_step", x, y, z, "dash_front", 40, yaw, 0)
-    command_as_player(player, "effect give @s minecraft:invisibility 2 0 true")
-    command_as_player(player, "effect give @s minecraft:speed 2 5 true")
-    command_as_player(player, "effect give @s minecraft:resistance 2 4 true")
+    command_as_player(player, "effect give @s minecraft:invisibility " .. tostring(SKILL.echo_step_duration_seconds) .. " 0 true")
+    command_as_player(player, "effect give @s minecraft:speed " .. tostring(SKILL.echo_step_duration_seconds) .. " 5 true")
+    command_as_player(player, "effect give @s minecraft:resistance " .. tostring(SKILL.echo_step_duration_seconds) .. " 4 true")
     every(0, 8, 1, function()
         local px, py, pz = offset_position(player, 0, 1.2, 0, 0)
         particle_at(px, py, pz, "minecraft:soul_fire_flame", 4, 0.25, 0.45, 0.25, 0.02)
@@ -412,15 +492,15 @@ end
 local function spawn_ritual_totem(player, ps, x, y, z, yaw)
     remove_active_totem(ps)
     if ps.stance == "thunder" then
-        local totem, tag = spawn_vfx(player:get_server_world(), "hunter_totem", x, y, z, "spawn", 220, yaw, 0)
-        ps.active_totem = { entity = totem, tag = tag, x = x, y = y, z = z, yaw = yaw, until_tick = state.tick + 220, stance = ps.stance }
+        local totem, tag = spawn_vfx(player:get_server_world(), "hunter_totem", x, y, z, "spawn", SKILL.totem_life, yaw, 0)
+        ps.active_totem = { entity = totem, tag = tag, x = x, y = y, z = z, yaw = yaw, until_tick = state.tick + SKILL.totem_life, stance = ps.stance }
         sound(player, "minecraft:block.trial_spawner.spawn_item", 0.7, 1.0)
-        after(30, function()
+        after(SKILL.totem_idle_delay, function()
             if is_current_totem(ps, tag) then
                 trigger_entity_anim(totem, "idle")
             end
         end)
-        every(40, 8, 20, function()
+        every(SKILL.totem_attack_start_delay, SKILL.totem_attack_count, SKILL.totem_attack_interval, function()
             if not is_current_totem(ps, tag) then
                 return
             end
@@ -431,35 +511,35 @@ local function spawn_ritual_totem(player, ps, x, y, z, yaw)
             end
             sound(player, "minecraft:entity.blaze.shoot", 0.45, 1.0)
         end)
-        after(200, function()
+        after(SKILL.totem_despawn_delay, function()
             if is_current_totem(ps, tag) then
                 trigger_entity_anim(totem, "despawn")
             end
         end)
     else
-        local totem, tag = spawn_vfx(player:get_server_world(), "guardian_totem", x, y, z, "spawn", 220, yaw, 0)
-        ps.active_totem = { entity = totem, tag = tag, x = x, y = y, z = z, yaw = yaw, until_tick = state.tick + 220, stance = ps.stance }
+        local totem, tag = spawn_vfx(player:get_server_world(), "guardian_totem", x, y, z, "spawn", SKILL.totem_life, yaw, 0)
+        ps.active_totem = { entity = totem, tag = tag, x = x, y = y, z = z, yaw = yaw, until_tick = state.tick + SKILL.totem_life, stance = ps.stance }
         sound(player, "minecraft:block.trial_spawner.spawn_item", 0.7, 1.4)
-        after(30, function()
+        after(SKILL.totem_idle_delay, function()
             if is_current_totem(ps, tag) then
                 trigger_entity_anim(totem, "idle")
             end
         end)
-        every(20, 9, 20, function()
+        every(SKILL.totem_heal_start_delay, SKILL.totem_heal_count, SKILL.totem_heal_interval, function()
             if not is_current_totem(ps, tag) then
                 return
             end
             trigger_entity_anim(totem, "hit")
-            heal_players_near(player, x, y, z, 12, 8, 0)
+            heal_players_near(player, x, y, z, SKILL.totem_heal_radius, SKILL.totem_heal_limit, 0)
             particle_at(x, y + 0.2, z, "minecraft:happy_villager", 35, 3, 0.35, 3, 0.03)
         end)
         every(25, 8, 20, function()
             if not is_current_totem(ps, tag) then
                 return
             end
-            effect_near(player, x, y, z, 12, 10, "slowness", 1, 1)
+            effect_near(player, x, y, z, SKILL.totem_heal_radius, 10, "slowness", 1, 1)
         end)
-        after(200, function()
+        after(SKILL.totem_despawn_delay, function()
             if is_current_totem(ps, tag) then
                 trigger_entity_anim(totem, "despawn")
             end
@@ -472,6 +552,7 @@ local function cast_ritual_totem(player)
         return
     end
     local ps = player_state(player)
+    play_player_motion(player, ps.stance == "thunder" and "hunter_totem" or "guardian_totem")
     local x, y, z, yaw = offset_position(player, 7, 0, 0, 0)
     spawn_ritual_totem(player, ps, x, y, z, yaw)
 end
@@ -499,14 +580,15 @@ local function cast_earthen_embrace(player)
     if not can_cast(player, "earthen_embrace", SKILL.earthen_embrace_cooldown) then
         return
     end
+    play_player_motion(player, "earthen_embrace")
     sound(player, "minecraft:block.rooted_dirt.break", 0.9, 0.6)
     local forward_points = { 3.5, 5.5, 7.5 }
     for index, forward in ipairs(forward_points) do
-        after((index - 1) * 2, function()
+        after((index - 1) * SKILL.earthen_step_delay, function()
             local cx, cy, cz, yaw = offset_position(player, forward, 0, 0, 0)
             spawn_vfx(player:get_server_world(), "earthen_embrace", cx, cy, cz, "animation", 52, yaw, 0)
-            effect_near(player, cx, cy, cz, 2.3, 3, "slowness", 3, 255)
-            effect_near(player, cx, cy, cz, 2.3, 3, "mining_fatigue", 3, 2)
+            effect_near(player, cx, cy, cz, 2.3, 3, "slowness", SKILL.earthen_slow_seconds, 255)
+            effect_near(player, cx, cy, cz, 2.3, 3, "mining_fatigue", SKILL.earthen_slow_seconds, 2)
             particle_at(cx, cy + 0.1, cz, "minecraft:campfire_cosy_smoke", 9, 0.35, 0.1, 0.35, 0.05)
             particle_at(cx, cy + 0.9, cz, "minecraft:block minecraft:rooted_dirt", 18, 0.45, 0.7, 0.45, 0.02)
         end)
@@ -518,6 +600,7 @@ local function cast_ancestral_hands(player)
         return
     end
     local ps = player_state(player)
+    play_player_motion(player, ps.stance == "thunder" and "thunderous_hand_1" or "natural_hands_start")
     local yaw = player:get_yaw()
     if ps.stance == "thunder" then
         local attacks = {
@@ -530,7 +613,7 @@ local function cast_ancestral_hands(player)
                 local x, y, z = offset_position(player, attack.forward, attack.y, 0, 0)
                 spawn_vfx(player:get_server_world(), "ancestor_hands", x, y, z, attack.anim, 22, yaw, 0)
                 after(attack.hit_delay, function()
-                    damage_near(player, x, y + 0.7, z, 5, 8, SKILL.ancestral_damage)
+                    damage_near(player, x, y + 0.7, z, SKILL.ancestral_thunder_radius, SKILL.ancestral_thunder_limit, SKILL.ancestral_damage)
                     push_entities_near(player, x, y, z, 5, 8, attack.lift)
                 end)
             end)
@@ -539,8 +622,8 @@ local function cast_ancestral_hands(player)
     else
         local x, y, z, pyaw = offset_position(player, 5, 0, 0, 0)
         spawn_vfx(player:get_server_world(), "nature_hands", x, y, z, "animation", 124, pyaw, 0)
-        every(20, 22, 5, function()
-            heal_players_near(player, x, y + 2, z, 4, 8, 0)
+        every(SKILL.ancestral_nature_heal_start, SKILL.ancestral_nature_heal_count, SKILL.ancestral_nature_heal_interval, function()
+            heal_players_near(player, x, y + 2, z, SKILL.ancestral_nature_radius, SKILL.ancestral_nature_limit, 0)
             command_as_player(player, "effect give @s minecraft:resistance 1 1 true")
         end)
         sound(player, "minecraft:block.beacon.activate", 0.8, 1.25)

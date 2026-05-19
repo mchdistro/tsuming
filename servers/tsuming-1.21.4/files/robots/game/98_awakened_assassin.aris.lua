@@ -1,3 +1,5 @@
+depends_on("10_awakened_hud_shared.aris")
+
 local DEG_TO_RAD = math.pi / 180
 
 local state = {
@@ -8,6 +10,7 @@ local state = {
     players = {},
     projectiles = {},
     next_vfx_id = 0,
+    motion_tokens = {},
 }
 
 local SKILL = {
@@ -18,10 +21,98 @@ local SKILL = {
     shadowquake_damage = 5,
     crimson_damage = 4,
     last_dance_damage = 2,
+    lethal_cooldown = 4,
+    ravaging_cooldown = 40,
+    death_bloom_cooldown = 100,
+    shadowquake_cooldown = 220,
+    crimson_cooldown = 60,
+    last_dance_cooldown = 240,
+    deadly_calm_duration = 999999,
+    lethal_stack_duration = 300,
+    lethal_max_stack = 3,
+    lethal_hit_radius = 3.5,
+    lethal_hit_limit = 4,
+    lethal_finisher_multiplier = 1.25,
+    shadowquake_window = 20,
+    ravaging_hit_radius = 3.5,
+    ravaging_hit_limit = 4,
+    ravaging_attack_count = 6,
+    ravaging_attack_interval = 2,
+    death_bloom_casting_duration = 40,
+    death_bloom_start_delay = 20,
+    death_bloom_hit_radius = 6,
+    death_bloom_hit_limit = 6,
+    death_bloom_cut_count = 8,
+    death_bloom_cut_interval = 3,
+    shadowquake_duration = 180,
+    shadowquake_radius = 6,
+    shadowquake_limit = 7,
+    shadowquake_wave_radius = 1.2,
+    shadowquake_wave_pierce = 4,
+    shadowquake_wave_ticks = 18,
+    shadowquake_wave_speed = 2.1,
+    crimson_start_delay = 10,
+    crimson_radius = 0.75,
+    crimson_pierce = 4,
+    crimson_ticks = 20,
+    crimson_return_ticks = 12,
+    crimson_speed = 2.0,
+    crimson_life = 50,
+    crimson_return_life = 30,
+    last_dance_duration = 140,
+    last_dance_blade_delay = 20,
+    last_dance_dagger_count = 20,
+    last_dance_dagger_interval = 3,
+    last_dance_spin_delay = 80,
+    last_dance_spin_radius = 5,
+    last_dance_spin_limit = 7,
+    last_dance_slash_delay = 95,
+    last_dance_slash_count = 8,
+    last_dance_slash_interval = 5,
+    last_dance_final_delay = 135,
+    last_dance_final_radius = 5,
+    last_dance_final_limit = 10,
+    last_dance_final_multiplier = 5,
+}
+
+local HUD_SKILLS = {
+    { id = "lethal_combo", key = "cooldown_Lethal_Combo", cooldown = SKILL.lethal_cooldown },
+    { id = "ravaging_dash", key = "cooldown_Ravaging_Dash", cooldown = SKILL.ravaging_cooldown },
+    { id = "last_dance", key = "cooldown_Last_Dance", cooldown = SKILL.last_dance_cooldown },
+    { id = "crimson_arc", key = "cooldown_Crimson_Arc", cooldown = SKILL.crimson_cooldown },
+    { id = "death_bloom", key = "cooldown_Death_Bloom", cooldown = SKILL.death_bloom_cooldown },
+    { id = "shadowquake", key = "cooldown_Shadowquake", cooldown = SKILL.shadowquake_cooldown },
 }
 
 local VFX_NBT = "Invulnerable:1b,NoAI:1b,Silent:1b,NoGravity:1b,PersistenceRequired:0b,DeathLootTable:\"minecraft:empty\",CanPickUpLoot:0b,Health:1000000f,attributes:[{id:\"minecraft:max_health\",base:1000000d},{id:\"minecraft:armor\",base:1000000d}],Attributes:[{Name:\"minecraft:generic.max_health\",Base:1000000d},{Name:\"minecraft:generic.armor\",Base:1000000d}]"
 local VFX_SELECTOR_EXCLUDE = ",tag=!aa_vfx,type=!aris:vfx_dusk_cut,type=!aris:vfx_dusk_dagger,type=!aris:vfx_dusk_dagger_circle,type=!aris:vfx_dusk_dash,type=!aris:vfx_dusk_downslash,type=!aris:vfx_dusk_shockwave_slash,type=!aris:vfx_dusk_shuriken,type=!aris:vfx_dusk_spinning_blades,type=!aris:vfx_pulse,type=!aris:vfx_dusk_dash_impact_1,type=!aris:vfx_dusk_dash_impact_2,type=!aris:vfx_dusk_dash_impact_3,type=!aris:vfx_dusk_dash_impact_4,type=!aris:vfx_dusk_dash_impact_5,type=!aris:vfx_dusk_dash_impact_6,type=!aris:vfx_dusk_dash_impact_7,type=!aris:vfx_dusk_dash_impact_8,type=!aris:vfx_dusk_dash_impact_9,type=!aris:vfx_dusk_pierce_1,type=!aris:vfx_dusk_pierce_2,type=!aris:vfx_dusk_pierce_3,type=!aris:vfx_dusk_pierce_4,type=!aris:vfx_dusk_pierce_5,type=!aris:vfx_dusk_pierce_6,type=!aris:vfx_dusk_pierce_7,type=!aris:vfx_dusk_pierce_8,type=!aris:vfx_dusk_pierce_9,type=!aris:vfx_dusk_slash_1,type=!aris:vfx_dusk_slash_2,type=!aris:vfx_dusk_slash_3,type=!aris:vfx_dusk_slash_4,type=!aris:vfx_dusk_slash_5,type=!aris:vfx_dusk_slash_6,type=!aris:vfx_dusk_slash_7,type=!aris:vfx_dusk_spin_1,type=!aris:vfx_dusk_spin_2,type=!aris:vfx_dusk_spin_3,type=!aris:vfx_dusk_spin_4,type=!aris:vfx_dusk_spin_5,type=!aris:vfx_dusk_spin_6,type=!aris:vfx_dusk_spin_7,type=!aris:vfx_shadow_figure_1,type=!aris:vfx_shadow_figure_2,type=!aris:vfx_shadow_figure_3,type=!aris:vfx_shadow_figure_4,type=!aris:vfx_shadow_figure_5"
+
+local MOTION_TICKS = {
+    deadly_calm = 63,
+    lc1 = 10,
+    lc2 = 20,
+    lc3 = 29,
+    lc4 = 16,
+    ravaging_dash = 22,
+    death_bloom = 70,
+    shadowquake = 12,
+    shadowquake_appear = 13,
+    crimson_arc = 51,
+    last_dance = 55,
+}
+
+local function play_player_motion(player, motion)
+    aris.game.geckolib.emote.set_emote_file(player, "boss_assassin")
+    aris.game.geckolib.emote.trigger_emote(player, motion)
+    local id = player:get_uuid()
+    local token = (state.motion_tokens[id] or 0) + 1
+    state.motion_tokens[id] = token
+    state.timers[#state.timers + 1] = { at = state.tick + (MOTION_TICKS[motion] or 20), fn = function()
+        if state.motion_tokens[id] == token then
+            aris.game.geckolib.emote.trigger_emote(player, "")
+        end
+    end }
+end
 
 local function uuid(entity)
     return entity:get_uuid()
@@ -61,13 +152,19 @@ local function aura_stacks(entity, name)
     return aura.stacks or 0
 end
 
+local function send_cooldown_message(entity, name, remaining_ticks)
+    entity:send_message_text("§6[스킬] §c" .. name .. " 쿨타임: " .. string.format("%.1f", remaining_ticks / 20) .. "초 남음")
+end
+
 local function can_cast(entity, name, cooldown_ticks)
     local key = aura_key(entity, "cooldown_" .. name)
     local until_tick = state.cooldowns[key] or 0
     if until_tick > state.tick then
+        send_cooldown_message(entity, name, until_tick - state.tick)
         return false
     end
     state.cooldowns[key] = state.tick + cooldown_ticks
+    AWAKENED_HUD.sync_skill(entity, "assassin")
     return true
 end
 
@@ -115,6 +212,10 @@ local function is_duskblade(player)
     return string.find(name, SKILL.item_name, 1, true) ~= nil
 end
 
+AWAKENED_HUD.register_class("assassin", is_duskblade, state.cooldowns, HUD_SKILLS, function()
+    return state.tick
+end)
+
 local function trigger_entity_anim(entity, anim)
     if entity == nil or anim == nil then
         return
@@ -157,7 +258,7 @@ end
 
 local function spawn_vfx_at_player(player, key, y_offset, forward_offset, anim, life, yaw_offset)
     local yaw = player:get_yaw() + (yaw_offset or 0)
-    local dx, dz = yaw_vector(player:get_yaw(), 0)
+    local dx, dz = yaw_vector(yaw, 0)
     return spawn_vfx(player:get_server_world(), key, player:get_x() + dx * (forward_offset or 0), player:get_y() + (y_offset or 0), player:get_z() + dz * (forward_offset or 0), anim, life, yaw, 0)
 end
 
@@ -281,7 +382,8 @@ local function player_state(player)
 end
 
 local function cast_deadly_calm(player)
-    add_aura(player, "Deadly_Calm", 999999, 1, 1)
+    play_player_motion(player, "deadly_calm")
+    add_aura(player, "Deadly_Calm", SKILL.deadly_calm_duration, 1, 1)
     sound(player, "entity.phantom.death", 0.9, 1.2)
     for i = 0, 8 do
         after(i, function()
@@ -291,34 +393,37 @@ local function cast_deadly_calm(player)
 end
 
 local function cast_lethal_combo(player)
-    if has_aura(player, "CASTING") or has_aura(player, "Last_Dance") or not can_cast(player, "Lethal_Combo", 4) then
+    if has_aura(player, "CASTING") or has_aura(player, "Last_Dance") or not can_cast(player, "Lethal_Combo", SKILL.lethal_cooldown) then
         return
     end
     if has_aura(player, "Shadowquake") then
-        add_aura(player, "Shadowquake_ON", 20, 1, 1)
+        add_aura(player, "Shadowquake_ON", SKILL.shadowquake_window, 1, 1)
         return
     end
 
     local stacks = aura_stacks(player, "Lethal_Combo_Stack")
     if stacks == 0 then
-        add_aura(player, "Lethal_Combo_Stack", 300, 1, 3)
+        play_player_motion(player, "lc1")
+        add_aura(player, "Lethal_Combo_Stack", SKILL.lethal_stack_duration, 1, SKILL.lethal_max_stack)
         spawn_frame_models_at_player(player, "vfx_dusk_slash_", 1, 7, "lr_cut", 1.4, 0.2, 0, 11, 2, 5, 1)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3.5, 4, SKILL.lethal_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.lethal_hit_radius, SKILL.lethal_hit_limit, SKILL.lethal_damage)
         sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_slash", 0.7, 1.1)
     elseif stacks == 1 then
-        add_aura(player, "Lethal_Combo_Stack", 300, 1, 3)
+        play_player_motion(player, "lc2")
+        add_aura(player, "Lethal_Combo_Stack", SKILL.lethal_stack_duration, 1, SKILL.lethal_max_stack)
         spawn_frame_models_at_player(player, "vfx_dusk_slash_", 1, 7, "rl_cut", 1.4, 0.2, 0, 11, 2, 5, 1)
         after(4, function()
             spawn_frame_models_at_player(player, "vfx_dusk_spin_", 1, 7, "skill", 1.4, 0.2, 0, 12, 2, 6, 1)
             after(2, function()
                 spawn_frame_models_at_player(player, "vfx_dusk_spin_", 1, 7, "skill", 0.8, 0.2, 0, 12, 2, 6, 1)
             end)
-            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3.5, 4, SKILL.lethal_damage)
+            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.lethal_hit_radius, SKILL.lethal_hit_limit, SKILL.lethal_damage)
             sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_blades_spin", 0.7, 1.1)
         end)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3.5, 4, SKILL.lethal_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.lethal_hit_radius, SKILL.lethal_hit_limit, SKILL.lethal_damage)
     elseif stacks == 2 then
-        add_aura(player, "Lethal_Combo_Stack", 300, 1, 3)
+        play_player_motion(player, "lc3")
+        add_aura(player, "Lethal_Combo_Stack", SKILL.lethal_stack_duration, 1, SKILL.lethal_max_stack)
         player:add_velocity_relative(-0.6, -0.05, 0)
         sound(player, "entity.ender_dragon.flap", 0.6, 1.4)
         after(4, function()
@@ -327,7 +432,7 @@ local function cast_lethal_combo(player)
         end)
         after(6, function()
             spawn_frame_models_at_player(player, "vfx_dusk_pierce_", 1, 9, "skill2", 1.4, 0.8, 0, 18, 2, 2, 2)
-            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3.5, 4, SKILL.lethal_damage)
+            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.lethal_hit_radius, SKILL.lethal_hit_limit, SKILL.lethal_damage)
             sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_pierce", 0.7, 1.1)
         end)
         after(9, function()
@@ -338,8 +443,9 @@ local function cast_lethal_combo(player)
             sound(player, "entity.ender_dragon.flap", 0.6, 1.4)
         end)
     else
+        play_player_motion(player, "lc4")
         remove_aura(player, "Lethal_Combo_Stack")
-        spawn_projectile(player, "vfx_dusk_dagger", "shoot_down", SKILL.lethal_damage * 1.25, { radius = 1, pierce = 1, max_ticks = 12, speed = 1.6, start_forward = 1.5 })
+        spawn_projectile(player, "vfx_dusk_dagger", "shoot_down", SKILL.lethal_damage * SKILL.lethal_finisher_multiplier, { radius = 1, pierce = 1, max_ticks = 12, speed = 1.6, start_forward = 1.5 })
         sound(player, "item.trident.throw", 0.8, 1.6)
         after(7, function()
             player:add_velocity_relative(1.3, -1, 0)
@@ -356,7 +462,7 @@ local function cast_lethal_combo(player)
             spawn_vfx(player:get_server_world(), "vfx_rubbles", x, y, z, "skill2", 45, yaw, 0)
             aris.game.dispatch_command("execute positioned " .. tostring(x) .. " " .. tostring(y) .. " " .. tostring(z) .. " run particle campfire_cosy_smoke ~ ~ ~ 0.8 0.1 0.8 0 7")
             aris.game.dispatch_command("execute positioned " .. tostring(x) .. " " .. tostring(y) .. " " .. tostring(z) .. " run particle block minecraft:dirt ~ ~ ~ 0.9 0.2 0.9 0 25")
-            skill_damage(player, x, y, z, 4, 4, SKILL.lethal_damage * 1.25)
+            skill_damage(player, x, y, z, 4, SKILL.lethal_hit_limit, SKILL.lethal_damage * SKILL.lethal_finisher_multiplier)
             sound(player, "item.mace.smash_ground_heavy", 0.8, 1.2)
         end)
     end
@@ -369,9 +475,10 @@ local function cast_ravaging_dash(player)
         sound(player, "entity.enderman.teleport", 1, 0.5)
         return
     end
-    if has_aura(player, "CASTING") or not can_cast(player, "Ravaging_Dash", 40) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Ravaging_Dash", SKILL.ravaging_cooldown) then
         return
     end
+    play_player_motion(player, "ravaging_dash")
     sound(player, "entity.phantom.ambient", 0.8, 0.8)
     particle(player, "dust_color_transition 1 0 0 0.07 0.01 0.01 0.55", 80, 4, 0.1, 4, 0)
     after(10, function()
@@ -379,25 +486,26 @@ local function cast_ravaging_dash(player)
         spawn_vfx_at_player(player, "vfx_dusk_dash", 1.4, 0, "skill", 15)
         player:add_velocity_relative(1.8, -0.05, 0)
         sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_dash", 0.7, 1.1)
-        every(0, 6, 2, function()
+        every(0, SKILL.ravaging_attack_count, SKILL.ravaging_attack_interval, function()
             spawn_frame_models_at_player(player, "vfx_dusk_slash_", 1, 7, math.random(1, 2) == 1 and "lr" or "rl", 1.0, 0.5, math.random(-30, 30), 8, 2, 5, 1)
-            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 3.5, 4, SKILL.ravaging_damage)
+            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.ravaging_hit_radius, SKILL.ravaging_hit_limit, SKILL.ravaging_damage)
         end)
     end)
 end
 
 local function cast_death_bloom(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Death_Bloom", 100) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Death_Bloom", SKILL.death_bloom_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 40, 1, 1)
+    play_player_motion(player, "death_bloom")
+    add_aura(player, "CASTING", SKILL.death_bloom_casting_duration, 1, 1)
     particle(player, "smoke", 50, 4, 0.15, 4, 0.05)
     sound(player, "entity.phantom.ambient", 0.7, 0.6)
-    after(20, function()
+    after(SKILL.death_bloom_start_delay, function()
         spawn_vfx_at_player(player, "vfx_shadow_figure_" .. tostring(math.random(1, 5)), 0.5, 0, "skill" .. tostring(math.random(1, 6)), 24)
-        every(0, 8, 3, function()
+        every(0, SKILL.death_bloom_cut_count, SKILL.death_bloom_cut_interval, function()
             spawn_vfx_at_player(player, "vfx_dusk_cut", 1.2, math.random(-3, 3), math.random(1, 2) == 1 and "lrd" or "rld", 8, math.random(0, 360))
-            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 6, 6, SKILL.death_bloom_damage)
+            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.death_bloom_hit_radius, SKILL.death_bloom_hit_limit, SKILL.death_bloom_damage)
             sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_cut", 0.6, 1.1)
         end)
     end)
@@ -413,10 +521,11 @@ local function request_death_bloom(player)
 end
 
 local function cast_shadowquake(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Shadowquake", 220) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Shadowquake", SKILL.shadowquake_cooldown) then
         return
     end
-    add_aura(player, "Shadowquake", 180, 1, 1)
+    play_player_motion(player, "shadowquake")
+    add_aura(player, "Shadowquake", SKILL.shadowquake_duration, 1, 1)
     particle(player, "smoke", 15, 0.35, 0.6, 0.35, 0.1)
     sound(player, "entity.phantom.ambient", 0.7, 0.6)
 end
@@ -427,39 +536,41 @@ local function trigger_shadowquake_appear(player)
     end
     remove_aura(player, "Shadowquake")
     remove_aura(player, "Shadowquake_ON")
+    play_player_motion(player, "shadowquake_appear")
     spawn_vfx_at_player(player, "vfx_pulse", 0.1, 0, "skill3", 28)
     spawn_vfx_at_player(player, "vfx_earthquake_rupture_1", 0.1, 0, "skill", 52)
     spawn_vfx_at_player(player, "vfx_rubbles", 0.1, 0, "skill", 45)
-    skill_damage(player, player:get_x(), player:get_y(), player:get_z(), 6, 7, SKILL.shadowquake_damage)
+    skill_damage(player, player:get_x(), player:get_y(), player:get_z(), SKILL.shadowquake_radius, SKILL.shadowquake_limit, SKILL.shadowquake_damage)
     sound(player, "item.mace.smash_ground_heavy", 1.1, 0.6)
-    spawn_projectile(player, "vfx_dusk_shockwave_slash", "skill", SKILL.shadowquake_damage, { radius = 1.2, pierce = 4, max_ticks = 18, speed = 2.1 })
+    spawn_projectile(player, "vfx_dusk_shockwave_slash", "skill", SKILL.shadowquake_damage, { radius = SKILL.shadowquake_wave_radius, pierce = SKILL.shadowquake_wave_pierce, max_ticks = SKILL.shadowquake_wave_ticks, speed = SKILL.shadowquake_wave_speed })
 end
 
 local function cast_crimson_arc(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Crimson_Arc", 60) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Crimson_Arc", SKILL.crimson_cooldown) then
         return
     end
+    play_player_motion(player, "crimson_arc")
     player:add_velocity_relative(-0.8, 0, 0)
     particle(player, "smoke", 15, 0.35, 0.6, 0.35, 0.01)
     sound(player, "block.trial_spawner.ambient_ominous", 0.8, 1.3)
-    after(10, function()
+    after(SKILL.crimson_start_delay, function()
         for _, h in ipairs({ 0, 10, -10 }) do
             spawn_projectile(player, "vfx_dusk_shuriken", "loop", SKILL.crimson_damage, {
                 h_offset = h,
-                radius = 0.75,
-                pierce = 4,
-                max_ticks = 20,
-                speed = 2.0,
-                life = 50,
+                radius = SKILL.crimson_radius,
+                pierce = SKILL.crimson_pierce,
+                max_ticks = SKILL.crimson_ticks,
+                speed = SKILL.crimson_speed,
+                life = SKILL.crimson_life,
                 on_end = function(p)
                     spawn_projectile(player, "vfx_dusk_shuriken", "loop", SKILL.crimson_damage, {
                         h_offset = h + 180,
-                        radius = 0.75,
-                        pierce = 4,
-                        max_ticks = 12,
-                        speed = 2.0,
+                        radius = SKILL.crimson_radius,
+                        pierce = SKILL.crimson_pierce,
+                        max_ticks = SKILL.crimson_return_ticks,
+                        speed = SKILL.crimson_speed,
                         start_forward = 8,
-                        life = 30,
+                        life = SKILL.crimson_return_life,
                     })
                 end,
             })
@@ -469,37 +580,38 @@ local function cast_crimson_arc(player)
 end
 
 local function cast_last_dance(player)
-    if has_aura(player, "CASTING") or not can_cast(player, "Last_Dance", 240) then
+    if has_aura(player, "CASTING") or not can_cast(player, "Last_Dance", SKILL.last_dance_cooldown) then
         return
     end
-    add_aura(player, "CASTING", 140, 1, 1)
-    add_aura(player, "Last_Dance", 140, 1, 1)
+    play_player_motion(player, "last_dance")
+    add_aura(player, "CASTING", SKILL.last_dance_duration, 1, 1)
+    add_aura(player, "Last_Dance", SKILL.last_dance_duration, 1, 1)
     spawn_vfx_at_player(player, "vfx_dusk_dagger_circle", 2.4, 0, "skill", 20)
     sound(player, "block.trial_spawner.spawn_item", 0.7, 1.35)
-    after(20, function()
+    after(SKILL.last_dance_blade_delay, function()
         spawn_vfx_at_player(player, "vfx_dusk_spinning_blades", 2.4, 0, "spin", 60)
-        every(0, 20, 3, function()
-            spawn_projectile(player, "vfx_dusk_dagger", "shoot_down", SKILL.last_dance_damage, { h_offset = math.random(-55, 55), radius = 0.75, pierce = 1, max_ticks = 16, speed = 2.0 })
+        every(0, SKILL.last_dance_dagger_count, SKILL.last_dance_dagger_interval, function()
+            spawn_projectile(player, "vfx_dusk_dagger", "shoot_down", SKILL.last_dance_damage, { h_offset = math.random(-55, 55), radius = SKILL.crimson_radius, pierce = 1, max_ticks = 16, speed = SKILL.crimson_speed })
         end)
         sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_blades_spin", 0.7, 1.2)
     end)
-    after(80, function()
+    after(SKILL.last_dance_spin_delay, function()
         spawn_frame_models_at_player(player, "vfx_dusk_spin_", 1, 7, "skill2", 1.4, 0.2, 0, 12, 2, 6, 1)
         spawn_frame_models_at_player(player, "vfx_dusk_spin_", 1, 7, "skill2", 0.7, 0.2, 0, 12, 2, 6, 1)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 5, 7, SKILL.last_dance_damage)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.last_dance_spin_radius, SKILL.last_dance_spin_limit, SKILL.last_dance_damage)
         sound(player, "awakened_assassin_sounds:samus.awakened_assassin.aa_spin", 0.7, 1.1)
     end)
-    after(95, function()
+    after(SKILL.last_dance_slash_delay, function()
         player:add_velocity_relative(0.01, 0.7, 0)
-        every(5, 8, 5, function()
+        every(5, SKILL.last_dance_slash_count, SKILL.last_dance_slash_interval, function()
             spawn_frame_models_at_player(player, "vfx_dusk_slash_", 1, 7, math.random(1, 2) == 1 and "lrd" or "rld", 1.2, 0.2, math.random(0, 360), 10, 2, 5, 1)
-            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 5, 10, SKILL.last_dance_damage)
+            skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.last_dance_spin_radius, SKILL.last_dance_final_limit, SKILL.last_dance_damage)
         end)
     end)
-    after(135, function()
+    after(SKILL.last_dance_final_delay, function()
         player:add_velocity_relative(2.5, -1.2, 0)
         spawn_frame_models_at_player(player, "vfx_dusk_pierce_", 1, 9, "skill3", 1.2, 0.8, 0, 18, 2, 2, 2)
-        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), 5, 10, SKILL.last_dance_damage * 5)
+        skill_damage(player, player:get_x(), player:get_y() + 1, player:get_z(), SKILL.last_dance_final_radius, SKILL.last_dance_final_limit, SKILL.last_dance_damage * SKILL.last_dance_final_multiplier)
     end)
 end
 
