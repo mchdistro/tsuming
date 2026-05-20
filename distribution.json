@@ -15133,9 +15133,9 @@
           "name": "20_stats_gui.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 4327,
+            "size": 6036,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/20_stats_gui.aris.lua",
-            "MD5": "48681f31b1ba9308e2eed1006ddf7a4e",
+            "MD5": "8f494cb47ab071a0b4d3b6a457c02627",
             "path": "robots/client-game/20_stats_gui.aris.lua"
           }
         },
@@ -15155,9 +15155,9 @@
           "name": "20_stats_packets.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 417,
+            "size": 564,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/20_stats_packets.aris.lua",
-            "MD5": "3cde137df0454f84ebe721e311beafd7",
+            "MD5": "a83f4c4455e332b67efc3adc8f5154e5",
             "path": "robots/client-init/20_stats_packets.aris.lua"
           }
         },

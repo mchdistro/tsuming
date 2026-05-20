@@ -8,7 +8,8 @@ local ROW_X = 48
 local ROW_Y = 96
 local ROW_H = 44
 local VALUE_X = 260
-local BUTTON_X = 410
+local MINUS_X = 348
+local PLUS_X = 422
 local BUTTON_W = 64
 local BUTTON_H = 32
 
@@ -26,6 +27,7 @@ local root = nil
 local points_text = nil
 local rows = {}
 local screen_opened = false
+local refresh = nil
 local current = {
     points = 0,
     str = 0,
@@ -34,11 +36,36 @@ local current = {
     vit = 0,
     luk = 0,
 }
+local pending = {
+    str = 0,
+    agi = 0,
+    int = 0,
+    vit = 0,
+    luk = 0,
+}
 
-local function send_add(stat)
-    local packet = aris.game.client.networking.create_c2s_packet_builder("stats_add_point")
-    packet:append_string("stat", stat)
+local function pending_total()
+    local total = 0
+    for _, stat in ipairs(STAT_ORDER) do
+        total = total + (pending[stat] or 0)
+    end
+    return total
+end
+
+local function send_apply()
+    if pending_total() <= 0 then
+        aris.game.client.send_system_message("[스탯] 적용할 변경 사항이 없습니다.")
+        return
+    end
+    local packet = aris.game.client.networking.create_c2s_packet_builder("stats_apply_points")
+    packet:append_string("payload", JSON.encode(pending))
     aris.game.client.networking.send_c2s_packet(packet)
+end
+
+local function reset_pending()
+    for _, stat in ipairs(STAT_ORDER) do
+        pending[stat] = 0
+    end
 end
 
 local function close_screen()
@@ -89,29 +116,54 @@ local function create_once()
         add_text(root, STAT_LABELS[stat], ROW_X, y, 0xFFFFFFFF, 2.0)
         local value = add_text(root, "0", VALUE_X, y, 0xFFB3E5FC, 2.0)
 
-        add_rect(root, BUTTON_X, y - 7, BUTTON_W, BUTTON_H, 50, 120, 58, 235)
-        add_text(root, "+", BUTTON_X + 23, y - 3, 0xFFFFFFFF, 2.0)
-        local clickable = aris.client.create_clickable(function()
-            send_add(stat)
-        end, BUTTON_X, y - 7, BUTTON_W, BUTTON_H)
-        root:add_child(clickable)
+        add_rect(root, MINUS_X, y - 7, BUTTON_W, BUTTON_H, 120, 58, 58, 235)
+        add_text(root, "-", MINUS_X + 25, y - 3, 0xFFFFFFFF, 2.0)
+        root:add_child(aris.client.create_clickable(function()
+            if (pending[stat] or 0) > 0 then
+                pending[stat] = pending[stat] - 1
+                refresh()
+            end
+        end, MINUS_X, y - 7, BUTTON_W, BUTTON_H))
+
+        add_rect(root, PLUS_X, y - 7, BUTTON_W, BUTTON_H, 50, 120, 58, 235)
+        add_text(root, "+", PLUS_X + 23, y - 3, 0xFFFFFFFF, 2.0)
+        root:add_child(aris.client.create_clickable(function()
+            if pending_total() < (current.points or 0) then
+                pending[stat] = (pending[stat] or 0) + 1
+                refresh()
+            else
+                aris.game.client.send_system_message("[스탯] 사용 가능한 스탯 포인트가 없습니다.")
+            end
+        end, PLUS_X, y - 7, BUTTON_W, BUTTON_H))
 
         rows[stat] = { value = value }
     end
 
-    add_rect(root, 208, HEIGHT - 52, 104, 34, 70, 70, 88, 230)
-    add_text(root, "닫기", 236, HEIGHT - 45, 0xFFFFFFFF, 1.5)
+    add_rect(root, 138, HEIGHT - 52, 104, 34, 50, 120, 58, 230)
+    add_text(root, "적용", 166, HEIGHT - 45, 0xFFFFFFFF, 1.5)
+    root:add_child(aris.client.create_clickable(function()
+        send_apply()
+    end, 138, HEIGHT - 52, 104, 34))
+
+    add_rect(root, 278, HEIGHT - 52, 104, 34, 70, 70, 88, 230)
+    add_text(root, "닫기", 306, HEIGHT - 45, 0xFFFFFFFF, 1.5)
     root:add_child(aris.client.create_clickable(function()
         close_screen()
-    end, 208, HEIGHT - 52, 104, 34))
+    end, 278, HEIGHT - 52, 104, 34))
 end
 
-local function refresh()
+refresh = function()
     create_once()
-    points_text:set_text("보유 포인트: " .. tostring(current.points or 0))
+    points_text:set_text("보유 포인트: " .. tostring((current.points or 0) - pending_total()))
     for _, stat in ipairs(STAT_ORDER) do
         if rows[stat] ~= nil then
-            rows[stat].value:set_text(tostring(current[stat] or 0))
+            local base = current[stat] or 0
+            local add = pending[stat] or 0
+            if add > 0 then
+                rows[stat].value:set_text(tostring(base + add) .. " (+" .. tostring(add) .. ")")
+            else
+                rows[stat].value:set_text(tostring(base))
+            end
         end
     end
 end
@@ -144,6 +196,7 @@ aris.game.client.hook.add_s2c_packet_handler("stats_sync", function(packet)
     current.int = tonumber(decoded.int) or 0
     current.vit = tonumber(decoded.vit) or 0
     current.luk = tonumber(decoded.luk) or 0
+    reset_pending()
     open_screen()
 end)
 
