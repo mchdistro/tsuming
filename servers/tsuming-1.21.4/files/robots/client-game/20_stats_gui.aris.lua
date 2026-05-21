@@ -1,5 +1,3 @@
-depends_on("00_lunajson_loader.aris")
-
 local WIDTH = 520
 local HEIGHT = 360
 local START_X = 700
@@ -58,7 +56,11 @@ local function send_apply()
         return
     end
     local packet = aris.game.client.networking.create_c2s_packet_builder("stats_apply_points")
-    packet:append_string("payload", JSON.encode(pending))
+    packet:append_int("str", pending.str or 0)
+    packet:append_int("agi", pending.agi or 0)
+    packet:append_int("int", pending.int or 0)
+    packet:append_int("vit", pending.vit or 0)
+    packet:append_int("luk", pending.luk or 0)
     aris.game.client.networking.send_c2s_packet(packet)
 end
 
@@ -179,23 +181,12 @@ local function open_screen()
 end
 
 aris.game.client.hook.add_s2c_packet_handler("stats_sync", function(packet)
-    aris.game.client.send_system_message("[stats] stats_sync received")
-    if JSON == nil then
-        aris.game.client.send_system_message("[stats] JSON is nil; check lua_libs in client profile")
-        return
-    end
-    local ok, decoded = pcall(JSON.decode, packet.payload or "{}")
-    if not ok then
-        aris.game.client.send_system_message("스탯 데이터를 읽지 못했습니다.")
-        return
-    end
-
-    current.points = tonumber(decoded.points) or 0
-    current.str = tonumber(decoded.str) or 0
-    current.agi = tonumber(decoded.agi) or 0
-    current.int = tonumber(decoded.int) or 0
-    current.vit = tonumber(decoded.vit) or 0
-    current.luk = tonumber(decoded.luk) or 0
+    current.points = tonumber(packet.points) or 0
+    current.str = tonumber(packet.str) or 0
+    current.agi = tonumber(packet.agi) or 0
+    current.int = tonumber(packet.int) or 0
+    current.vit = tonumber(packet.vit) or 0
+    current.luk = tonumber(packet.luk) or 0
     reset_pending()
     open_screen()
 end)

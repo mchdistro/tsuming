@@ -1,8 +1,22 @@
 local sync_packet = aris.init.networking.create_s2c_packet("stats_sync")
-sync_packet:append(aris.init.networking.string_arg("payload"))
+sync_packet:append(aris.init.networking.string_arg("uuid"))
+sync_packet:append(aris.init.networking.string_arg("name"))
+sync_packet:append(aris.init.networking.integer_arg("points"))
+sync_packet:append(aris.init.networking.integer_arg("str"))
+sync_packet:append(aris.init.networking.integer_arg("agi"))
+sync_packet:append(aris.init.networking.integer_arg("int"))
+sync_packet:append(aris.init.networking.integer_arg("vit"))
+sync_packet:append(aris.init.networking.integer_arg("luk"))
 
 local add_packet = aris.init.networking.create_c2s_packet("stats_add_point")
 add_packet:append(aris.init.networking.string_arg("stat"))
+
+local apply_packet = aris.init.networking.create_c2s_packet("stats_apply_points")
+apply_packet:append(aris.init.networking.integer_arg("str"))
+apply_packet:append(aris.init.networking.integer_arg("agi"))
+apply_packet:append(aris.init.networking.integer_arg("int"))
+apply_packet:append(aris.init.networking.integer_arg("vit"))
+apply_packet:append(aris.init.networking.integer_arg("luk"))
 
 local open_packet = aris.init.networking.create_c2s_packet("stats_open_request")
 open_packet:append(aris.init.networking.string_arg("reason"))

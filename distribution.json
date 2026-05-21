@@ -318,9 +318,9 @@
           "type": "File",
           "artifact": {
             "size": 5644,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/archer/icon_blasting_combo.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/archer/icon_blasting_combo.png",
             "MD5": "70fa163777dad9d7dfb31cf589fa0123",
-            "path": "images/skill_hud/archer/icon_blasting_combo.png"
+            "path": "assets/images/skill_hud/archer/icon_blasting_combo.png"
           }
         },
         {
@@ -329,9 +329,9 @@
           "type": "File",
           "artifact": {
             "size": 7008,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/archer/icon_evasive_shot.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/archer/icon_evasive_shot.png",
             "MD5": "ed017aca76d9c7c1f2c7156860bd29be",
-            "path": "images/skill_hud/archer/icon_evasive_shot.png"
+            "path": "assets/images/skill_hud/archer/icon_evasive_shot.png"
           }
         },
         {
@@ -340,9 +340,9 @@
           "type": "File",
           "artifact": {
             "size": 7367,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/archer/icon_piercing_skyfall.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/archer/icon_piercing_skyfall.png",
             "MD5": "73d53f6c1e30b037bf52ca18b8c75d84",
-            "path": "images/skill_hud/archer/icon_piercing_skyfall.png"
+            "path": "assets/images/skill_hud/archer/icon_piercing_skyfall.png"
           }
         },
         {
@@ -351,9 +351,9 @@
           "type": "File",
           "artifact": {
             "size": 8597,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/archer/icon_rapid_arrows.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/archer/icon_rapid_arrows.png",
             "MD5": "5246d3c2b82f6a691b37bf8f7386adf0",
-            "path": "images/skill_hud/archer/icon_rapid_arrows.png"
+            "path": "assets/images/skill_hud/archer/icon_rapid_arrows.png"
           }
         },
         {
@@ -362,9 +362,9 @@
           "type": "File",
           "artifact": {
             "size": 7632,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/archer/icon_shot_of_destruction.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/archer/icon_shot_of_destruction.png",
             "MD5": "83686104ba9c22dbe15bdcf26193f720",
-            "path": "images/skill_hud/archer/icon_shot_of_destruction.png"
+            "path": "assets/images/skill_hud/archer/icon_shot_of_destruction.png"
           }
         },
         {
@@ -373,9 +373,9 @@
           "type": "File",
           "artifact": {
             "size": 4550,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/archer/icon_volley_of_arrows.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/archer/icon_volley_of_arrows.png",
             "MD5": "abaef129f7d6c765db4ee79ec2d9c467",
-            "path": "images/skill_hud/archer/icon_volley_of_arrows.png"
+            "path": "assets/images/skill_hud/archer/icon_volley_of_arrows.png"
           }
         },
         {
@@ -384,9 +384,9 @@
           "type": "File",
           "artifact": {
             "size": 4403,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/assassin/icon_crimson_arc.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/assassin/icon_crimson_arc.png",
             "MD5": "a9de0cfef86f289a0b2210180949b4aa",
-            "path": "images/skill_hud/assassin/icon_crimson_arc.png"
+            "path": "assets/images/skill_hud/assassin/icon_crimson_arc.png"
           }
         },
         {
@@ -395,9 +395,9 @@
           "type": "File",
           "artifact": {
             "size": 4175,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/assassin/icon_death_bloom.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/assassin/icon_death_bloom.png",
             "MD5": "1068488484fe9f5443c237da45595383",
-            "path": "images/skill_hud/assassin/icon_death_bloom.png"
+            "path": "assets/images/skill_hud/assassin/icon_death_bloom.png"
           }
         },
         {
@@ -406,9 +406,9 @@
           "type": "File",
           "artifact": {
             "size": 4078,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/assassin/icon_last_dance.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/assassin/icon_last_dance.png",
             "MD5": "420e601e44b0d20cf2d6bf0a676878fe",
-            "path": "images/skill_hud/assassin/icon_last_dance.png"
+            "path": "assets/images/skill_hud/assassin/icon_last_dance.png"
           }
         },
         {
@@ -417,9 +417,9 @@
           "type": "File",
           "artifact": {
             "size": 4052,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/assassin/icon_lethal_combo.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/assassin/icon_lethal_combo.png",
             "MD5": "4af91d540f84c6282c9d10bd50e764a2",
-            "path": "images/skill_hud/assassin/icon_lethal_combo.png"
+            "path": "assets/images/skill_hud/assassin/icon_lethal_combo.png"
           }
         },
         {
@@ -428,9 +428,9 @@
           "type": "File",
           "artifact": {
             "size": 3622,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/assassin/icon_ravaging_dash.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/assassin/icon_ravaging_dash.png",
             "MD5": "05e84bf9544e881295c8732c627c9a52",
-            "path": "images/skill_hud/assassin/icon_ravaging_dash.png"
+            "path": "assets/images/skill_hud/assassin/icon_ravaging_dash.png"
           }
         },
         {
@@ -439,9 +439,9 @@
           "type": "File",
           "artifact": {
             "size": 4780,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/assassin/icon_shadowquake.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/assassin/icon_shadowquake.png",
             "MD5": "6bfb5dcf1c00f1a45980da6f3eee2832",
-            "path": "images/skill_hud/assassin/icon_shadowquake.png"
+            "path": "assets/images/skill_hud/assassin/icon_shadowquake.png"
           }
         },
         {
@@ -450,9 +450,9 @@
           "type": "File",
           "artifact": {
             "size": 7735,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/mage/icon_blazing_barrage.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/mage/icon_blazing_barrage.png",
             "MD5": "e1ea3e074c190fd533265b39ece3c63a",
-            "path": "images/skill_hud/mage/icon_blazing_barrage.png"
+            "path": "assets/images/skill_hud/mage/icon_blazing_barrage.png"
           }
         },
         {
@@ -461,9 +461,9 @@
           "type": "File",
           "artifact": {
             "size": 6828,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/mage/icon_cryo_prison.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/mage/icon_cryo_prison.png",
             "MD5": "0e0837d5190c3d31c4a5d13d7dfbd1f3",
-            "path": "images/skill_hud/mage/icon_cryo_prison.png"
+            "path": "assets/images/skill_hud/mage/icon_cryo_prison.png"
           }
         },
         {
@@ -472,9 +472,9 @@
           "type": "File",
           "artifact": {
             "size": 6618,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/mage/icon_hailpiercer.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/mage/icon_hailpiercer.png",
             "MD5": "fea6484e201ae9a6c1098aec8bb882e8",
-            "path": "images/skill_hud/mage/icon_hailpiercer.png"
+            "path": "assets/images/skill_hud/mage/icon_hailpiercer.png"
           }
         },
         {
@@ -483,9 +483,9 @@
           "type": "File",
           "artifact": {
             "size": 8271,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/mage/icon_meteor_of_doom.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/mage/icon_meteor_of_doom.png",
             "MD5": "68e8aab4a13ee98c52242ef3c3ad092d",
-            "path": "images/skill_hud/mage/icon_meteor_of_doom.png"
+            "path": "assets/images/skill_hud/mage/icon_meteor_of_doom.png"
           }
         },
         {
@@ -494,9 +494,9 @@
           "type": "File",
           "artifact": {
             "size": 5371,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/mage/icon_sorcery_combo.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/mage/icon_sorcery_combo.png",
             "MD5": "f7cf37f40ef255dfd960e97be2f496a1",
-            "path": "images/skill_hud/mage/icon_sorcery_combo.png"
+            "path": "assets/images/skill_hud/mage/icon_sorcery_combo.png"
           }
         },
         {
@@ -505,9 +505,9 @@
           "type": "File",
           "artifact": {
             "size": 6537,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/mage/icon_teleport_strike.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/mage/icon_teleport_strike.png",
             "MD5": "4bb5ae97c2941f5b2da88c87d9195b66",
-            "path": "images/skill_hud/mage/icon_teleport_strike.png"
+            "path": "assets/images/skill_hud/mage/icon_teleport_strike.png"
           }
         },
         {
@@ -516,9 +516,9 @@
           "type": "File",
           "artifact": {
             "size": 6876,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/shaman/icon_ancestral_hands.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/shaman/icon_ancestral_hands.png",
             "MD5": "0d4a3494fd08f39aac3dac830eb6bb72",
-            "path": "images/skill_hud/shaman/icon_ancestral_hands.png"
+            "path": "assets/images/skill_hud/shaman/icon_ancestral_hands.png"
           }
         },
         {
@@ -527,9 +527,9 @@
           "type": "File",
           "artifact": {
             "size": 4605,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/shaman/icon_earthen_embrace.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/shaman/icon_earthen_embrace.png",
             "MD5": "25af1edae3e1e86da2fcaa091b70a6de",
-            "path": "images/skill_hud/shaman/icon_earthen_embrace.png"
+            "path": "assets/images/skill_hud/shaman/icon_earthen_embrace.png"
           }
         },
         {
@@ -538,9 +538,9 @@
           "type": "File",
           "artifact": {
             "size": 6353,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/shaman/icon_echo_step.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/shaman/icon_echo_step.png",
             "MD5": "e306f6f8a3001b75df97d1755a7d7c63",
-            "path": "images/skill_hud/shaman/icon_echo_step.png"
+            "path": "assets/images/skill_hud/shaman/icon_echo_step.png"
           }
         },
         {
@@ -549,9 +549,9 @@
           "type": "File",
           "artifact": {
             "size": 7710,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/shaman/icon_primal_combo.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/shaman/icon_primal_combo.png",
             "MD5": "7ea3f58c34e0fdb1aba1795225d6ae06",
-            "path": "images/skill_hud/shaman/icon_primal_combo.png"
+            "path": "assets/images/skill_hud/shaman/icon_primal_combo.png"
           }
         },
         {
@@ -560,9 +560,9 @@
           "type": "File",
           "artifact": {
             "size": 6159,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/shaman/icon_ritual_totem.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/shaman/icon_ritual_totem.png",
             "MD5": "6910c5dc91730ae7647ac85d9babe6a1",
-            "path": "images/skill_hud/shaman/icon_ritual_totem.png"
+            "path": "assets/images/skill_hud/shaman/icon_ritual_totem.png"
           }
         },
         {
@@ -571,9 +571,9 @@
           "type": "File",
           "artifact": {
             "size": 6969,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/shaman/icon_stance_switch.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/shaman/icon_stance_switch.png",
             "MD5": "7f18f364d4e01dce6180eaff735d931e",
-            "path": "images/skill_hud/shaman/icon_stance_switch.png"
+            "path": "assets/images/skill_hud/shaman/icon_stance_switch.png"
           }
         },
         {
@@ -582,9 +582,9 @@
           "type": "File",
           "artifact": {
             "size": 8435,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/summoner/icon_blade_wheel.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/summoner/icon_blade_wheel.png",
             "MD5": "b4a0b36a841725178b5df2f8b055d52d",
-            "path": "images/skill_hud/summoner/icon_blade_wheel.png"
+            "path": "assets/images/skill_hud/summoner/icon_blade_wheel.png"
           }
         },
         {
@@ -593,9 +593,9 @@
           "type": "File",
           "artifact": {
             "size": 7364,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/summoner/icon_soul_combo.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/summoner/icon_soul_combo.png",
             "MD5": "5364b019c7f008c980c66acaf67ca118",
-            "path": "images/skill_hud/summoner/icon_soul_combo.png"
+            "path": "assets/images/skill_hud/summoner/icon_soul_combo.png"
           }
         },
         {
@@ -604,9 +604,9 @@
           "type": "File",
           "artifact": {
             "size": 7871,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/summoner/icon_soul_spear.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/summoner/icon_soul_spear.png",
             "MD5": "9d486e3684c3a5e14e116aefbd45cea9",
-            "path": "images/skill_hud/summoner/icon_soul_spear.png"
+            "path": "assets/images/skill_hud/summoner/icon_soul_spear.png"
           }
         },
         {
@@ -615,9 +615,9 @@
           "type": "File",
           "artifact": {
             "size": 6127,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/summoner/icon_summoners_command.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/summoner/icon_summoners_command.png",
             "MD5": "315c6cf6977603ebcc53abfe65ca5ce1",
-            "path": "images/skill_hud/summoner/icon_summoners_command.png"
+            "path": "assets/images/skill_hud/summoner/icon_summoners_command.png"
           }
         },
         {
@@ -626,9 +626,9 @@
           "type": "File",
           "artifact": {
             "size": 8235,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/summoner/icon_summon_dragon.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/summoner/icon_summon_dragon.png",
             "MD5": "eb4a0252ca6f58fdcde4e9c8a9645d50",
-            "path": "images/skill_hud/summoner/icon_summon_dragon.png"
+            "path": "assets/images/skill_hud/summoner/icon_summon_dragon.png"
           }
         },
         {
@@ -637,9 +637,9 @@
           "type": "File",
           "artifact": {
             "size": 8269,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/summoner/icon_summon_minion.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/summoner/icon_summon_minion.png",
             "MD5": "f845b3ac0a3a05b0ab4be4ad3ed82613",
-            "path": "images/skill_hud/summoner/icon_summon_minion.png"
+            "path": "assets/images/skill_hud/summoner/icon_summon_minion.png"
           }
         },
         {
@@ -648,9 +648,9 @@
           "type": "File",
           "artifact": {
             "size": 5611,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/warrior/icon_berserkers_leap.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/warrior/icon_berserkers_leap.png",
             "MD5": "0a27c107e87dc25f861d81d585f24c8a",
-            "path": "images/skill_hud/warrior/icon_berserkers_leap.png"
+            "path": "assets/images/skill_hud/warrior/icon_berserkers_leap.png"
           }
         },
         {
@@ -659,9 +659,9 @@
           "type": "File",
           "artifact": {
             "size": 6302,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/warrior/icon_bloodbound_barrier.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/warrior/icon_bloodbound_barrier.png",
             "MD5": "735c30f988718836d95256a45f5617e1",
-            "path": "images/skill_hud/warrior/icon_bloodbound_barrier.png"
+            "path": "assets/images/skill_hud/warrior/icon_bloodbound_barrier.png"
           }
         },
         {
@@ -670,9 +670,9 @@
           "type": "File",
           "artifact": {
             "size": 3862,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/warrior/icon_brutal_combo.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/warrior/icon_brutal_combo.png",
             "MD5": "8e9501552a906ea2dda8f8a43bc5c8af",
-            "path": "images/skill_hud/warrior/icon_brutal_combo.png"
+            "path": "assets/images/skill_hud/warrior/icon_brutal_combo.png"
           }
         },
         {
@@ -681,9 +681,9 @@
           "type": "File",
           "artifact": {
             "size": 5731,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/warrior/icon_relentless_whirlwind.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/warrior/icon_relentless_whirlwind.png",
             "MD5": "0baa015e8ccfda555e36234f22076c50",
-            "path": "images/skill_hud/warrior/icon_relentless_whirlwind.png"
+            "path": "assets/images/skill_hud/warrior/icon_relentless_whirlwind.png"
           }
         },
         {
@@ -692,9 +692,9 @@
           "type": "File",
           "artifact": {
             "size": 6939,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/warrior/icon_strike_of_fury.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/warrior/icon_strike_of_fury.png",
             "MD5": "16fe4b469ee0b382ca22acd88106e0ed",
-            "path": "images/skill_hud/warrior/icon_strike_of_fury.png"
+            "path": "assets/images/skill_hud/warrior/icon_strike_of_fury.png"
           }
         },
         {
@@ -703,9 +703,9 @@
           "type": "File",
           "artifact": {
             "size": 5967,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/images/skill_hud/warrior/icon_vicious_strike.png",
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/assets/images/skill_hud/warrior/icon_vicious_strike.png",
             "MD5": "b248178ec6a6270817ab19ac0b49b4b2",
-            "path": "images/skill_hud/warrior/icon_vicious_strike.png"
+            "path": "assets/images/skill_hud/warrior/icon_vicious_strike.png"
           }
         },
         {
@@ -15133,9 +15133,9 @@
           "name": "20_stats_gui.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 6036,
+            "size": 5745,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/20_stats_gui.aris.lua",
-            "MD5": "8f494cb47ab071a0b4d3b6a457c02627",
+            "MD5": "f43470374488c2a2ebba4551ff5995e6",
             "path": "robots/client-game/20_stats_gui.aris.lua"
           }
         },
@@ -15155,263 +15155,10 @@
           "name": "20_stats_packets.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 564,
+            "size": 1225,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/20_stats_packets.aris.lua",
-            "MD5": "a83f4c4455e332b67efc3adc8f5154e5",
+            "MD5": "a145f76807c490b3504f90cd2efcf2c8",
             "path": "robots/client-init/20_stats_packets.aris.lua"
-          }
-        },
-        {
-          "id": "00_converted_missing_animations.aris.lua",
-          "name": "00_converted_missing_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 16680,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/00_converted_missing_animations.aris.lua",
-            "MD5": "3d6a1fb5492c147023232f01c006e90a",
-            "path": "robots/game/00_converted_missing_animations.aris.lua"
-          }
-        },
-        {
-          "id": "00_gecko_resource_animations.aris.lua",
-          "name": "00_gecko_resource_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 6089,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/00_gecko_resource_animations.aris.lua",
-            "MD5": "ea1f84681a54bae39c6802fbb026e440",
-            "path": "robots/game/00_gecko_resource_animations.aris.lua"
-          }
-        },
-        {
-          "id": "00_lunajson_loader.aris.lua",
-          "name": "00_lunajson_loader.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 383,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/00_lunajson_loader.aris.lua",
-            "MD5": "b1dfab87302664994b76da705557efbe",
-            "path": "robots/game/00_lunajson_loader.aris.lua"
-          }
-        },
-        {
-          "id": "01_gecko_resource_auto_animations.aris.lua",
-          "name": "01_gecko_resource_auto_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 4837,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/01_gecko_resource_auto_animations.aris.lua",
-            "MD5": "a520d042320aa86f3bce5aec661b50a8",
-            "path": "robots/game/01_gecko_resource_auto_animations.aris.lua"
-          }
-        },
-        {
-          "id": "02_gecko_resource_goals.aris.lua",
-          "name": "02_gecko_resource_goals.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 6189,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/02_gecko_resource_goals.aris.lua",
-            "MD5": "3488b9ab0bb14c9a2d77adc28af7d090",
-            "path": "robots/game/02_gecko_resource_goals.aris.lua"
-          }
-        },
-        {
-          "id": "03_awakened_assassin_animations.aris.lua",
-          "name": "03_awakened_assassin_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 1783,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/03_awakened_assassin_animations.aris.lua",
-            "MD5": "a042edcfaa6fc51892d70d2bb475a47c",
-            "path": "robots/game/03_awakened_assassin_animations.aris.lua"
-          }
-        },
-        {
-          "id": "04_awakened_warrior_animations.aris.lua",
-          "name": "04_awakened_warrior_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 2452,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/04_awakened_warrior_animations.aris.lua",
-            "MD5": "d2ece91c144bf0dc021d113b8deaead4",
-            "path": "robots/game/04_awakened_warrior_animations.aris.lua"
-          }
-        },
-        {
-          "id": "05_awakened_mage_animations.aris.lua",
-          "name": "05_awakened_mage_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 1748,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/05_awakened_mage_animations.aris.lua",
-            "MD5": "96c4508a9487381439c379c84b28d85c",
-            "path": "robots/game/05_awakened_mage_animations.aris.lua"
-          }
-        },
-        {
-          "id": "05_converted_missing_animations.aris.lua",
-          "name": "05_converted_missing_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 16680,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/05_converted_missing_animations.aris.lua",
-            "MD5": "3d6a1fb5492c147023232f01c006e90a",
-            "path": "robots/game/05_converted_missing_animations.aris.lua"
-          }
-        },
-        {
-          "id": "06_awakened_summoner_animations.aris.lua",
-          "name": "06_awakened_summoner_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 2043,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/06_awakened_summoner_animations.aris.lua",
-            "MD5": "113cd1967f8ba097a8d47dac169f7d2f",
-            "path": "robots/game/06_awakened_summoner_animations.aris.lua"
-          }
-        },
-        {
-          "id": "07_awakened_shaman_animations.aris.lua",
-          "name": "07_awakened_shaman_animations.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 1016,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/07_awakened_shaman_animations.aris.lua",
-            "MD5": "3ac1769989e78852d8d2fcabdbc39042",
-            "path": "robots/game/07_awakened_shaman_animations.aris.lua"
-          }
-        },
-        {
-          "id": "10_awakened_hud_shared.aris.lua",
-          "name": "10_awakened_hud_shared.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 2772,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/10_awakened_hud_shared.aris.lua",
-            "MD5": "23c0abda9c0f701b4241c9f6c487dbff",
-            "path": "robots/game/10_awakened_hud_shared.aris.lua"
-          }
-        },
-        {
-          "id": "20_stats_core.aris.lua",
-          "name": "20_stats_core.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 6801,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/20_stats_core.aris.lua",
-            "MD5": "bb2342faa5029ca7f0bec0d68e345fc2",
-            "path": "robots/game/20_stats_core.aris.lua"
-          }
-        },
-        {
-          "id": "20_stats_system.aris.lua",
-          "name": "20_stats_system.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 9020,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/20_stats_system.aris.lua",
-            "MD5": "0d817e0de9fe0c83c24f5c1a958b210c",
-            "path": "robots/game/20_stats_system.aris.lua"
-          }
-        },
-        {
-          "id": "21_stats_runtime.aris.lua",
-          "name": "21_stats_runtime.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 3243,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/21_stats_runtime.aris.lua",
-            "MD5": "47701a386a607201fb971520d9ab785e",
-            "path": "robots/game/21_stats_runtime.aris.lua"
-          }
-        },
-        {
-          "id": "22_stats_storage.aris.lua",
-          "name": "22_stats_storage.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 6028,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/22_stats_storage.aris.lua",
-            "MD5": "dd7f85743188c70411945f3ce626f102",
-            "path": "robots/game/22_stats_storage.aris.lua"
-          }
-        },
-        {
-          "id": "94_awakened_shaman.aris.lua",
-          "name": "94_awakened_shaman.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 30980,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/94_awakened_shaman.aris.lua",
-            "MD5": "aba57b86a1b516c1f6b536636baf8423",
-            "path": "robots/game/94_awakened_shaman.aris.lua"
-          }
-        },
-        {
-          "id": "95_awakened_summoner.aris.lua",
-          "name": "95_awakened_summoner.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 32256,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/95_awakened_summoner.aris.lua",
-            "MD5": "f5ae2993822e2b070bd284e139b42146",
-            "path": "robots/game/95_awakened_summoner.aris.lua"
-          }
-        },
-        {
-          "id": "96_awakened_mage.aris.lua",
-          "name": "96_awakened_mage.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 33860,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/96_awakened_mage.aris.lua",
-            "MD5": "b8f1ad4bf3b7595a80a7f97dadf168df",
-            "path": "robots/game/96_awakened_mage.aris.lua"
-          }
-        },
-        {
-          "id": "97_awakened_warrior.aris.lua",
-          "name": "97_awakened_warrior.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 29922,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/97_awakened_warrior.aris.lua",
-            "MD5": "5d146cd1e18846b59080c1235e61c9f9",
-            "path": "robots/game/97_awakened_warrior.aris.lua"
-          }
-        },
-        {
-          "id": "98_awakened_assassin.aris.lua",
-          "name": "98_awakened_assassin.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 32844,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/98_awakened_assassin.aris.lua",
-            "MD5": "3cfcdb116bcada07e3e29fd27ba328a4",
-            "path": "robots/game/98_awakened_assassin.aris.lua"
-          }
-        },
-        {
-          "id": "awakened_archer.aris.lua",
-          "name": "awakened_archer.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 29674,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/awakened_archer.aris.lua",
-            "MD5": "4725c85f96c5e0332da81c521b8b4cb8",
-            "path": "robots/game/awakened_archer.aris.lua"
-          }
-        },
-        {
-          "id": "awakened_shaman.game.aris.lua",
-          "name": "awakened_shaman.game.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 18139,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/game/awakened_shaman.game.aris.lua",
-            "MD5": "9cbabb032a332b00568b0e8c5f653c91",
-            "path": "robots/game/awakened_shaman.game.aris.lua"
           }
         },
         {
@@ -15430,9 +15177,9 @@
           "name": "20_stats_packets.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 2116,
+            "size": 2924,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/20_stats_packets.aris.lua",
-            "MD5": "fca1dca07bbb5048651563941a4eb0ae",
+            "MD5": "963cae6c3f95c3adc26ddab69dcb660e",
             "path": "robots/init/20_stats_packets.aris.lua"
           }
         },
