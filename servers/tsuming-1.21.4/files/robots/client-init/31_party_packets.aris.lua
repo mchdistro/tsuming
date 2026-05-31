@@ -1,0 +1,15 @@
+-- 파티 패킷 선언 (클라 측 — init 파일과 필드 순서/개수 일치 필수)
+local sync_packet = aris.init.networking.create_s2c_packet("party_sync")
+sync_packet:append(aris.init.networking.integer_arg("in_party"))
+sync_packet:append(aris.init.networking.integer_arg("members"))
+sync_packet:append(aris.init.networking.string_arg("leader"))
+sync_packet:append(aris.init.networking.string_arg("member_names"))
+sync_packet:append(aris.init.networking.string_arg("leader_name"))
+sync_packet:append(aris.init.networking.integer_arg("has_invite"))
+
+local health_packet = aris.init.networking.create_s2c_packet("party_health")
+health_packet:append(aris.init.networking.string_arg("data"))
+
+local action_packet = aris.init.networking.create_c2s_packet("party_gui_action")
+action_packet:append(aris.init.networking.string_arg("action"))
+action_packet:append(aris.init.networking.string_arg("value"))

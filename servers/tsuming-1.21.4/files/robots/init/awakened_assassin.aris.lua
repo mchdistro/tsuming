@@ -1,5 +1,5 @@
 local attr = aris.init.geckolib.entity_attr()
-attr:max_health(1000000)
+attr:max_health(1856794)
 attr:armor(1000000)
 attr:movement_speed(0)
 attr:follow_range(2048)

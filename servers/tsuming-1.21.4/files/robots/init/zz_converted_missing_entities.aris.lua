@@ -5,8 +5,93 @@ attr:armor(0)
 attr:movement_speed(0.25)
 attr:follow_range(16)
 
+local entity_health = {
+    ashen_azalea = 30,
+    beluga = 70,
+    black_angler_fish = 32,
+    deep_angler_fish = 32,
+    ecabyssosaurus = 300,
+    ecamonite = 30,
+    ecaquilolamna = 300,
+    ecaquilolamnababy = 300,
+    ecarchelon = 100,
+    ecatopodentatus = 100,
+    ecbabyaquilolamna = 300,
+    ecbabyelasmosaurus = 300,
+    ecbabymosasaurus = 150,
+    ecbabyophthalmosaurus = 300,
+    ecbabyplesiosaurus = 300,
+    ecbabyshastasaurus = 150,
+    eccartornychus = 100,
+    ecclidastes = 300,
+    eccoelacanth = 30,
+    eccogboundicarosphinx = 1000,
+    ecdunkleosteus = 300,
+    ecdunkleosteusbaby = 100,
+    ecelasmosaurus = 300,
+    ecelasmosaurusbaby = 300,
+    ecichtyosaurus = 300,
+    ecleedsichthys = 600,
+    ecleviathan = 600,
+    ["ec-leviathan"] = 500,
+    ecleviathanbaby = 150,
+    ecliopleurodon = 600,
+    ecliopleurodonbaby = 150,
+    ecmosasaurus = 600,
+    ecmosasaurusbaby = 150,
+    ecophthalmosaurus = 300,
+    ecplesiosaurus = 300,
+    ecplesiosaurusbaby = 300,
+    ecseascorpion = 30,
+    ecshastasaurus = 600,
+    ecshastasaurusbaby = 150,
+    em_dskeleton_archer = 30,
+    em_dskeleton_footman = 20,
+    em_dskeleton_halberdier = 30,
+    em_dskeleton_swordman = 26,
+    em_dskeleton_tank = 66,
+    em_dskeleton_warrior = 36,
+    em_dskeleton_wizard = 45,
+    ent_guardian = 200,
+    ent_king = 350,
+    ent_minion = 15,
+    ent_sorcerer = 25,
+    ent_warrior = 30,
+    greatwhale = 200,
+    harmony_hare = 30,
+    ice_knight = 200,
+    ["ice_knight-minion-shield"] = 120,
+    ["ice_knight-minion-spear"] = 50,
+    ["ice_knight-minion-sword"] = 80,
+    lurking_lily = 100,
+    malevolent_moss = 100,
+    mystic_stag = 30,
+    narwhal = 50,
+    nectar_spider = 60,
+    nocsy_dragon = 800,
+    nocsy_dragon_saddled_version = 800,
+    octopus = 130,
+    poisonous_bloom = 500,
+    red_angler_fish = 32,
+    rootling = 20,
+    the_soulrot = 100,
+    vivid_viper = 60,
+    whispering_willow = 100,
+    whispering_wisteria = 100,
+}
+
+local function create_default_attr(key)
+    local attr = aris.init.geckolib.entity_attr()
+    attr:max_health(entity_health[key] or 20)
+    attr:attack_damage(2)
+    attr:armor(0)
+    attr:movement_speed(0.25)
+    attr:follow_range(16)
+    return attr
+end
+
 local vfx_attr = aris.init.geckolib.entity_attr()
-vfx_attr:max_health(1000000)
+vfx_attr:max_health(1856794)
 vfx_attr:armor(1000000)
 vfx_attr:movement_speed(0)
 vfx_attr:follow_range(2048)
@@ -110,6 +195,105 @@ local entity_sizes = {
     whispering_wisteria = { 2.5, 4.5 },
 }
 
+local entity_hitbox_height = {
+    aquamarine = 2,
+    ashen_azalea = 11,
+    beluga = 2,
+    black_angler_fish = 2,
+    bronze = 2,
+    cerberus = 9,
+    cocoon = 3,
+    deep_angler_fish = 2,
+    diamond = 2,
+    ecabyssosaurus = 3,
+    ecamonite = 3,
+    ecaquilolamna = 5,
+    ecaquilolamnababy = 2,
+    ecarchelon = 3,
+    ecatopodentatus = 2,
+    ecbabyaquilolamna = 2,
+    ecbabyelasmosaurus = 2,
+    ecbabymosasaurus = 2,
+    ecbabyophthalmosaurus = 2,
+    ecbabyplesiosaurus = 2,
+    ecbabyshastasaurus = 2,
+    eccartornychus = 2,
+    ecclidastes = 3,
+    eccoelacanth = 2,
+    eccogboundicarosphinx = 15,
+    ecdunkleosteus = 6,
+    ecdunkleosteusbaby = 3,
+    ecelasmosaurus = 3,
+    ecelasmosaurusbaby = 2,
+    ecichtyosaurus = 2,
+    ecleedsichthys = 10,
+    ecleviathan = 9,
+    ["ec-leviathan"] = 2,
+    ["ec-leviathan_seg"] = 7,
+    ecleviathanbaby = 3,
+    ecliopleurodon = 6,
+    ecliopleurodonbaby = 2,
+    ecmosasaurus = 10,
+    ecmosasaurusbaby = 2,
+    ecophthalmosaurus = 3,
+    ecplesiosaurus = 2,
+    ecplesiosaurusbaby = 2,
+    ecseascorpion = 2,
+    ecshastasaurus = 5,
+    ecshastasaurusbaby = 2,
+    em_dskeleton_archer = 3,
+    em_dskeleton_footman = 3,
+    em_dskeleton_halberdier = 3,
+    em_dskeleton_swordman = 3,
+    em_dskeleton_tank = 3,
+    em_dskeleton_variations = 4,
+    em_dskeleton_warrior = 3,
+    em_dskeleton_wizard = 3,
+    emerald = 2,
+    ent_guardian = 6,
+    ent_king = 6,
+    ent_minion = 2,
+    ent_sorcerer = 3,
+    ent_warrior = 3,
+    frostmite = 3,
+    frozen_blaze = 3,
+    garnet = 2,
+    gnut = 3,
+    gold = 2,
+    greatwhale = 5,
+    harmony_hare = 2,
+    ice_knight = 6,
+    ["ice_knight-minion-shield"] = 3,
+    ["ice_knight-minion-spear"] = 3,
+    ["ice_knight-minion-sword"] = 3,
+    ice_witch = 3,
+    iceologer = 3,
+    iron = 2,
+    lapis = 2,
+    lurking_lily = 4,
+    malevolent_moss = 5,
+    mystic_stag = 4,
+    narwhal = 2,
+    nectar_spider = 3,
+    nocsy_dragon = 6,
+    nocsy_dragon_saddled_version = 6,
+    obsidian = 2,
+    octopus = 2,
+    poison_targe = 1,
+    poisonous_bloom = 8,
+    red_angler_fish = 2,
+    redstone = 2,
+    rootling = 2,
+    ruby = 2,
+    sapphire = 2,
+    snowball_spirit = 1,
+    the_soulrot = 6,
+    undead_ice_warrior = 4,
+    vivid_viper = 2,
+    whispering_willow = 4,
+    whispering_wisteria = 4,
+}
+
 local vfx_entities = {
     "circular_branch",
     "em_dskeleton_fire_resources",
@@ -140,8 +324,12 @@ local vfx_entities = {
     "vfx-ice_pillar",
 }
 
+local function create_entity_with_hitbox(key, size)
+    aris.init.geckolib.create_entity(key, size[1], entity_hitbox_height[key] or size[2], create_default_attr(key))
+end
+
 for key, size in pairs(entity_sizes) do
-    aris.init.geckolib.create_entity(key, size[1], size[2], attr)
+    create_entity_with_hitbox(key, size)
 end
 
 for _, key in ipairs(vfx_entities) do

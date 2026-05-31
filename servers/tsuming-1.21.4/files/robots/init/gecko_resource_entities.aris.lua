@@ -5,8 +5,74 @@ default_attr:armor(0)
 default_attr:movement_speed(0.25)
 default_attr:follow_range(16)
 
+local entity_health = {
+    black_shroomhead = 40,
+    brown_shroomhead = 16,
+    cinder_moth = 25,
+    crimson_shroomhead = 24,
+    demon_wolf_black = 40,
+    demon_wolf_grey = 40,
+    ectusoteuthis = 5000,
+    ectusoteuthisink = 10000,
+    fog_lizard_brown = 40,
+    fog_lizard_green = 40,
+    ice_golem = 350,
+    lava_crab = 15,
+    minotaur = 400,
+    nm_jellyfish_blue = 30,
+    nm_jellyfish_fusion = 30,
+    nm_jellyfish_golden = 30,
+    nm_jellyfish_orange = 30,
+    nm_jellyfish_pink = 30,
+    nm_jellyfish_white = 30,
+    nm_mandrake = 4,
+    nm_rat_albino = 45,
+    nm_rat_brown = 45,
+    nm_rat_grey = 45,
+    plague_rat_black = 40,
+    plague_rat_brown = 40,
+    plague_rat_grey = 40,
+    plague_rat_red = 40,
+    plague_rat_white = 40,
+    poison = 500,
+    poison_mobs = 100,
+    poison_mobs_eng = 1000,
+    poison_overload = 500,
+    red_shroomhead = 16,
+    sleeping_minotaur = 400,
+    slime_elite_am = 8,
+    slime_elite_hw_am = 8,
+    slime_mage_am = 5,
+    slime_mage_hw_am = 5,
+    slime_ranger_am = 5,
+    slime_ranger_hw_am = 5,
+    slime_warrior_am = 5,
+    slime_warrior_hw_am = 5,
+    sunken_swordfish = 32,
+    swordfish = 32,
+    toro_type02 = 1000,
+    tulf_no008 = 600,
+    volcanic_gecko = 15,
+    volcanic_raptor = 75,
+    volcanic_raptor_adult = 75,
+    warped_shroomhead = 24,
+    wild_boar_brown = 40,
+    wild_boar_grey = 40,
+    yeti = 150,
+}
+
+local function create_default_attr(key)
+    local attr = aris.init.geckolib.entity_attr()
+    attr:max_health(entity_health[key] or 20)
+    attr:attack_damage(2)
+    attr:armor(0)
+    attr:movement_speed(0.25)
+    attr:follow_range(16)
+    return attr
+end
+
 local vfx_attr = aris.init.geckolib.entity_attr()
-vfx_attr:max_health(1000000)
+vfx_attr:max_health(1856794)
 vfx_attr:armor(1000000)
 vfx_attr:movement_speed(0)
 vfx_attr:follow_range(2048)
@@ -72,6 +138,67 @@ local entity_sizes = {
     yeti = { 2.0, 5.5 },
 }
 
+local entity_hitbox_height = {
+    black_shroomhead = 2,
+    brown_shroomhead = 2,
+    cinder_moth = 3,
+    crimson_shroomhead = 3,
+    demon_wolf_black = 2,
+    demon_wolf_grey = 2,
+    ectusoteuthis = 6,
+    ectusoteuthisink = 7,
+    fog_lizard_brown = 2,
+    fog_lizard_green = 2,
+    ground_with_roots = 2,
+    haunted_swordfish = 2,
+    ice_golem = 6,
+    lava_crab = 2,
+    marlin = 2,
+    minotaur = 5,
+    nm_jellyfish_blue = 2,
+    nm_jellyfish_fusion = 2,
+    nm_jellyfish_golden = 2,
+    nm_jellyfish_orange = 2,
+    nm_jellyfish_pink = 2,
+    nm_jellyfish_white = 2,
+    nm_mandrake = 2,
+    nm_rat_albino = 1,
+    nm_rat_brown = 1,
+    nm_rat_grey = 1,
+    plague_rat_black = 2,
+    plague_rat_brown = 2,
+    plague_rat_grey = 2,
+    plague_rat_red = 2,
+    plague_rat_white = 2,
+    poison = 3,
+    poison_mobs = 4,
+    poison_mobs_eng = 4,
+    poison_overload = 4,
+    red_shroomhead = 2,
+    sailfish = 2,
+    sleeping_minotaur = 4,
+    slime_elite_am = 3,
+    slime_elite_hw_am = 3,
+    slime_mage_am = 2,
+    slime_mage_hw_am = 2,
+    slime_ranger_am = 2,
+    slime_ranger_hw_am = 2,
+    slime_warrior_am = 2,
+    slime_warrior_hw_am = 2,
+    sunken_swordfish = 2,
+    swordfish = 2,
+    toro_type02 = 10,
+    tulf_no008 = 9,
+    tulf_no008_minion = 3,
+    volcanic_gecko = 1,
+    volcanic_raptor = 3,
+    volcanic_raptor_adult = 4,
+    warped_shroomhead = 2,
+    wild_boar_brown = 2,
+    wild_boar_grey = 2,
+    yeti = 4,
+}
+
 local vfx_entities = {
     "slime_death_hw_vfx",
     "slime_death_vfx",
@@ -92,8 +219,12 @@ local vfx_entities = {
     "poison_target",
 }
 
+local function create_entity_with_hitbox(key, size)
+    aris.init.geckolib.create_entity(key, size[1], entity_hitbox_height[key] or size[2], create_default_attr(key))
+end
+
 for key, size in pairs(entity_sizes) do
-    aris.init.geckolib.create_entity(key, size[1], size[2], default_attr)
+    create_entity_with_hitbox(key, size)
 end
 
 for _, key in ipairs(vfx_entities) do

@@ -131,13 +131,13 @@
           ]
         },
         {
-          "id": "me.ddayo:aris:1.1.0-260518_2335@jar",
+          "id": "me.ddayo:aris:1.1.0@jar",
           "name": "Project Aris",
           "type": "FabricMod",
           "artifact": {
-            "size": 4190503,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/aris-1.1.0-260518_2335.jar",
-            "MD5": "795fc932dfb2a23c6cb475e7274f337a"
+            "size": 4225735,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/aris-1.1.0-fabric.jar",
+            "MD5": "f90bca785f4974bc90a6210173f62d33"
           },
           "required": {
             "value": false
@@ -209,13 +209,26 @@
           }
         },
         {
+          "id": "com.gitter:gtcaris:1.0-SNAPSHOT@jar",
+          "name": "GTCanvas for Aris",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 47318,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/GTCanvasAris-fabric-1.0-SNAPSHOT.jar",
+            "MD5": "cbc914546e93ed9cea25bf7e12c5ad95"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
           "id": "com.gitter:gtchathud:1.0-SNAPSHOT@jar",
           "name": "GTChatHUD",
           "type": "FabricMod",
           "artifact": {
-            "size": 1059260,
+            "size": 1059561,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/GTChatHUD-fabric-1.21.4-1.0-SNAPSHOT.jar",
-            "MD5": "093af33a24665fb9123625d1393ceefb"
+            "MD5": "66fabdacd38b54974975a946275c0d25"
           },
           "required": {
             "value": false
@@ -294,6 +307,19 @@
             "size": 1306799,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/sodium-fabric-0.6.13+mc1.21.4.jar",
             "MD5": "28922a78d1876ee062e3265f10abcc46"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "com.gitter:tsuming:1.0.0@jar",
+          "name": "Tsuming",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1062132,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/tsuming-1.0.0.jar",
+            "MD5": "95ea452f832d40760122e1308e3d3542"
           },
           "required": {
             "value": false
@@ -833,9 +859,9 @@
           "name": "beluga.animation.json",
           "type": "File",
           "artifact": {
-            "size": 29718,
+            "size": 66959,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/beluga.animation.json",
-            "MD5": "b4f2efe795e97ca9e77cf5167f9742a4",
+            "MD5": "18fb3f03ebaa29933281d645d90f809a",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/beluga.animation.json"
           }
         },
@@ -1394,9 +1420,9 @@
           "name": "demon_wolf_black.animation.json",
           "type": "File",
           "artifact": {
-            "size": 1011185,
+            "size": 155185,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/demon_wolf_black.animation.json",
-            "MD5": "b41a2293a26e7ac7a3117f41a8243550",
+            "MD5": "4f4586e610847ea53798dafa953e2ee2",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/demon_wolf_black.animation.json"
           }
         },
@@ -1405,9 +1431,9 @@
           "name": "demon_wolf_grey.animation.json",
           "type": "File",
           "artifact": {
-            "size": 1011185,
+            "size": 155185,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/demon_wolf_grey.animation.json",
-            "MD5": "b41a2293a26e7ac7a3117f41a8243550",
+            "MD5": "4f4586e610847ea53798dafa953e2ee2",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/demon_wolf_grey.animation.json"
           }
         },
@@ -1449,9 +1475,9 @@
           "name": "ecabyssosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 112549,
+            "size": 173035,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecabyssosaurus.animation.json",
-            "MD5": "3a95579ef805371a55582a034f25466c",
+            "MD5": "c445bfcbf88a08a6a4131908bde92d38",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecabyssosaurus.animation.json"
           }
         },
@@ -1460,9 +1486,9 @@
           "name": "ecamonite.animation.json",
           "type": "File",
           "artifact": {
-            "size": 33024,
+            "size": 64747,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecamonite.animation.json",
-            "MD5": "0d21eaa1db9ac10dec84a125793f0bc8",
+            "MD5": "e9fb5487e25282c84f55dcfd76ff0cbb",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecamonite.animation.json"
           }
         },
@@ -1471,9 +1497,9 @@
           "name": "ecaquilolamna.animation.json",
           "type": "File",
           "artifact": {
-            "size": 83985,
+            "size": 148789,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecaquilolamna.animation.json",
-            "MD5": "aa3e908d12354d9c95676a993584a109",
+            "MD5": "21968aa7ff817105103628145c54b8da",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecaquilolamna.animation.json"
           }
         },
@@ -1482,9 +1508,9 @@
           "name": "ecaquilolamnababy.animation.json",
           "type": "File",
           "artifact": {
-            "size": 83985,
+            "size": 148789,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecaquilolamnababy.animation.json",
-            "MD5": "aa3e908d12354d9c95676a993584a109",
+            "MD5": "21968aa7ff817105103628145c54b8da",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecaquilolamnababy.animation.json"
           }
         },
@@ -1493,9 +1519,9 @@
           "name": "ecarchelon.animation.json",
           "type": "File",
           "artifact": {
-            "size": 113700,
+            "size": 173759,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecarchelon.animation.json",
-            "MD5": "c736f0498c29b9d5db078eb8f32ded02",
+            "MD5": "1f467747455fce9c86defa340118a367",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecarchelon.animation.json"
           }
         },
@@ -1504,9 +1530,9 @@
           "name": "ecatopodentatus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 114056,
+            "size": 177689,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecatopodentatus.animation.json",
-            "MD5": "982a4dd113b49f331ffda339b3010582",
+            "MD5": "2179bfb116340cb49a1ba35594d78ad4",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecatopodentatus.animation.json"
           }
         },
@@ -1515,9 +1541,9 @@
           "name": "ecbabyaquilolamna.animation.json",
           "type": "File",
           "artifact": {
-            "size": 83985,
+            "size": 148789,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecbabyaquilolamna.animation.json",
-            "MD5": "aa3e908d12354d9c95676a993584a109",
+            "MD5": "21968aa7ff817105103628145c54b8da",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecbabyaquilolamna.animation.json"
           }
         },
@@ -1526,9 +1552,9 @@
           "name": "ecbabyelasmosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 112557,
+            "size": 173051,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecbabyelasmosaurus.animation.json",
-            "MD5": "d7dfaa44c03cde952af7c776dcd5ca66",
+            "MD5": "c47db452bc6a71dde012a7ce84c2fc90",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecbabyelasmosaurus.animation.json"
           }
         },
@@ -1537,9 +1563,9 @@
           "name": "ecbabymosasaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 110001,
+            "size": 169309,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecbabymosasaurus.animation.json",
-            "MD5": "d57a3f3fadc393f4c96e7d792ae07fa8",
+            "MD5": "fd5828cad179c516ea658b55f699d024",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecbabymosasaurus.animation.json"
           }
         },
@@ -1548,9 +1574,9 @@
           "name": "ecbabyophthalmosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 123356,
+            "size": 189187,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecbabyophthalmosaurus.animation.json",
-            "MD5": "171428d8784e45a209b7da2052bd5183",
+            "MD5": "c1f9919884638d7b0f91657f0bfc3e06",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecbabyophthalmosaurus.animation.json"
           }
         },
@@ -1559,9 +1585,9 @@
           "name": "ecbabyplesiosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 113160,
+            "size": 173901,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecbabyplesiosaurus.animation.json",
-            "MD5": "aa87f0dcad5172ff5030439907f8bf8a",
+            "MD5": "49e6e67941c07086092630bf87bca28d",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecbabyplesiosaurus.animation.json"
           }
         },
@@ -1570,9 +1596,9 @@
           "name": "ecbabyshastasaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 83982,
+            "size": 132140,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecbabyshastasaurus.animation.json",
-            "MD5": "88062ab4329f2b027d355220cbd336a1",
+            "MD5": "999272151548bcd7f5c48203f7d02c15",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecbabyshastasaurus.animation.json"
           }
         },
@@ -1581,9 +1607,9 @@
           "name": "eccartornychus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 94914,
+            "size": 145444,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/eccartornychus.animation.json",
-            "MD5": "c2528313ce74e3193d9e9264ce3109a6",
+            "MD5": "2ccfdf47af29d2321545889edc096f14",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/eccartornychus.animation.json"
           }
         },
@@ -1592,9 +1618,9 @@
           "name": "ecclidastes.animation.json",
           "type": "File",
           "artifact": {
-            "size": 109371,
+            "size": 167760,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecclidastes.animation.json",
-            "MD5": "4616cf0de0240705fd79e7ebdeca608f",
+            "MD5": "a9c7f02a26300fd9e0a83421665b6d9d",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecclidastes.animation.json"
           }
         },
@@ -1603,9 +1629,9 @@
           "name": "eccoelacanth.animation.json",
           "type": "File",
           "artifact": {
-            "size": 17935,
+            "size": 33745,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/eccoelacanth.animation.json",
-            "MD5": "9c3e01f454a1d99e63cd05f3da9a679b",
+            "MD5": "16217e587476f2c29a2994ae7956901b",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/eccoelacanth.animation.json"
           }
         },
@@ -1614,9 +1640,9 @@
           "name": "eccogboundicarosphinx.animation.json",
           "type": "File",
           "artifact": {
-            "size": 653520,
+            "size": 990118,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/eccogboundicarosphinx.animation.json",
-            "MD5": "c1ac7bc1c21fac290d9582c39f959a91",
+            "MD5": "150e5bb7ceda99466f5efcdfd8d3d9a9",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/eccogboundicarosphinx.animation.json"
           }
         },
@@ -1625,9 +1651,9 @@
           "name": "ecdunkleosteus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 116983,
+            "size": 178512,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecdunkleosteus.animation.json",
-            "MD5": "c8e990ba936eae0d6cc13dbc4003a9aa",
+            "MD5": "bff04f35d2f3ce244c0d162b3791f242",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecdunkleosteus.animation.json"
           }
         },
@@ -1636,9 +1662,9 @@
           "name": "ecdunkleosteusbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 116993,
+            "size": 178537,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecdunkleosteusbaby.animation.json",
-            "MD5": "e615be1ba00ec885603b1e83fa7ae332",
+            "MD5": "a2d53a2e9cef84338c872e9faf32c138",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecdunkleosteusbaby.animation.json"
           }
         },
@@ -1647,9 +1673,9 @@
           "name": "ecelasmosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 112579,
+            "size": 173073,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecelasmosaurus.animation.json",
-            "MD5": "0cc0884f4d9474e979c69258e6906ed8",
+            "MD5": "1993ca247e317b4db1788e6cbed6735f",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecelasmosaurus.animation.json"
           }
         },
@@ -1658,9 +1684,9 @@
           "name": "ecelasmosaurusbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 112557,
+            "size": 173051,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecelasmosaurusbaby.animation.json",
-            "MD5": "d7dfaa44c03cde952af7c776dcd5ca66",
+            "MD5": "c47db452bc6a71dde012a7ce84c2fc90",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecelasmosaurusbaby.animation.json"
           }
         },
@@ -1680,9 +1706,9 @@
           "name": "ecichtyosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 83947,
+            "size": 132073,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecichtyosaurus.animation.json",
-            "MD5": "68b69853e86ab91345cd9da902a45cc6",
+            "MD5": "4bd525adfea3c8efa6165ee529a65909",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecichtyosaurus.animation.json"
           }
         },
@@ -1691,9 +1717,9 @@
           "name": "ecleedsichthys.animation.json",
           "type": "File",
           "artifact": {
-            "size": 93375,
+            "size": 143568,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecleedsichthys.animation.json",
-            "MD5": "ce18ef025b6601e04615a873d7f28517",
+            "MD5": "2d054ced42b9ff7a27dd399d8320da04",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecleedsichthys.animation.json"
           }
         },
@@ -1702,9 +1728,9 @@
           "name": "ecleviathan.animation.json",
           "type": "File",
           "artifact": {
-            "size": 107985,
+            "size": 159402,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecleviathan.animation.json",
-            "MD5": "ddb24a4749bef3fa11c13bc275cca8a5",
+            "MD5": "6dd3787df2c54652ee5bb6b4ce556c8f",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecleviathan.animation.json"
           }
         },
@@ -1713,9 +1739,9 @@
           "name": "ecleviathanbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 107984,
+            "size": 159401,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecleviathanbaby.animation.json",
-            "MD5": "f39cc9747787d1dcba4607cf31a602cc",
+            "MD5": "b05ed25192847f24eff64b4faae85a91",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecleviathanbaby.animation.json"
           }
         },
@@ -1724,9 +1750,9 @@
           "name": "ecliopleurodon.animation.json",
           "type": "File",
           "artifact": {
-            "size": 146718,
+            "size": 220029,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecliopleurodon.animation.json",
-            "MD5": "6506cde39f4a49b6791bbb8d2732582a",
+            "MD5": "24ed7a8b1a21562c0ee5862a50661b52",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecliopleurodon.animation.json"
           }
         },
@@ -1735,9 +1761,9 @@
           "name": "ecliopleurodonbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 129637,
+            "size": 195502,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecliopleurodonbaby.animation.json",
-            "MD5": "31e481f9ff4b2fc44c326c0c34652d04",
+            "MD5": "5bdb3d9bcee365a6705dea0b5307fac6",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecliopleurodonbaby.animation.json"
           }
         },
@@ -1746,9 +1772,9 @@
           "name": "ecmosasaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 130610,
+            "size": 199428,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecmosasaurus.animation.json",
-            "MD5": "2c3ed8ab7a742fa20d5d1ef65f842d1c",
+            "MD5": "eda237cddeb20a03470abedb6a9c208b",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecmosasaurus.animation.json"
           }
         },
@@ -1757,9 +1783,9 @@
           "name": "ecmosasaurusbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 110001,
+            "size": 169309,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecmosasaurusbaby.animation.json",
-            "MD5": "d57a3f3fadc393f4c96e7d792ae07fa8",
+            "MD5": "fd5828cad179c516ea658b55f699d024",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecmosasaurusbaby.animation.json"
           }
         },
@@ -1768,9 +1794,9 @@
           "name": "ecophthalmosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 132767,
+            "size": 202093,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecophthalmosaurus.animation.json",
-            "MD5": "942bfb4312741493d1447d70b9d4cded",
+            "MD5": "a26a3f771466565ae9a78d58dabf4d73",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecophthalmosaurus.animation.json"
           }
         },
@@ -1779,9 +1805,9 @@
           "name": "ecplesiosaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 113202,
+            "size": 173943,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecplesiosaurus.animation.json",
-            "MD5": "50419ce4bcfc2159388b37af740de9fb",
+            "MD5": "4931134ca4382252120d502e757e86a2",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecplesiosaurus.animation.json"
           }
         },
@@ -1790,9 +1816,9 @@
           "name": "ecplesiosaurusbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 113160,
+            "size": 173901,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecplesiosaurusbaby.animation.json",
-            "MD5": "aa87f0dcad5172ff5030439907f8bf8a",
+            "MD5": "49e6e67941c07086092630bf87bca28d",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecplesiosaurusbaby.animation.json"
           }
         },
@@ -1801,9 +1827,9 @@
           "name": "ecseascorpion.animation.json",
           "type": "File",
           "artifact": {
-            "size": 39143,
+            "size": 76954,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecseascorpion.animation.json",
-            "MD5": "650bd3c8b6b704e1b6c84f3ef96fc21e",
+            "MD5": "7be28ec17a82b3869556af1920cc3240",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecseascorpion.animation.json"
           }
         },
@@ -1812,9 +1838,9 @@
           "name": "ecshastasaurus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 90094,
+            "size": 140475,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecshastasaurus.animation.json",
-            "MD5": "95c7ce387eda863b25fa21c4152599ca",
+            "MD5": "22e0c1d35a41ffa9bd075906d19c8529",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecshastasaurus.animation.json"
           }
         },
@@ -1823,9 +1849,9 @@
           "name": "ecshastasaurusbaby.animation.json",
           "type": "File",
           "artifact": {
-            "size": 83982,
+            "size": 132140,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ecshastasaurusbaby.animation.json",
-            "MD5": "88062ab4329f2b027d355220cbd336a1",
+            "MD5": "999272151548bcd7f5c48203f7d02c15",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ecshastasaurusbaby.animation.json"
           }
         },
@@ -2003,6 +2029,17 @@
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ent_branch_upwards.animation.json",
             "MD5": "ef2a02e3968674004865f697640c23f9",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ent_branch_upwards.animation.json"
+          }
+        },
+        {
+          "id": "ent_guardian.animation.json",
+          "name": "ent_guardian.animation.json",
+          "type": "File",
+          "artifact": {
+            "size": 125692,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/ent_guardian.animation.json",
+            "MD5": "445620c024ad29db90b938cb81afcb74",
+            "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/ent_guardian.animation.json"
           }
         },
         {
@@ -2296,9 +2333,9 @@
           "name": "frozen_blaze.animation.json",
           "type": "File",
           "artifact": {
-            "size": 10409,
+            "size": 23911,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/frozen_blaze.animation.json",
-            "MD5": "3e071398113ed1148910812b34ff0c0b",
+            "MD5": "a004a5c9d96d10ea3581ba4c3848603a",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/frozen_blaze.animation.json"
           }
         },
@@ -2329,9 +2366,9 @@
           "name": "greatwhale.animation.json",
           "type": "File",
           "artifact": {
-            "size": 24477,
+            "size": 55521,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/greatwhale.animation.json",
-            "MD5": "e4c02be555e3d3af9b81beb31b508844",
+            "MD5": "a3c468005c4aebcaa3e1f37e53500296",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/greatwhale.animation.json"
           }
         },
@@ -2384,9 +2421,9 @@
           "name": "harmony_hare.animation.json",
           "type": "File",
           "artifact": {
-            "size": 36849,
+            "size": 63033,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/harmony_hare.animation.json",
-            "MD5": "86e22cfc10f713938f616c419e72f5ed",
+            "MD5": "b6f4d825fb487e74b31660e950e206cb",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/harmony_hare.animation.json"
           }
         },
@@ -2681,9 +2718,9 @@
           "name": "minotaur.animation.json",
           "type": "File",
           "artifact": {
-            "size": 1624309,
+            "size": 228457,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/minotaur.animation.json",
-            "MD5": "95255e375a0bde3bfbed6e7ba8192581",
+            "MD5": "7eace4c239613fd79d329941caf40084",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/minotaur.animation.json"
           }
         },
@@ -2692,9 +2729,9 @@
           "name": "mystic_stag.animation.json",
           "type": "File",
           "artifact": {
-            "size": 113334,
+            "size": 182436,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/mystic_stag.animation.json",
-            "MD5": "8550155d08a044b40aaa4ca06ed96aaf",
+            "MD5": "976c933c776df510090558d50ac404df",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/mystic_stag.animation.json"
           }
         },
@@ -2703,9 +2740,9 @@
           "name": "narwhal.animation.json",
           "type": "File",
           "artifact": {
-            "size": 29711,
+            "size": 66952,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/narwhal.animation.json",
-            "MD5": "39deb6c9ce0c2f75ed0ffa7f9f86f57d",
+            "MD5": "3c77e77247e218db9ca79e65083a2e36",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/narwhal.animation.json"
           }
         },
@@ -2725,9 +2762,9 @@
           "name": "nectar_spider.animation.json",
           "type": "File",
           "artifact": {
-            "size": 89202,
+            "size": 147331,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/nectar_spider.animation.json",
-            "MD5": "b9043a54caafce6cffc07aee0f05ea08",
+            "MD5": "8858f0035e395e2ae300544a7ce8e203",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/nectar_spider.animation.json"
           }
         },
@@ -2868,9 +2905,9 @@
           "name": "octopus.animation.json",
           "type": "File",
           "artifact": {
-            "size": 49766,
+            "size": 106766,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/octopus.animation.json",
-            "MD5": "8a481e5b482c4f7dc7a8e3fee1df4d18",
+            "MD5": "23a12517d646e8620b00a55df73e7d94",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/octopus.animation.json"
           }
         },
@@ -2956,9 +2993,9 @@
           "name": "poisonous_bloom.animation.json",
           "type": "File",
           "artifact": {
-            "size": 96226,
+            "size": 148964,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/poisonous_bloom.animation.json",
-            "MD5": "242ee622df1b8b3261475b0c9443c011",
+            "MD5": "8cb4eb529fd0e65c14d9a390738e592c",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/poisonous_bloom.animation.json"
           }
         },
@@ -5255,9 +5292,9 @@
           "name": "volcanic_gecko.animation.json",
           "type": "File",
           "artifact": {
-            "size": 536864,
+            "size": 86795,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/volcanic_gecko.animation.json",
-            "MD5": "714607697c50210d98ca2d9a3e0cb33c",
+            "MD5": "c50388f52c5348c55d6ab5fb1a03e4be",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/volcanic_gecko.animation.json"
           }
         },
@@ -5299,9 +5336,9 @@
           "name": "whispering_willow.animation.json",
           "type": "File",
           "artifact": {
-            "size": 75972,
+            "size": 135225,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/whispering_willow.animation.json",
-            "MD5": "0e3f269d2a55b51fbede78fa07a4668f",
+            "MD5": "ab26770a6d87748dc7891ed344388d4e",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/whispering_willow.animation.json"
           }
         },
@@ -15122,9 +15159,9 @@
           "name": "20_skill_cooldown_hud.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 7245,
+            "size": 7278,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/20_skill_cooldown_hud.aris.lua",
-            "MD5": "36dac688c49cd079abd4a3d1425609cc",
+            "MD5": "db25ac76639f1848c883eaeffdd47c98",
             "path": "robots/client-game/20_skill_cooldown_hud.aris.lua"
           }
         },
@@ -15133,10 +15170,54 @@
           "name": "20_stats_gui.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 5745,
+            "size": 6198,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/20_stats_gui.aris.lua",
-            "MD5": "f43470374488c2a2ebba4551ff5995e6",
+            "MD5": "f45be07334b8ca2f75a3b4477a0c5729",
             "path": "robots/client-game/20_stats_gui.aris.lua"
+          }
+        },
+        {
+          "id": "30_guild_gui.aris.lua",
+          "name": "30_guild_gui.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 11390,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/30_guild_gui.aris.lua",
+            "MD5": "f99ef3c7f140a12b0251c3dc18b36586",
+            "path": "robots/client-game/30_guild_gui.aris.lua"
+          }
+        },
+        {
+          "id": "31_party_gui.aris.lua",
+          "name": "31_party_gui.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 9169,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/31_party_gui.aris.lua",
+            "MD5": "9b76aaa8245bbc79e1c33d479f4f95f0",
+            "path": "robots/client-game/31_party_gui.aris.lua"
+          }
+        },
+        {
+          "id": "31_party_hud.aris.lua",
+          "name": "31_party_hud.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 3445,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/31_party_hud.aris.lua",
+            "MD5": "44598ec80105bc9560ae7c1b1f25a635",
+            "path": "robots/client-game/31_party_hud.aris.lua"
+          }
+        },
+        {
+          "id": "99_gtc_test.aris.lua",
+          "name": "99_gtc_test.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 3363,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/99_gtc_test.aris.lua",
+            "MD5": "146b41c81791b729803b2bea095d86e8",
+            "path": "robots/client-game/99_gtc_test.aris.lua"
           }
         },
         {
@@ -15155,10 +15236,43 @@
           "name": "20_stats_packets.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 1225,
+            "size": 1286,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/20_stats_packets.aris.lua",
-            "MD5": "a145f76807c490b3504f90cd2efcf2c8",
+            "MD5": "7b1f018ae2af9c2f7a4aa076c2994f92",
             "path": "robots/client-init/20_stats_packets.aris.lua"
+          }
+        },
+        {
+          "id": "30_guild_packets.aris.lua",
+          "name": "30_guild_packets.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 855,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/30_guild_packets.aris.lua",
+            "MD5": "b671a338c25cd967e0924ea28ac04686",
+            "path": "robots/client-init/30_guild_packets.aris.lua"
+          }
+        },
+        {
+          "id": "31_party_packets.aris.lua",
+          "name": "31_party_packets.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 906,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/31_party_packets.aris.lua",
+            "MD5": "90196093c7ca1873b5886715e4ae92b0",
+            "path": "robots/client-init/31_party_packets.aris.lua"
+          }
+        },
+        {
+          "id": "99_gtc_test_keybind.aris.lua",
+          "name": "99_gtc_test_keybind.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 191,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/99_gtc_test_keybind.aris.lua",
+            "MD5": "f2dd0f53f52c9208986389ccd2415121",
+            "path": "robots/client-init/99_gtc_test_keybind.aris.lua"
           }
         },
         {
@@ -15177,10 +15291,43 @@
           "name": "20_stats_packets.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 2924,
+            "size": 2985,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/20_stats_packets.aris.lua",
-            "MD5": "963cae6c3f95c3adc26ddab69dcb660e",
+            "MD5": "56877977bfb0bfea4323e3589463ac09",
             "path": "robots/init/20_stats_packets.aris.lua"
+          }
+        },
+        {
+          "id": "30_guild_commands.aris.lua",
+          "name": "30_guild_commands.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 2105,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/30_guild_commands.aris.lua",
+            "MD5": "4c2c444972e1f68a74efcb6bb7f9ef58",
+            "path": "robots/init/30_guild_commands.aris.lua"
+          }
+        },
+        {
+          "id": "31_party_commands.aris.lua",
+          "name": "31_party_commands.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 2083,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/31_party_commands.aris.lua",
+            "MD5": "8ca8c311636849ed46370062cfdc6f43",
+            "path": "robots/init/31_party_commands.aris.lua"
+          }
+        },
+        {
+          "id": "40_skill_commands.aris.lua",
+          "name": "40_skill_commands.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 1394,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/40_skill_commands.aris.lua",
+            "MD5": "e2b54cfab1cabc42cc987b98291da832",
+            "path": "robots/init/40_skill_commands.aris.lua"
           }
         },
         {
@@ -15190,7 +15337,7 @@
           "artifact": {
             "size": 953,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/awakened_archer.aris.lua",
-            "MD5": "3e1a22d898accf9b4679d5ee464f7a61",
+            "MD5": "f87066696f8a7e6a36812ae14c7180a1",
             "path": "robots/init/awakened_archer.aris.lua"
           }
         },
@@ -15201,7 +15348,7 @@
           "artifact": {
             "size": 928,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/awakened_assassin.aris.lua",
-            "MD5": "3f8d97cc678415d7c0f95a726957d19c",
+            "MD5": "e024655df401e17baefe4e18007979ff",
             "path": "robots/init/awakened_assassin.aris.lua"
           }
         },
@@ -15212,7 +15359,7 @@
           "artifact": {
             "size": 925,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/awakened_mage.aris.lua",
-            "MD5": "aaded82d8ac6cb9a375633057798070f",
+            "MD5": "ac735371200ace77979ed2925ff2f5f0",
             "path": "robots/init/awakened_mage.aris.lua"
           }
         },
@@ -15234,7 +15381,7 @@
           "artifact": {
             "size": 732,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/awakened_shaman_entities.aris.lua",
-            "MD5": "c4d448bf872e2aaf2730bf4603c75852",
+            "MD5": "83c2dc8a769aad44a81c08192eb15d6b",
             "path": "robots/init/awakened_shaman_entities.aris.lua"
           }
         },
@@ -15245,7 +15392,7 @@
           "artifact": {
             "size": 760,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/awakened_summoner.aris.lua",
-            "MD5": "faa10a5cbbb5e4c5abecdb0f0d297065",
+            "MD5": "bee05b1749684d17fe131c2173b44809",
             "path": "robots/init/awakened_summoner.aris.lua"
           }
         },
@@ -15256,8 +15403,19 @@
           "artifact": {
             "size": 612,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/awakened_warrior.aris.lua",
-            "MD5": "b21621920c7ecc6ff80495526f995687",
+            "MD5": "8fb0c94c8b743a29d985973b700ae0c5",
             "path": "robots/init/awakened_warrior.aris.lua"
+          }
+        },
+        {
+          "id": "bind_item.aris.lua",
+          "name": "bind_item.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 146,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/bind_item.aris.lua",
+            "MD5": "f03ea7a930e468cc46ec351c1595a488",
+            "path": "robots/init/bind_item.aris.lua"
           }
         },
         {
@@ -15265,9 +15423,9 @@
           "name": "gecko_resource_entities.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 3096,
+            "size": 6318,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/gecko_resource_entities.aris.lua",
-            "MD5": "461178392ad93b6b8c8828a097f2bde2",
+            "MD5": "748321dc949e2852c72d4006638da5be",
             "path": "robots/init/gecko_resource_entities.aris.lua"
           }
         },
@@ -15287,9 +15445,9 @@
           "name": "zz_converted_missing_entities.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 4486,
+            "size": 9156,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/zz_converted_missing_entities.aris.lua",
-            "MD5": "cdd53e03b265df1c1cb7a30f1f635d7d",
+            "MD5": "c2b1206ff7fa43be76d1fedea771e1e4",
             "path": "robots/init/zz_converted_missing_entities.aris.lua"
           }
         },

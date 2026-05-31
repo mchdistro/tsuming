@@ -7,6 +7,7 @@ sync_packet:append(aris.init.networking.integer_arg("agi"))
 sync_packet:append(aris.init.networking.integer_arg("int"))
 sync_packet:append(aris.init.networking.integer_arg("vit"))
 sync_packet:append(aris.init.networking.integer_arg("luk"))
+sync_packet:append(aris.init.networking.integer_arg("open"))
 
 local add_packet = aris.init.networking.create_c2s_packet("stats_add_point")
 add_packet:append(aris.init.networking.string_arg("stat"))

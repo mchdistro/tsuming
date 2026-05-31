@@ -1,0 +1,55 @@
+local sync_packet = aris.init.networking.create_s2c_packet("guild_sync")
+sync_packet:append(aris.init.networking.integer_arg("in_guild"))
+sync_packet:append(aris.init.networking.string_arg("name"))
+sync_packet:append(aris.init.networking.integer_arg("level"))
+sync_packet:append(aris.init.networking.integer_arg("exp"))
+sync_packet:append(aris.init.networking.integer_arg("members"))
+sync_packet:append(aris.init.networking.string_arg("owner"))
+sync_packet:append(aris.init.networking.string_arg("member_names"))
+sync_packet:append(aris.init.networking.string_arg("owner_name"))
+sync_packet:append(aris.init.networking.integer_arg("has_invite"))
+
+local action_packet = aris.init.networking.create_c2s_packet("guild_gui_action")
+action_packet:append(aris.init.networking.string_arg("action"))
+action_packet:append(aris.init.networking.string_arg("value"))
+
+local root = aris.init.command.create_command("guild")
+root:set_endpoint("guild_open")
+
+local create = aris.init.command.sub_command("create")
+create:set_endpoint("guild_create")
+local create_name = aris.init.command.string_arg("name")
+create_name:set_endpoint("guild_create_named")
+create:append(create_name)
+root:append(create)
+
+local info = aris.init.command.sub_command("info")
+info:set_endpoint("guild_info")
+root:append(info)
+
+local leave = aris.init.command.sub_command("leave")
+leave:set_endpoint("guild_leave")
+root:append(leave)
+
+local disband = aris.init.command.sub_command("disband")
+disband:set_endpoint("guild_disband")
+root:append(disband)
+
+local accept = aris.init.command.sub_command("accept")
+accept:set_endpoint("guild_accept")
+root:append(accept)
+
+local deny = aris.init.command.sub_command("deny")
+deny:set_endpoint("guild_deny")
+root:append(deny)
+
+local invite = aris.init.command.sub_command("invite")
+local invite_player = aris.init.command.player_arg("player")
+invite_player:set_endpoint("guild_invite")
+invite:append(invite_player)
+root:append(invite)
+
+local gc = aris.init.command.create_command("gc")
+local gc_message = aris.init.command.string_arg("message")
+gc_message:set_endpoint("guild_chat")
+gc:append(gc_message)

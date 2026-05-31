@@ -1,196 +1,159 @@
-local WIDTH = 520
-local HEIGHT = 360
-local START_X = 700
-local START_Y = 300
-local ROW_X = 48
-local ROW_Y = 96
-local ROW_H = 44
-local VALUE_X = 260
-local MINUS_X = 348
-local PLUS_X = 422
-local BUTTON_W = 64
-local BUTTON_H = 32
+-- 스탯 GUI — GTCanvas(gtc) 포팅판
+--
+-- 엔진 제약 메모:
+--  * LuaFunc(콜백)는 "생성 시점"에만 currentTask 가 필요하다. S2C 패킷 핸들러는
+--    task 로 실행되므로(핸들러 안 = currentTask 있음) 거기서 트리/on_click 을 만들면 안전.
+--  * 반대로 버튼 on_click 콜백 안에서는 currentTask 가 없으므로 새 LuaFunc 를 만들면 안 된다.
+--    → +/- 클릭에서는 라벨 텍스트만 바꾸고(:text), 패킷 전송/close 만 한다.
 
 local STAT_ORDER = { "str", "agi", "int", "vit", "luk" }
 local STAT_LABELS = {
-    str = "힘",
-    agi = "민첩",
-    int = "지능",
-    vit = "체력",
-    luk = "운",
+    str = "힘", agi = "민첩", int = "지능", vit = "체력", luk = "운",
 }
 
-local screen = nil
-local root = nil
-local points_text = nil
-local rows = {}
-local screen_opened = false
-local refresh = nil
-local current = {
-    points = 0,
-    str = 0,
-    agi = 0,
-    int = 0,
-    vit = 0,
-    luk = 0,
-}
-local pending = {
-    str = 0,
-    agi = 0,
-    int = 0,
-    vit = 0,
-    luk = 0,
-}
+-- 팔레트
+local C_TEXT  = 0xFFEAEAEA
+local C_SUB   = 0xFFA0A0A0
+local C_GOLD  = 0xFFFACC15
+local C_VALUE = 0xFF93D6FF
+
+local cur = { points = 0, str = 0, agi = 0, int = 0, vit = 0, luk = 0 }
+local pending = { str = 0, agi = 0, int = 0, vit = 0, luk = 0 }
+local refs = nil  -- { points_lbl, rows = { stat -> { val, pend } } }
 
 local function pending_total()
-    local total = 0
-    for _, stat in ipairs(STAT_ORDER) do
-        total = total + (pending[stat] or 0)
-    end
-    return total
-end
-
-local function send_apply()
-    if pending_total() <= 0 then
-        aris.game.client.send_system_message("[스탯] 적용할 변경 사항이 없습니다.")
-        return
-    end
-    local packet = aris.game.client.networking.create_c2s_packet_builder("stats_apply_points")
-    packet:append_int("str", pending.str or 0)
-    packet:append_int("agi", pending.agi or 0)
-    packet:append_int("int", pending.int or 0)
-    packet:append_int("vit", pending.vit or 0)
-    packet:append_int("luk", pending.luk or 0)
-    aris.game.client.networking.send_c2s_packet(packet)
+    local t = 0
+    for _, s in ipairs(STAT_ORDER) do t = t + (pending[s] or 0) end
+    return t
 end
 
 local function reset_pending()
-    for _, stat in ipairs(STAT_ORDER) do
-        pending[stat] = 0
-    end
+    for _, s in ipairs(STAT_ORDER) do pending[s] = 0 end
 end
 
-local function close_screen()
-    if screen == nil then return end
-    screen_opened = false
-    screen:close()
-end
-
-local function add_text(parent, text, x, y, color, scale)
-    local renderer = aris.client.create_default_text_renderer(text, color or 0xFFFFFFFF)
-    renderer:set_x(x)
-    renderer:set_y(y)
-    renderer:set_scale(scale or 1.0)
-    parent:add_child(renderer)
-    return renderer
-end
-
-local function add_rect(parent, x, y, w, h, r, g, b, a)
-    local renderer = aris.client.create_color_renderer(r, g, b, a)
-    renderer:set_x(x)
-    renderer:set_y(y)
-    renderer:set_width(w)
-    renderer:set_height(h)
-    parent:add_child(renderer)
-    return renderer
-end
-
-local function create_once()
-    if screen ~= nil then return end
-
-    screen = aris.client.create_window()
-    screen:set_can_exit_with_esc(false)
-
-    root = aris.client.create_component()
-    root:set_x(START_X)
-    root:set_y(START_Y)
-    screen:add_child(root)
-
-    add_rect(root, 0, 0, WIDTH, HEIGHT, 10, 10, 18, 240)
-    add_rect(root, 6, 6, WIDTH - 12, HEIGHT - 12, 34, 34, 50, 225)
-    add_rect(root, 18, 68, WIDTH - 36, 2, 95, 95, 130, 210)
-    add_text(root, "스탯", 28, 24, 0xFFFFFFFF, 3.0)
-    points_text = add_text(root, "보유 포인트: 0", 270, 32, 0xFFFFE082, 1.7)
-
-    for i, stat in ipairs(STAT_ORDER) do
-        local y = ROW_Y + ((i - 1) * ROW_H)
-        add_rect(root, 28, y - 8, WIDTH - 56, ROW_H - 6, 22, 22, 34, 205)
-        add_text(root, STAT_LABELS[stat], ROW_X, y, 0xFFFFFFFF, 2.0)
-        local value = add_text(root, "0", VALUE_X, y, 0xFFB3E5FC, 2.0)
-
-        add_rect(root, MINUS_X, y - 7, BUTTON_W, BUTTON_H, 120, 58, 58, 235)
-        add_text(root, "-", MINUS_X + 25, y - 3, 0xFFFFFFFF, 2.0)
-        root:add_child(aris.client.create_clickable(function()
-            if (pending[stat] or 0) > 0 then
-                pending[stat] = pending[stat] - 1
-                refresh()
-            end
-        end, MINUS_X, y - 7, BUTTON_W, BUTTON_H))
-
-        add_rect(root, PLUS_X, y - 7, BUTTON_W, BUTTON_H, 50, 120, 58, 235)
-        add_text(root, "+", PLUS_X + 23, y - 3, 0xFFFFFFFF, 2.0)
-        root:add_child(aris.client.create_clickable(function()
-            if pending_total() < (current.points or 0) then
-                pending[stat] = (pending[stat] or 0) + 1
-                refresh()
-            else
-                aris.game.client.send_system_message("[스탯] 사용 가능한 스탯 포인트가 없습니다.")
-            end
-        end, PLUS_X, y - 7, BUTTON_W, BUTTON_H))
-
-        rows[stat] = { value = value }
-    end
-
-    add_rect(root, 138, HEIGHT - 52, 104, 34, 50, 120, 58, 230)
-    add_text(root, "적용", 166, HEIGHT - 45, 0xFFFFFFFF, 1.5)
-    root:add_child(aris.client.create_clickable(function()
-        send_apply()
-    end, 138, HEIGHT - 52, 104, 34))
-
-    add_rect(root, 278, HEIGHT - 52, 104, 34, 70, 70, 88, 230)
-    add_text(root, "닫기", 306, HEIGHT - 45, 0xFFFFFFFF, 1.5)
-    root:add_child(aris.client.create_clickable(function()
-        close_screen()
-    end, 278, HEIGHT - 52, 104, 34))
-end
-
-refresh = function()
-    create_once()
-    points_text:set_text("보유 포인트: " .. tostring((current.points or 0) - pending_total()))
-    for _, stat in ipairs(STAT_ORDER) do
-        if rows[stat] ~= nil then
-            local base = current[stat] or 0
-            local add = pending[stat] or 0
-            if add > 0 then
-                rows[stat].value:set_text(tostring(base + add) .. " (+" .. tostring(add) .. ")")
-            else
-                rows[stat].value:set_text(tostring(base))
-            end
+-- 라벨 텍스트만 갱신 (LuaFunc 생성 없음 → 클릭 콜백/핸들러 어디서든 안전)
+local function update_labels()
+    if refs == nil then return end
+    refs.points_lbl:text("보유 포인트 " .. tostring((cur.points or 0) - pending_total()))
+    for _, s in ipairs(STAT_ORDER) do
+        local r = refs.rows[s]
+        if r ~= nil then
+            -- 미리보기 값 = 현재 + 가배정 (적용 시 확정)
+            r.val:text(tostring((cur[s] or 0) + (pending[s] or 0)))
         end
     end
 end
 
-local function open_screen()
-    create_once()
-    refresh()
-    if screen_opened then
+local function send_apply()
+    if pending_total() <= 0 then
+        aris.game.client.send_system_message("§e[스탯] 적용할 변경 사항이 없습니다.")
         return
     end
-    screen_opened = true
-    screen:open()
+    local p = aris.game.client.networking.create_c2s_packet_builder("stats_apply_points")
+    p:append_int("str", pending.str or 0)
+    p:append_int("agi", pending.agi or 0)
+    p:append_int("int", pending.int or 0)
+    p:append_int("vit", pending.vit or 0)
+    p:append_int("luk", pending.luk or 0)
+    aris.game.client.networking.send_c2s_packet(p)
+end
+
+local function small_btn(label, r, g, b, on_click)
+    return gtc.button(label)
+        :width(38):height(30):border_radius(6)
+        :background(gtc.rgba(r, g, b, 46))
+        :border(1, gtc.rgba(r, g, b, 150))
+        :color(0xFF000000 + r * 0x10000 + g * 0x100 + b)
+        :on_click(on_click)
+end
+
+local function build_row(stat)
+    local val = gtc.label("0"):font_size(15):color(C_VALUE):width(44):text_align("center")
+    refs.rows[stat] = { val = val }
+
+    local minus = small_btn("−", 239, 68, 68, function()
+        if (pending[stat] or 0) > 0 then
+            pending[stat] = pending[stat] - 1
+            update_labels()
+        end
+    end)
+    local plus = small_btn("+", 34, 197, 94, function()
+        if pending_total() < (cur.points or 0) then
+            pending[stat] = (pending[stat] or 0) + 1
+            update_labels()
+        else
+            aris.game.client.send_system_message("§e[스탯] 사용 가능한 스탯 포인트가 없습니다.")
+        end
+    end)
+
+    -- 좌: 라벨 / 우: [−] 값 [+] 스텝퍼  (justify space_between 으로 좌우 분배)
+    return gtc.row()
+        :justify("space_between"):align("center"):padding4(8, 14, 8, 14)
+        :background(gtc.rgba(26, 26, 26, 255))
+        :border(1, gtc.rgba(38, 38, 38, 255))
+        :border_radius(8)
+        :add(gtc.label(STAT_LABELS[stat]):font_size(15):color(C_TEXT))
+        :add(gtc.row():align("center"):gap(8):add(minus):add(val):add(plus))
+end
+
+local function build_tree()
+    refs = { rows = {} }
+    refs.points_lbl = gtc.label("보유 포인트 0"):font_size(11):color(C_GOLD)
+
+    local header = gtc.row():align("center"):justify("space_between")
+        :add(gtc.label("스탯"):font_size(22):font_weight(700):color(C_TEXT))
+        :add(gtc.row():padding4(3, 11, 3, 11):border_radius(8)
+            :background(gtc.rgba(250, 204, 21, 20))
+            :border(1, gtc.rgba(250, 204, 21, 90))
+            :add(refs.points_lbl))
+
+    local rows_col = gtc.column():gap(8):align("stretch")
+    for _, s in ipairs(STAT_ORDER) do rows_col:add(build_row(s)) end
+
+    local footer = gtc.row():justify("center"):align("center"):gap(12)
+        :add(gtc.button("적용"):width(160):height(38):border_radius(8)
+            :background(gtc.rgba(34, 197, 94, 46)):border(1, gtc.rgba(34, 197, 94, 150))
+            :color(0xFF22C55E)
+            :on_click(send_apply))
+        :add(gtc.button("닫기"):width(120):height(38):border_radius(8)
+            :background(gtc.rgba(30, 30, 30, 255)):border(1, gtc.rgba(42, 42, 42, 255))
+            :color(C_SUB)
+            :on_click(function() gtc.close_screen() end))
+
+    local panel = gtc.column()
+        :width(420):padding(24):gap(14):align("stretch")
+        :background(gtc.rgba(20, 20, 20, 245))
+        :border(1, gtc.rgba(42, 42, 42, 255))
+        :border_radius(12)
+        :add(header):add(rows_col):add(footer)
+
+    update_labels()
+    return panel
+end
+
+local function open_stats()
+    if gtc == nil then
+        aris.game.client.send_system_message("§c[스탯] gtc 라이브러리 없음 — GTCanvasAris 모드 확인")
+        return
+    end
+    local tree = build_tree()
+    local centered = gtc.column():flex(1):align("center"):justify("center"):add(tree)
+    gtc.open_screen(true, function(root) root:add(centered) end)
 end
 
 aris.game.client.hook.add_s2c_packet_handler("stats_sync", function(packet)
-    current.points = tonumber(packet.points) or 0
-    current.str = tonumber(packet.str) or 0
-    current.agi = tonumber(packet.agi) or 0
-    current.int = tonumber(packet.int) or 0
-    current.vit = tonumber(packet.vit) or 0
-    current.luk = tonumber(packet.luk) or 0
+    cur.points = tonumber(packet.points) or 0
+    cur.str = tonumber(packet.str) or 0
+    cur.agi = tonumber(packet.agi) or 0
+    cur.int = tonumber(packet.int) or 0
+    cur.vit = tonumber(packet.vit) or 0
+    cur.luk = tonumber(packet.luk) or 0
     reset_pending()
-    open_screen()
+    if (tonumber(packet.open) or 0) == 1 then
+        open_stats()
+    else
+        update_labels()  -- 이미 열려있으면 값만 갱신 (닫혀있으면 무해)
+    end
 end)
 
-while true do
-    task_sleep(1000)
-end
+-- (유지용 무한 루프 제거: 패킷 핸들러는 등록 후 task 가 끝나도 유지됨)

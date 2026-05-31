@@ -107,20 +107,25 @@ local function update_slot(slot, skill)
         return
     end
 
-    if skill.total <= 0 or skill.remain <= 0 then
+    local remain_ms = (skill.end_ms or 0) - get_time()
+    if remain_ms < 0 then
+        remain_ms = 0
+    end
+
+    if skill.total_ms <= 0 or remain_ms <= 0 then
         slot.overlay:set_height(0)
         slot.text:set_text("")
         return
     end
 
-    local ratio = skill.remain / skill.total
+    local ratio = remain_ms / skill.total_ms
     if ratio > 1 then
         ratio = 1
     end
     local overlay_h = math.floor(ICON_SIZE * ratio + 0.5)
     slot.overlay:set_y(ICON_SIZE - overlay_h)
     slot.overlay:set_height(overlay_h)
-    slot.text:set_text(string.format("%.1f", skill.remain / 20))
+    slot.text:set_text(string.format("%.1f", remain_ms / 1000))
 end
 
 local function refresh_slots()
@@ -181,8 +186,8 @@ local function parse_payload(class_id, payload)
         if skill_id ~= nil then
             parsed[#parsed + 1] = {
                 id = skill_id,
-                remain = tonumber(fields[2]) or 0,
-                total = tonumber(fields[3]) or 0,
+                end_ms = tonumber(fields[2]) or 0,
+                total_ms = tonumber(fields[3]) or 0,
             }
         end
     end
@@ -215,17 +220,15 @@ aris.game.client.hook.add_s2c_packet_handler("skill_cooldown_hud", function(pack
 end)
 
 aris.game.client.hook.add_tick_hook(function()
-    local changed = false
-    for _, skill in ipairs(current_skills) do
-        if skill.remain ~= nil and skill.remain > 0 then
-            skill.remain = skill.remain - 1
-            if skill.remain < 0 then
-                skill.remain = 0
-            end
-            changed = true
-        end
-    end
-    if changed then
+    if visible then
         refresh_slots()
+    end
+end)
+
+-- /aris reload 시 옛 엔진이 연 HUD 렌더러가 클라 HUD 엔진에 남아 중첩되는 것 방지
+aris.hook.on_engine_dispose(function()
+    if hud ~= nil then
+        hud:close_hud()
+        hud = nil
     end
 end)
