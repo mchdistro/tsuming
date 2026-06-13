@@ -15172,17 +15172,6 @@
           }
         },
         {
-          "id": "00_lunajson_loader.aris.lua",
-          "name": "00_lunajson_loader.aris.lua",
-          "type": "File",
-          "artifact": {
-            "size": 427,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/00_lunajson_loader.aris.lua",
-            "MD5": "b87a7c489366af0c8d137fe804c1b4e9",
-            "path": "robots/client-game/00_lunajson_loader.aris.lua"
-          }
-        },
-        {
           "id": "10_player_emote_bone_mapping.aris.lua",
           "name": "10_player_emote_bone_mapping.aris.lua",
           "type": "File",
