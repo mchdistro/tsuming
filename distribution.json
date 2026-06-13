@@ -157,6 +157,45 @@
           }
         },
         {
+          "id": "de.markusbordihn.easynpc.bundle:easy_npc_bundle:6.5.2@jar",
+          "name": "Easy NPC (Bundle)",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 28406,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/easy_npc_bundle-fabric-1.21.4-6.5.2.jar",
+            "MD5": "1da02742ad346a6c8142e781911e3b7e"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "de.markusbordihn.easynpc.configui:easy_npc_config_ui:6.5.2@jar",
+          "name": "Easy NPC: Config UI",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 715384,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/easy_npc_config_ui-fabric-1.21.4-6.5.2.jar",
+            "MD5": "1539c826f4852701853393fb0f32f3be"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "de.markusbordihn.easynpc:easy_npc:6.5.2@jar",
+          "name": "Easy NPC",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1649253,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/easy_npc-fabric-1.21.4-6.5.2.jar",
+            "MD5": "9f2d64ccfd85251a8ca0ec1707aa7dab"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
           "id": "generated.fabricmod:fabric-api:0.119.4+1.21.4@jar",
           "name": "Fabric API",
           "type": "FabricMod",
@@ -213,9 +252,9 @@
           "name": "GTCanvas for Aris",
           "type": "FabricMod",
           "artifact": {
-            "size": 47318,
+            "size": 1076606,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/GTCanvasAris-fabric-1.0-SNAPSHOT.jar",
-            "MD5": "cbc914546e93ed9cea25bf7e12c5ad95"
+            "MD5": "d0fb2d20a4ecc09c194845469cc706bb"
           },
           "required": {
             "value": false
@@ -226,9 +265,9 @@
           "name": "GTChatHUD",
           "type": "FabricMod",
           "artifact": {
-            "size": 1059561,
+            "size": 1065720,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/GTChatHUD-fabric-1.21.4-1.0-SNAPSHOT.jar",
-            "MD5": "66fabdacd38b54974975a946275c0d25"
+            "MD5": "0b867fe047e35fdbade573f83143ccf7"
           },
           "required": {
             "value": false
@@ -239,9 +278,9 @@
           "name": "GTShop",
           "type": "FabricMod",
           "artifact": {
-            "size": 4130867,
+            "size": 5138846,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/gtshop-fabric-1.21.4-1.0.1.jar",
-            "MD5": "7fbcf31797a86ec0a6d1f1be860a72ea"
+            "MD5": "2e0c99a8a9f6a7f34c2937020fadbbae"
           },
           "required": {
             "value": false
@@ -317,9 +356,9 @@
           "name": "Tsuming",
           "type": "FabricMod",
           "artifact": {
-            "size": 1062132,
+            "size": 1086599,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/tsuming-1.0.0.jar",
-            "MD5": "95ea452f832d40760122e1308e3d3542"
+            "MD5": "86fc06eecf9871b916abeb5f5f7de57f"
           },
           "required": {
             "value": false
@@ -15210,14 +15249,14 @@
           }
         },
         {
-          "id": "99_gtc_test.aris.lua",
-          "name": "99_gtc_test.aris.lua",
+          "id": "50_enhance_gui.aris.lua",
+          "name": "50_enhance_gui.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 3363,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/99_gtc_test.aris.lua",
-            "MD5": "146b41c81791b729803b2bea095d86e8",
-            "path": "robots/client-game/99_gtc_test.aris.lua"
+            "size": 23856,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/50_enhance_gui.aris.lua",
+            "MD5": "bbbbc9f96a936061d6910b46f04a370d",
+            "path": "robots/client-game/50_enhance_gui.aris.lua"
           }
         },
         {
@@ -15265,14 +15304,14 @@
           }
         },
         {
-          "id": "99_gtc_test_keybind.aris.lua",
-          "name": "99_gtc_test_keybind.aris.lua",
+          "id": "50_enhance_packets.aris.lua",
+          "name": "50_enhance_packets.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 191,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/99_gtc_test_keybind.aris.lua",
-            "MD5": "f2dd0f53f52c9208986389ccd2415121",
-            "path": "robots/client-init/99_gtc_test_keybind.aris.lua"
+            "size": 973,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-init/50_enhance_packets.aris.lua",
+            "MD5": "02c0c0d6703aacd4f4444cee84a6d5cd",
+            "path": "robots/client-init/50_enhance_packets.aris.lua"
           }
         },
         {
@@ -15328,6 +15367,17 @@
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/40_skill_commands.aris.lua",
             "MD5": "e2b54cfab1cabc42cc987b98291da832",
             "path": "robots/init/40_skill_commands.aris.lua"
+          }
+        },
+        {
+          "id": "50_enhance_packets.aris.lua",
+          "name": "50_enhance_packets.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 1729,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/50_enhance_packets.aris.lua",
+            "MD5": "6e414a1025db4c6e072a91be8fb956a7",
+            "path": "robots/init/50_enhance_packets.aris.lua"
           }
         },
         {

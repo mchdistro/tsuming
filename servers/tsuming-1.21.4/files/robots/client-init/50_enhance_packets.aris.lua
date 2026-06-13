@@ -1,0 +1,18 @@
+-- 무기 강화 — 패킷 미러 정의 (클라 init 엔진에서도 동일 선언이 있어야 파싱/전송 가능)
+
+-- S2C (클라가 수신/파싱)
+local open = aris.init.networking.create_s2c_packet("enhance_open")
+open:append(aris.init.networking.string_arg("weapon_slots"))
+open:append(aris.init.networking.integer_arg("stone_slot"))
+open:append(aris.init.networking.integer_arg("stone_count"))
+open:append(aris.init.networking.integer_arg("ticket_slot"))
+open:append(aris.init.networking.integer_arg("ticket_count"))
+open:append(aris.init.networking.string_arg("result"))
+open:append(aris.init.networking.integer_arg("from_level"))
+open:append(aris.init.networking.integer_arg("to_level"))
+open:append(aris.init.networking.string_arg("weapon_atks"))
+
+-- C2S (클라가 송신)
+local do_pkt = aris.init.networking.create_c2s_packet("enhance_do")
+do_pkt:append(aris.init.networking.integer_arg("slot"))
+do_pkt:append(aris.init.networking.integer_arg("use_ticket"))
