@@ -148,9 +148,48 @@
           "name": "Aris_geckolib",
           "type": "FabricMod",
           "artifact": {
-            "size": 144652,
-            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/aris-entity-fabric-1.0-SNAPSHOT.jar",
-            "MD5": "e37adb20ec8d776f4b5c3e991f82ef21"
+            "size": 176745,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/aris-geckolib-fabric-1.0-SNAPSHOT.jar",
+            "MD5": "eebdc57a7d7c4d672d6d325ac9d048b9"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "me.ddayo.aris.video:arisvideo:1.0-SNAPSHOT@jar",
+          "name": "Aris-video",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 96547400,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/aris-video-fabric-1.0-SNAPSHOT.jar",
+            "MD5": "c412411de7817bbf7f2396f41867433b"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "net.darkhax.attributefix.fabric.impl:attributefix:21.4.2@jar",
+          "name": "AttributeFix",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 21873,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/attributefix-fabric-1.21.4-21.4.2.jar",
+            "MD5": "737be29ae57bd95d9aca93f021093a4c"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "me.axieum.mcmod.authme.impl:authme:9.0.1+1.21.4@jar",
+          "name": "Auth Me",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 376047,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/authme-fabric-9.0.1+1.21.4.jar",
+            "MD5": "3c220399e5c34dae32224818c7acaa6c"
           },
           "required": {
             "value": false
@@ -274,6 +313,19 @@
           }
         },
         {
+          "id": "com.gitter:gtnick:2.0.4@jar",
+          "name": "GTNick",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 104792,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/gtnick-fabric-1.21.4-2.0.4.jar",
+            "MD5": "4c82b7cf203901a9cec6f7078eae449a"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
           "id": "com.gitter:gtshop:1.0.1@jar",
           "name": "GTShop",
           "type": "FabricMod",
@@ -333,6 +385,19 @@
             "size": 237288,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/placeholder-api-2.5.2+1.21.3.jar",
             "MD5": "80b2dea3d99621d2b76db30a0582665d"
+          },
+          "required": {
+            "value": false
+          }
+        },
+        {
+          "id": "net.darkhax.pricklemc.fabric.impl:prickle:21.4.1@jar",
+          "name": "PrickleMC",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 86156,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/prickle-fabric-1.21.4-21.4.1.jar",
+            "MD5": "95d60bed92cef683676e6fee286601ad"
           },
           "required": {
             "value": false
@@ -795,6 +860,28 @@
           }
         },
         {
+          "id": "archer.animation.json",
+          "name": "archer.animation.json",
+          "type": "File",
+          "artifact": {
+            "size": 122,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/armor/archer.animation.json",
+            "MD5": "38e0aa667e17c4684e78c7aaba887acf",
+            "path": "resourcepacks/츠밍서버/assets/aris/animations/armor/archer.animation.json"
+          }
+        },
+        {
+          "id": "armor.animation.json",
+          "name": "armor.animation.json",
+          "type": "File",
+          "artifact": {
+            "size": 115,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/armor/armor.animation.json",
+            "MD5": "562b5ddac24b6e2f5c0797dee9d9ae48",
+            "path": "resourcepacks/츠밍서버/assets/aris/animations/armor/armor.animation.json"
+          }
+        },
+        {
           "id": "ancestor_hands.animation.json",
           "name": "ancestor_hands.animation.json",
           "type": "File",
@@ -1096,9 +1183,9 @@
           "name": "boss_archer.animation.json",
           "type": "File",
           "artifact": {
-            "size": 3702455,
+            "size": 748183,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/animations/entity/boss_archer.animation.json",
-            "MD5": "2753a0d0bf9382fb26546ce9865154ea",
+            "MD5": "4aab337b646e7d3c17bca7108877d151",
             "path": "resourcepacks/츠밍서버/assets/aris/animations/entity/boss_archer.animation.json"
           }
         },
@@ -5437,6 +5524,226 @@
           }
         },
         {
+          "id": "aris_armor.json",
+          "name": "aris_armor.json",
+          "type": "File",
+          "artifact": {
+            "size": 156,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/equipment/aris_armor.json",
+            "MD5": "3d922b01c47650f98c36e7500d6177c0",
+            "path": "resourcepacks/츠밍서버/assets/aris/equipment/aris_armor.json"
+          }
+        },
+        {
+          "id": "archer_chestplate.geo.json",
+          "name": "archer_chestplate.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 72567,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/archer_chestplate.geo.json",
+            "MD5": "cc01bef94cd754762d2c0339edb2faab",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/archer_chestplate.geo.json"
+          }
+        },
+        {
+          "id": "archer_helmet.geo.json",
+          "name": "archer_helmet.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 6288,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/archer_helmet.geo.json",
+            "MD5": "4ffb4708873de0ba139a058a9507467f",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/archer_helmet.geo.json"
+          }
+        },
+        {
+          "id": "archer_leggings.geo.json",
+          "name": "archer_leggings.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 22540,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/archer_leggings.geo.json",
+            "MD5": "5bf28710d547d82cde1d967f3fb30ac7",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/archer_leggings.geo.json"
+          }
+        },
+        {
+          "id": "assassin_boots.geo.json",
+          "name": "assassin_boots.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 4309,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/assassin_boots.geo.json",
+            "MD5": "0afd4dc5c8f87c2fc9382c3232bd5a3b",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/assassin_boots.geo.json"
+          }
+        },
+        {
+          "id": "assassin_chestplate.geo.json",
+          "name": "assassin_chestplate.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 53449,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/assassin_chestplate.geo.json",
+            "MD5": "e34932c530b956ec56568706ed817b8d",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/assassin_chestplate.geo.json"
+          }
+        },
+        {
+          "id": "assassin_helmet.geo.json",
+          "name": "assassin_helmet.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 2528,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/assassin_helmet.geo.json",
+            "MD5": "bfac29cfc73dff4809b03d40f6ec971b",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/assassin_helmet.geo.json"
+          }
+        },
+        {
+          "id": "assassin_leggings.geo.json",
+          "name": "assassin_leggings.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 18566,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/assassin_leggings.geo.json",
+            "MD5": "fc629a1a11beb0abce147817570355c2",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/assassin_leggings.geo.json"
+          }
+        },
+        {
+          "id": "mage_chestplate.geo.json",
+          "name": "mage_chestplate.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 10208,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/mage_chestplate.geo.json",
+            "MD5": "a7df56f6bd40072136fd62102ddc07eb",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/mage_chestplate.geo.json"
+          }
+        },
+        {
+          "id": "mage_helmet.geo.json",
+          "name": "mage_helmet.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 2523,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/mage_helmet.geo.json",
+            "MD5": "1f2eee9b0a431dd6f1eda42854e478d3",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/mage_helmet.geo.json"
+          }
+        },
+        {
+          "id": "mage_leggings.geo.json",
+          "name": "mage_leggings.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 15927,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/mage_leggings.geo.json",
+            "MD5": "76b6a3b8629f161c9019c15921c9d906",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/mage_leggings.geo.json"
+          }
+        },
+        {
+          "id": "shaman_chestplate.geo.json",
+          "name": "shaman_chestplate.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 80034,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/shaman_chestplate.geo.json",
+            "MD5": "eaa6201e3e18a3f9472b0b443470aafe",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/shaman_chestplate.geo.json"
+          }
+        },
+        {
+          "id": "shaman_helmet.geo.json",
+          "name": "shaman_helmet.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 9550,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/shaman_helmet.geo.json",
+            "MD5": "e011bdf9c4ca573d5a2d54cfe92a887f",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/shaman_helmet.geo.json"
+          }
+        },
+        {
+          "id": "shaman_leggings.geo.json",
+          "name": "shaman_leggings.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 8237,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/shaman_leggings.geo.json",
+            "MD5": "c260caa41f834eae6907c17162549314",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/shaman_leggings.geo.json"
+          }
+        },
+        {
+          "id": "summoner_chestplate.geo.json",
+          "name": "summoner_chestplate.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 51316,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/summoner_chestplate.geo.json",
+            "MD5": "399d3f97d223d9c2a5e7aca23150e025",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/summoner_chestplate.geo.json"
+          }
+        },
+        {
+          "id": "summoner_helmet.geo.json",
+          "name": "summoner_helmet.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 26948,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/summoner_helmet.geo.json",
+            "MD5": "09ac9f08fa36aa8f0ddbb2d2afbe0dbd",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/summoner_helmet.geo.json"
+          }
+        },
+        {
+          "id": "summoner_leggings.geo.json",
+          "name": "summoner_leggings.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 8071,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/summoner_leggings.geo.json",
+            "MD5": "7a4a0d87c7088b4aced741873716d342",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/summoner_leggings.geo.json"
+          }
+        },
+        {
+          "id": "warrior_chestplate.geo.json",
+          "name": "warrior_chestplate.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 26752,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/warrior_chestplate.geo.json",
+            "MD5": "47ee7c0e76712b19304711148fa48fcd",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/warrior_chestplate.geo.json"
+          }
+        },
+        {
+          "id": "warrior_helmet.geo.json",
+          "name": "warrior_helmet.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 14479,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/warrior_helmet.geo.json",
+            "MD5": "696930a9ef52c24c092cbf4c4d0d9f98",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/warrior_helmet.geo.json"
+          }
+        },
+        {
+          "id": "warrior_leggings.geo.json",
+          "name": "warrior_leggings.geo.json",
+          "type": "File",
+          "artifact": {
+            "size": 28916,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/armor/warrior_leggings.geo.json",
+            "MD5": "590ac11742df8f5e1adf2fd1ec9c1dbd",
+            "path": "resourcepacks/츠밍서버/assets/aris/geo/armor/warrior_leggings.geo.json"
+          }
+        },
+        {
           "id": "ancestor_hands.geo.json",
           "name": "ancestor_hands.geo.json",
           "type": "File",
@@ -5749,9 +6056,9 @@
           "name": "boss_archer.geo.json",
           "type": "File",
           "artifact": {
-            "size": 4254,
+            "size": 13470,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/entity/boss_archer.geo.json",
-            "MD5": "f96ac096d15eaf0321ee5ee152f2788c",
+            "MD5": "e471f57695a04e1562fbfc35190b9699",
             "path": "resourcepacks/츠밍서버/assets/aris/geo/entity/boss_archer.geo.json"
           }
         },
@@ -10274,6 +10581,501 @@
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/geo/entity/yeti_ice_block.geo.json",
             "MD5": "346ebd2ac1488f0ba82ec51a6824400b",
             "path": "resourcepacks/츠밍서버/assets/aris/geo/entity/yeti_ice_block.geo.json"
+          }
+        },
+        {
+          "id": "archer_chestplate.json",
+          "name": "archer_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 151,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/archer_chestplate.json",
+            "MD5": "08a7bf768cdf2a8d95d91152e3a9ac90",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/archer_chestplate.json"
+          }
+        },
+        {
+          "id": "archer_helmet.json",
+          "name": "archer_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 147,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/archer_helmet.json",
+            "MD5": "d1475a441427ec6e21d1a4da8b4ddb67",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/archer_helmet.json"
+          }
+        },
+        {
+          "id": "archer_leggings.json",
+          "name": "archer_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 149,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/archer_leggings.json",
+            "MD5": "4eba48d1f683dae83b3bdb556405f494",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/archer_leggings.json"
+          }
+        },
+        {
+          "id": "assassin_boots.json",
+          "name": "assassin_boots.json",
+          "type": "File",
+          "artifact": {
+            "size": 148,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/assassin_boots.json",
+            "MD5": "d12bb2801db1349004b5795c961c3e1c",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/assassin_boots.json"
+          }
+        },
+        {
+          "id": "assassin_chestplate.json",
+          "name": "assassin_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 153,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/assassin_chestplate.json",
+            "MD5": "8eacc49eba48d7ed3a97aa0b16ff60c5",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/assassin_chestplate.json"
+          }
+        },
+        {
+          "id": "assassin_helmet.json",
+          "name": "assassin_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 149,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/assassin_helmet.json",
+            "MD5": "08c69d08934e407d5bd9cf6b3008ed70",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/assassin_helmet.json"
+          }
+        },
+        {
+          "id": "assassin_leggings.json",
+          "name": "assassin_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 151,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/assassin_leggings.json",
+            "MD5": "8fdbc4de99f11af816b10fd6db91e247",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/assassin_leggings.json"
+          }
+        },
+        {
+          "id": "mage_chestplate.json",
+          "name": "mage_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 149,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/mage_chestplate.json",
+            "MD5": "886830e75e5ad396fbc44e737fd4e318",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/mage_chestplate.json"
+          }
+        },
+        {
+          "id": "mage_helmet.json",
+          "name": "mage_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 145,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/mage_helmet.json",
+            "MD5": "86250b9c4a9ae00fbc3a9a74f35f1af7",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/mage_helmet.json"
+          }
+        },
+        {
+          "id": "mage_leggings.json",
+          "name": "mage_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 147,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/mage_leggings.json",
+            "MD5": "f921c524edee2fc72badd2267cec581b",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/mage_leggings.json"
+          }
+        },
+        {
+          "id": "shaman_chestplate.json",
+          "name": "shaman_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 151,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/shaman_chestplate.json",
+            "MD5": "58f1c9fadcd15e06a2a3ef94e874c705",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/shaman_chestplate.json"
+          }
+        },
+        {
+          "id": "shaman_helmet.json",
+          "name": "shaman_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 147,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/shaman_helmet.json",
+            "MD5": "441cd59393893a639ae12fd55f1c3e58",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/shaman_helmet.json"
+          }
+        },
+        {
+          "id": "shaman_leggings.json",
+          "name": "shaman_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 149,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/shaman_leggings.json",
+            "MD5": "98a781836390e12301c87d1d63392e42",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/shaman_leggings.json"
+          }
+        },
+        {
+          "id": "summoner_chestplate.json",
+          "name": "summoner_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 153,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/summoner_chestplate.json",
+            "MD5": "5b8f3a8ff87c905cad9933cf0c081079",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/summoner_chestplate.json"
+          }
+        },
+        {
+          "id": "summoner_helmet.json",
+          "name": "summoner_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 149,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/summoner_helmet.json",
+            "MD5": "11b5ab632558ea2acdd5166a53541671",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/summoner_helmet.json"
+          }
+        },
+        {
+          "id": "summoner_leggings.json",
+          "name": "summoner_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 151,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/summoner_leggings.json",
+            "MD5": "cd97d1bfc9c560661c362188b57e4564",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/summoner_leggings.json"
+          }
+        },
+        {
+          "id": "warrior_chestplate.json",
+          "name": "warrior_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 152,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/warrior_chestplate.json",
+            "MD5": "02445724d8dd46f8f55b3cc2667e59f4",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/warrior_chestplate.json"
+          }
+        },
+        {
+          "id": "warrior_helmet.json",
+          "name": "warrior_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 148,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/warrior_helmet.json",
+            "MD5": "4f811f28498ad864418426f30026daa9",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/warrior_helmet.json"
+          }
+        },
+        {
+          "id": "warrior_leggings.json",
+          "name": "warrior_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 150,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/items/warrior_leggings.json",
+            "MD5": "fcc3f306eff49f9d35baea6ca8fb81fc",
+            "path": "resourcepacks/츠밍서버/assets/aris/items/warrior_leggings.json"
+          }
+        },
+        {
+          "id": "en_us.json",
+          "name": "en_us.json",
+          "type": "File",
+          "artifact": {
+            "size": 968,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/lang/en_us.json",
+            "MD5": "f8bef9a08d5c44b39503d7925acf1299",
+            "path": "resourcepacks/츠밍서버/assets/aris/lang/en_us.json"
+          }
+        },
+        {
+          "id": "archer_chestplate.json",
+          "name": "archer_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 1678,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/archer_chestplate.json",
+            "MD5": "83d6c2067c5a8a0285fcc608c2cdf860",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/archer_chestplate.json"
+          }
+        },
+        {
+          "id": "archer_helmet.json",
+          "name": "archer_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 1697,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/archer_helmet.json",
+            "MD5": "85678a3eecbe3bfc34490b1f67260bda",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/archer_helmet.json"
+          }
+        },
+        {
+          "id": "archer_leggings.json",
+          "name": "archer_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1693,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/archer_leggings.json",
+            "MD5": "2066603ba3b9d5c72ccacc8e80994da3",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/archer_leggings.json"
+          }
+        },
+        {
+          "id": "assassin_boots.json",
+          "name": "assassin_boots.json",
+          "type": "File",
+          "artifact": {
+            "size": 1680,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/assassin_boots.json",
+            "MD5": "b2873178cf183ba499b5fc5796206ec9",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/assassin_boots.json"
+          }
+        },
+        {
+          "id": "assassin_chestplate.json",
+          "name": "assassin_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 1685,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/assassin_chestplate.json",
+            "MD5": "2622c1bed6c4eac9e4ba89faeb09dbab",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/assassin_chestplate.json"
+          }
+        },
+        {
+          "id": "assassin_helmet.json",
+          "name": "assassin_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 1705,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/assassin_helmet.json",
+            "MD5": "c73459a7f48c2383586a02165ffe2435",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/assassin_helmet.json"
+          }
+        },
+        {
+          "id": "assassin_leggings.json",
+          "name": "assassin_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1695,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/assassin_leggings.json",
+            "MD5": "aaf3b98c483531f7c2ae651a73262804",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/assassin_leggings.json"
+          }
+        },
+        {
+          "id": "mage_chestplate.json",
+          "name": "mage_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 1679,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/mage_chestplate.json",
+            "MD5": "ff812d286b74a0bd268f6bf2a45ac3d7",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/mage_chestplate.json"
+          }
+        },
+        {
+          "id": "mage_helmet.json",
+          "name": "mage_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 1700,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/mage_helmet.json",
+            "MD5": "53b642b1071d6b23a64c60a5b89bd675",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/mage_helmet.json"
+          }
+        },
+        {
+          "id": "mage_leggings.json",
+          "name": "mage_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1691,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/mage_leggings.json",
+            "MD5": "57ce75427345c7bede480dd3f92a7e6e",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/mage_leggings.json"
+          }
+        },
+        {
+          "id": "shaman_chestplate.json",
+          "name": "shaman_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 1688,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/shaman_chestplate.json",
+            "MD5": "ca2054a85db581e7d888ac01d75d2703",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/shaman_chestplate.json"
+          }
+        },
+        {
+          "id": "shaman_helmet.json",
+          "name": "shaman_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 1703,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/shaman_helmet.json",
+            "MD5": "f24b85084f34212c59423dffebb07530",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/shaman_helmet.json"
+          }
+        },
+        {
+          "id": "shaman_leggings.json",
+          "name": "shaman_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1693,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/shaman_leggings.json",
+            "MD5": "d30de2216703468b955c68f884fc3f73",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/shaman_leggings.json"
+          }
+        },
+        {
+          "id": "summoner_chestplate.json",
+          "name": "summoner_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 1690,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/summoner_chestplate.json",
+            "MD5": "2d94c9283040bd23f51ec777c4fd0f86",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/summoner_chestplate.json"
+          }
+        },
+        {
+          "id": "summoner_helmet.json",
+          "name": "summoner_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 1705,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/summoner_helmet.json",
+            "MD5": "8bb62952cc47050b16d7ef662b7b9778",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/summoner_helmet.json"
+          }
+        },
+        {
+          "id": "summoner_leggings.json",
+          "name": "summoner_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1695,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/summoner_leggings.json",
+            "MD5": "675108596192f6af64924587e089cb12",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/summoner_leggings.json"
+          }
+        },
+        {
+          "id": "warrior_chestplate.json",
+          "name": "warrior_chestplate.json",
+          "type": "File",
+          "artifact": {
+            "size": 1687,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/warrior_chestplate.json",
+            "MD5": "1c55bd767ebe0df7aad378f9c171fd7b",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/warrior_chestplate.json"
+          }
+        },
+        {
+          "id": "warrior_helmet.json",
+          "name": "warrior_helmet.json",
+          "type": "File",
+          "artifact": {
+            "size": 1703,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/warrior_helmet.json",
+            "MD5": "55d232daa2abce78fb4531bc26586dd9",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/warrior_helmet.json"
+          }
+        },
+        {
+          "id": "warrior_leggings.json",
+          "name": "warrior_leggings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1694,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/models/item/warrior_leggings.json",
+            "MD5": "0f2441fd812f158f74e185cdc5a69990",
+            "path": "resourcepacks/츠밍서버/assets/aris/models/item/warrior_leggings.json"
+          }
+        },
+        {
+          "id": "archer.png",
+          "name": "archer.png",
+          "type": "File",
+          "artifact": {
+            "size": 8861,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/armor/archer.png",
+            "MD5": "c33b422a0e0b3d3fe2c35bafcf277b0c",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/armor/archer.png"
+          }
+        },
+        {
+          "id": "assassin.png",
+          "name": "assassin.png",
+          "type": "File",
+          "artifact": {
+            "size": 6309,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/armor/assassin.png",
+            "MD5": "92d1be673fc356d65fd91121e7756c8e",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/armor/assassin.png"
+          }
+        },
+        {
+          "id": "mage.png",
+          "name": "mage.png",
+          "type": "File",
+          "artifact": {
+            "size": 4697,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/armor/mage.png",
+            "MD5": "9607312b1fe029c79202f26fcf52565f",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/armor/mage.png"
+          }
+        },
+        {
+          "id": "shaman.png",
+          "name": "shaman.png",
+          "type": "File",
+          "artifact": {
+            "size": 5823,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/armor/shaman.png",
+            "MD5": "e3f25ecf3b30f3b602a73eb83cd0844b",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/armor/shaman.png"
+          }
+        },
+        {
+          "id": "summoner.png",
+          "name": "summoner.png",
+          "type": "File",
+          "artifact": {
+            "size": 4642,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/armor/summoner.png",
+            "MD5": "da1b0598b096f295e18f42a6a9c8bc37",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/armor/summoner.png"
+          }
+        },
+        {
+          "id": "warrior.png",
+          "name": "warrior.png",
+          "type": "File",
+          "artifact": {
+            "size": 9088,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/armor/warrior.png",
+            "MD5": "a9a0b963ea297f03962af99b34c1ecbc",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/armor/warrior.png"
           }
         },
         {
@@ -15128,6 +15930,72 @@
           }
         },
         {
+          "id": "archer.png",
+          "name": "archer.png",
+          "type": "File",
+          "artifact": {
+            "size": 8861,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/item/archer.png",
+            "MD5": "c33b422a0e0b3d3fe2c35bafcf277b0c",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/item/archer.png"
+          }
+        },
+        {
+          "id": "assassin.png",
+          "name": "assassin.png",
+          "type": "File",
+          "artifact": {
+            "size": 6309,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/item/assassin.png",
+            "MD5": "92d1be673fc356d65fd91121e7756c8e",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/item/assassin.png"
+          }
+        },
+        {
+          "id": "mage.png",
+          "name": "mage.png",
+          "type": "File",
+          "artifact": {
+            "size": 4697,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/item/mage.png",
+            "MD5": "9607312b1fe029c79202f26fcf52565f",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/item/mage.png"
+          }
+        },
+        {
+          "id": "shaman.png",
+          "name": "shaman.png",
+          "type": "File",
+          "artifact": {
+            "size": 5823,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/item/shaman.png",
+            "MD5": "e3f25ecf3b30f3b602a73eb83cd0844b",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/item/shaman.png"
+          }
+        },
+        {
+          "id": "summoner.png",
+          "name": "summoner.png",
+          "type": "File",
+          "artifact": {
+            "size": 4642,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/item/summoner.png",
+            "MD5": "da1b0598b096f295e18f42a6a9c8bc37",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/item/summoner.png"
+          }
+        },
+        {
+          "id": "warrior.png",
+          "name": "warrior.png",
+          "type": "File",
+          "artifact": {
+            "size": 9088,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/resourcepacks/%EC%B8%A0%EB%B0%8D%EC%84%9C%EB%B2%84/assets/aris/textures/item/warrior.png",
+            "MD5": "a9a0b963ea297f03962af99b34c1ecbc",
+            "path": "resourcepacks/츠밍서버/assets/aris/textures/item/warrior.png"
+          }
+        },
+        {
           "id": "sounds.json",
           "name": "sounds.json",
           "type": "File",
@@ -15172,13 +16040,24 @@
           }
         },
         {
+          "id": "00_lunajson_loader.aris.lua",
+          "name": "00_lunajson_loader.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 427,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/00_lunajson_loader.aris.lua",
+            "MD5": "b87a7c489366af0c8d137fe804c1b4e9",
+            "path": "robots/client-game/00_lunajson_loader.aris.lua"
+          }
+        },
+        {
           "id": "10_player_emote_bone_mapping.aris.lua",
           "name": "10_player_emote_bone_mapping.aris.lua",
           "type": "File",
           "artifact": {
-            "size": 2114,
+            "size": 3378,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/client-game/10_player_emote_bone_mapping.aris.lua",
-            "MD5": "5f1b951bd08b6238eb14d34bd7abbf2e",
+            "MD5": "981268895c98e38c5fe8a8bbbd01c235",
             "path": "robots/client-game/10_player_emote_bone_mapping.aris.lua"
           }
         },
@@ -15367,6 +16246,17 @@
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/50_enhance_packets.aris.lua",
             "MD5": "6e414a1025db4c6e072a91be8fb956a7",
             "path": "robots/init/50_enhance_packets.aris.lua"
+          }
+        },
+        {
+          "id": "55_armor.aris.lua",
+          "name": "55_armor.aris.lua",
+          "type": "File",
+          "artifact": {
+            "size": 3923,
+            "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/files/robots/init/55_armor.aris.lua",
+            "MD5": "7c7a535e98b4210a965a7ffb88b5c3a5",
+            "path": "robots/init/55_armor.aris.lua"
           }
         },
         {

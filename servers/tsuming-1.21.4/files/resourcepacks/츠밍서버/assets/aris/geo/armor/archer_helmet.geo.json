@@ -1,0 +1,272 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.boss_archer_helmet",
+        "texture_width": 256,
+        "texture_height": 256,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "helmet",
+          "pivot": [
+            0,
+            0.0,
+            0
+          ]
+        },
+        {
+          "name": "armorHead",
+          "parent": "helmet",
+          "pivot": [
+            0,
+            24.02963,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.625,
+                23.52963,
+                -4.625
+              ],
+              "size": [
+                9.25,
+                9,
+                9.25
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    37,
+                    115
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    7,
+                    109
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    105,
+                    114
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    80,
+                    107
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    64,
+                    104
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    122,
+                    125
+                  ],
+                  "uv_size": [
+                    9,
+                    -9
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -4.5,
+                29.02963,
+                -4.5
+              ],
+              "size": [
+                9,
+                1,
+                9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    86,
+                    16
+                  ],
+                  "uv_size": [
+                    9,
+                    1
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    88,
+                    37
+                  ],
+                  "uv_size": [
+                    9,
+                    1
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    90,
+                    39
+                  ],
+                  "uv_size": [
+                    9,
+                    1
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    90,
+                    89
+                  ],
+                  "uv_size": [
+                    9,
+                    1
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    26
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    10,
+                    35
+                  ],
+                  "uv_size": [
+                    9,
+                    -9
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -1.5,
+                28.02963,
+                -4.75
+              ],
+              "size": [
+                3,
+                3,
+                0
+              ],
+              "pivot": [
+                0,
+                29.52963,
+                -4.75
+              ],
+              "rotation": [
+                0,
+                0,
+                45
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    24,
+                    90
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    53,
+                    95
+                  ],
+                  "uv_size": [
+                    0,
+                    3
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    27,
+                    90
+                  ],
+                  "uv_size": [
+                    -3,
+                    3
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    54,
+                    95
+                  ],
+                  "uv_size": [
+                    0,
+                    3
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    95,
+                    34
+                  ],
+                  "uv_size": [
+                    3,
+                    0
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    95,
+                    35
+                  ],
+                  "uv_size": [
+                    3,
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

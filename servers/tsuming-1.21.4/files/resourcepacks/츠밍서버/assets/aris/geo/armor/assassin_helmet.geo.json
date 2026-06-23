@@ -1,0 +1,114 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.boss_assassin_helmet",
+        "texture_width": 130,
+        "texture_height": 195,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "helmet",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "armorHead",
+          "parent": "helmet",
+          "pivot": [
+            0,
+            24.02963,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                23.52963,
+                -4.5
+              ],
+              "size": [
+                9,
+                9,
+                9
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    21,
+                    21
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    1,
+                    25
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    11,
+                    25
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    29,
+                    1
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    31,
+                    11
+                  ],
+                  "uv_size": [
+                    9,
+                    9
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    21,
+                    40
+                  ],
+                  "uv_size": [
+                    9,
+                    -9
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

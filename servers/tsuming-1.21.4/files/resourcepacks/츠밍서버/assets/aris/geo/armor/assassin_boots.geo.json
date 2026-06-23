@@ -1,0 +1,189 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.boss_assassin_boots",
+        "texture_width": 130,
+        "texture_height": 195,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "armorRightBoot",
+          "pivot": [
+            -1.9,
+            12,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                0.00463,
+                -2.5
+              ],
+              "size": [
+                5,
+                4,
+                5
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    24,
+                    82
+                  ],
+                  "uv_size": [
+                    -5,
+                    4
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    68,
+                    82
+                  ],
+                  "uv_size": [
+                    -5,
+                    4
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    24,
+                    82
+                  ],
+                  "uv_size": [
+                    -5,
+                    4
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    68,
+                    82
+                  ],
+                  "uv_size": [
+                    -5,
+                    4
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    20,
+                    35
+                  ],
+                  "uv_size": [
+                    -5,
+                    5
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    44,
+                    79
+                  ],
+                  "uv_size": [
+                    -5,
+                    -5
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "armorLeftBoot",
+          "pivot": [
+            1.9,
+            12,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.5,
+                0.00463,
+                -2.5
+              ],
+              "size": [
+                5,
+                4,
+                5
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    19,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    4
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    63,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    4
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    19,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    4
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    63,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    4
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    15,
+                    35
+                  ],
+                  "uv_size": [
+                    5,
+                    5
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    39,
+                    79
+                  ],
+                  "uv_size": [
+                    5,
+                    -5
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

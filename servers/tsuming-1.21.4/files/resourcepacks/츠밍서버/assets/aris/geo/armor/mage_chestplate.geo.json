@@ -1,0 +1,441 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.boss_mage_chestplate",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "chestplate",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "upper_body",
+          "parent": "chestplate",
+          "pivot": [
+            0,
+            12.57291,
+            -0.37731
+          ]
+        },
+        {
+          "name": "armorLeftArm",
+          "parent": "upper_body",
+          "pivot": [
+            4,
+            24.02963,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                4,
+                14.02963,
+                -3
+              ],
+              "size": [
+                5,
+                11,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    5,
+                    45
+                  ],
+                  "uv_size": [
+                    -5,
+                    11
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    26,
+                    30
+                  ],
+                  "uv_size": [
+                    -6,
+                    11
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    42,
+                    48
+                  ],
+                  "uv_size": [
+                    -5,
+                    11
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    36,
+                    9
+                  ],
+                  "uv_size": [
+                    -6,
+                    11
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    78,
+                    10
+                  ],
+                  "uv_size": [
+                    -5,
+                    6
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    37,
+                    79
+                  ],
+                  "uv_size": [
+                    -5,
+                    -6
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "armorRightArm",
+          "parent": "upper_body",
+          "pivot": [
+            -4,
+            24.02963,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -9,
+                14.02963,
+                -3
+              ],
+              "size": [
+                5,
+                11,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    45
+                  ],
+                  "uv_size": [
+                    5,
+                    11
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    30,
+                    9
+                  ],
+                  "uv_size": [
+                    6,
+                    11
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    37,
+                    48
+                  ],
+                  "uv_size": [
+                    5,
+                    11
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    20,
+                    30
+                  ],
+                  "uv_size": [
+                    6,
+                    11
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    73,
+                    10
+                  ],
+                  "uv_size": [
+                    5,
+                    6
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    32,
+                    79
+                  ],
+                  "uv_size": [
+                    5,
+                    -6
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "armorBody",
+          "parent": "upper_body",
+          "pivot": [
+            0,
+            12.57291,
+            -0.37731
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                12.02963,
+                -2.5
+              ],
+              "size": [
+                9,
+                8,
+                5
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    10,
+                    23
+                  ],
+                  "uv_size": [
+                    9,
+                    8
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    47,
+                    0
+                  ],
+                  "uv_size": [
+                    5,
+                    8
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    28,
+                    0
+                  ],
+                  "uv_size": [
+                    9,
+                    8
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    67,
+                    12
+                  ],
+                  "uv_size": [
+                    5,
+                    8
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    66,
+                    39
+                  ],
+                  "uv_size": [
+                    9,
+                    5
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    66,
+                    50
+                  ],
+                  "uv_size": [
+                    9,
+                    -5
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -5,
+                20.00463,
+                -3
+              ],
+              "size": [
+                10,
+                4,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    67,
+                    21
+                  ],
+                  "uv_size": [
+                    10,
+                    4
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    75,
+                    78
+                  ],
+                  "uv_size": [
+                    6,
+                    4
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    71,
+                    26
+                  ],
+                  "uv_size": [
+                    10,
+                    4
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    79,
+                    10
+                  ],
+                  "uv_size": [
+                    6,
+                    4
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    44,
+                    9
+                  ],
+                  "uv_size": [
+                    10,
+                    6
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    26,
+                    51
+                  ],
+                  "uv_size": [
+                    10,
+                    -6
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -5,
+                12.00463,
+                -3
+              ],
+              "size": [
+                10,
+                2,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    81,
+                    0
+                  ],
+                  "uv_size": [
+                    10,
+                    2
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    83,
+                    59
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    81,
+                    3
+                  ],
+                  "uv_size": [
+                    10,
+                    2
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    83,
+                    62
+                  ],
+                  "uv_size": [
+                    6,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    46,
+                    16
+                  ],
+                  "uv_size": [
+                    10,
+                    6
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    46,
+                    29
+                  ],
+                  "uv_size": [
+                    10,
+                    -6
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

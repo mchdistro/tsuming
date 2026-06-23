@@ -1,0 +1,704 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.boss_mage_leggings",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "leggings",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "cape2",
+          "parent": "armorBody",
+          "pivot": [
+            0,
+            12.5,
+            2.5
+          ],
+          "rotation": [
+            -85,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "tl_lace2",
+          "parent": "cape2",
+          "pivot": [
+            0,
+            12.5,
+            6.5
+          ]
+        },
+        {
+          "name": "indiv2",
+          "parent": "tl_lace2",
+          "pivot": [
+            0,
+            12.55,
+            4.52963
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.5,
+                12.55,
+                2.52963
+              ],
+              "size": [
+                5,
+                0,
+                4
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    87,
+                    41
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    87,
+                    42
+                  ],
+                  "uv_size": [
+                    4,
+                    0
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    69,
+                    87
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    78,
+                    87
+                  ],
+                  "uv_size": [
+                    4,
+                    0
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    82,
+                    78
+                  ],
+                  "uv_size": [
+                    5,
+                    4
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    82,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    -4
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "third2",
+          "parent": "tl_lace2",
+          "pivot": [
+            0,
+            12.5,
+            6.5
+          ]
+        },
+        {
+          "name": "tl_lace5",
+          "parent": "third2",
+          "pivot": [
+            0,
+            12.5,
+            13.5
+          ]
+        },
+        {
+          "name": "indiv5",
+          "parent": "tl_lace5",
+          "pivot": [
+            0,
+            12.55,
+            10.02963
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.5,
+                12.55,
+                6.52963
+              ],
+              "size": [
+                5,
+                0,
+                7
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    83,
+                    87
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    9,
+                    88
+                  ],
+                  "uv_size": [
+                    7,
+                    0
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    88,
+                    15
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    88,
+                    16
+                  ],
+                  "uv_size": [
+                    7,
+                    0
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    71,
+                    67
+                  ],
+                  "uv_size": [
+                    5,
+                    7
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    71,
+                    74
+                  ],
+                  "uv_size": [
+                    5,
+                    -7
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "cape3",
+          "parent": "armorBody",
+          "pivot": [
+            0,
+            12.5,
+            -2.5
+          ],
+          "rotation": [
+            -95,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "tl_lace3",
+          "parent": "cape3",
+          "pivot": [
+            0,
+            12.5,
+            1.5
+          ]
+        },
+        {
+          "name": "indiv3",
+          "parent": "tl_lace3",
+          "pivot": [
+            0,
+            12.55,
+            -0.47037
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.5,
+                12.55,
+                -2.47037
+              ],
+              "size": [
+                5,
+                0,
+                4
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    17,
+                    88
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    88,
+                    26
+                  ],
+                  "uv_size": [
+                    4,
+                    0
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    88,
+                    27
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    88,
+                    28
+                  ],
+                  "uv_size": [
+                    4,
+                    0
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    82,
+                    78
+                  ],
+                  "uv_size": [
+                    5,
+                    4
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    82,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    -4
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "third3",
+          "parent": "tl_lace3",
+          "pivot": [
+            0,
+            12.5,
+            1.5
+          ]
+        },
+        {
+          "name": "tl_lace4",
+          "parent": "third3",
+          "pivot": [
+            0,
+            12.5,
+            8.5
+          ]
+        },
+        {
+          "name": "indiv4",
+          "parent": "tl_lace4",
+          "pivot": [
+            0,
+            12.55,
+            5.02963
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.5,
+                12.55,
+                1.52963
+              ],
+              "size": [
+                5,
+                0,
+                7
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    88,
+                    29
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    88,
+                    30
+                  ],
+                  "uv_size": [
+                    7,
+                    0
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    30,
+                    88
+                  ],
+                  "uv_size": [
+                    5,
+                    0
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    88,
+                    31
+                  ],
+                  "uv_size": [
+                    7,
+                    0
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    71,
+                    67
+                  ],
+                  "uv_size": [
+                    5,
+                    7
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    71,
+                    74
+                  ],
+                  "uv_size": [
+                    5,
+                    -7
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "armorRightLeg",
+          "parent": "leggings",
+          "pivot": [
+            -3.10898,
+            12.53048,
+            -1.21284
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.75183,
+                1.05081,
+                -2.51576
+              ],
+              "size": [
+                5,
+                11,
+                5
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    43,
+                    48
+                  ],
+                  "uv_size": [
+                    5,
+                    11
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    49,
+                    48
+                  ],
+                  "uv_size": [
+                    5,
+                    11
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    43,
+                    48
+                  ],
+                  "uv_size": [
+                    5,
+                    11
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    49,
+                    48
+                  ],
+                  "uv_size": [
+                    5,
+                    11
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    76,
+                    43
+                  ],
+                  "uv_size": [
+                    5,
+                    5
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    21,
+                    82
+                  ],
+                  "uv_size": [
+                    5,
+                    -5
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "armorLeftLeg",
+          "parent": "leggings",
+          "pivot": [
+            3,
+            12.52963,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1.5,
+                1.00463,
+                -3
+              ],
+              "size": [
+                4,
+                11,
+                6
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    66,
+                    63
+                  ],
+                  "uv_size": [
+                    4,
+                    11
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    33
+                  ],
+                  "uv_size": [
+                    6,
+                    11
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    67,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    11
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    27,
+                    33
+                  ],
+                  "uv_size": [
+                    6,
+                    11
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    65,
+                    78
+                  ],
+                  "uv_size": [
+                    4,
+                    6
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    70,
+                    84
+                  ],
+                  "uv_size": [
+                    4,
+                    -6
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -0.24817,
+                1.05081,
+                -2.51576
+              ],
+              "size": [
+                5,
+                11,
+                5
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    48,
+                    48
+                  ],
+                  "uv_size": [
+                    -5,
+                    11
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    54,
+                    48
+                  ],
+                  "uv_size": [
+                    -5,
+                    11
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    48,
+                    48
+                  ],
+                  "uv_size": [
+                    -5,
+                    11
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    54,
+                    48
+                  ],
+                  "uv_size": [
+                    -5,
+                    11
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    81,
+                    43
+                  ],
+                  "uv_size": [
+                    -5,
+                    5
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    26,
+                    82
+                  ],
+                  "uv_size": [
+                    -5,
+                    -5
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "armorBody",
+          "parent": "leggings",
+          "pivot": [
+            0,
+            24,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

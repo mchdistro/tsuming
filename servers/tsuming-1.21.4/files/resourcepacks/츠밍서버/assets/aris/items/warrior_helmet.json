@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "aris:item/warrior_helmet",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

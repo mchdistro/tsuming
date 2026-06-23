@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "aris:item/summoner_leggings",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "aris:item/summoner_chestplate",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

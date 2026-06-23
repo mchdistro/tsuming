@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "aris:item/assassin_leggings",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}
