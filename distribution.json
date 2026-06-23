@@ -421,9 +421,9 @@
           "name": "Tsuming",
           "type": "FabricMod",
           "artifact": {
-            "size": 1086599,
+            "size": 1096731,
             "url": "https://github.com/mchdistro/tsuming/raw/main/servers/tsuming-1.21.4/fabricmods/optionalon/tsuming-1.0.0.jar",
-            "MD5": "86fc06eecf9871b916abeb5f5f7de57f"
+            "MD5": "04193215a8f5464701ca2685da4c7dbb"
           },
           "required": {
             "value": false
